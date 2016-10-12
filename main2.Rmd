@@ -6,6 +6,7 @@ output: ioslides_presentation
 ---
 
 ```{r setup, include=FALSE}
+setwd("~/Dropbox/practice/Teaching/R-Crawler")
 # knitr::opts_chunk$set(echo = FALSE)
 ```
 
