@@ -1,26 +1,31 @@
+
 ---
-title: "main2"
+title: "R Crawler Part2: Let’s Rock with R!"
 author: "Miao Chien"
+
 date: "2016/10/12"
-output: ioslides_presentation
+output:
+ 
+  slidy_presentation:
+    css: custom.css
 ---
 
 ```{r setup, include=FALSE}
 setwd("~/Dropbox/practice/Teaching/R-Crawler")
-# knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
 ```
 
-# Let’s Rock with R!
 
 ## RStudio
-
+<div class="midcenter">
 ![](img/RStudio.png)
+</div>
 
 ## 所需套件
 
 ### Pipeline Coding
 
- - magrittr
+<span style="font-weight:bold; color:red;">- magrittr </span>
 
 ### Crawler’s toolkits in R
 
@@ -181,7 +186,7 @@ content(res, as = "parsed", encoding = "UTF-8")
 
 程式碼放在 `Gossiping.R`
 
-```{r}
+```{r, warning=FALSE}
 library(magrittr)
 library(httr)
 library(rvest)

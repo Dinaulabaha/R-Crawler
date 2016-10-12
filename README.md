@@ -10,4 +10,4 @@
 
 即可下載所有檔案
 
-`.Rmd`是教學投影片，範例程式碼在 Rscripts 資料夾中
+其中 `.Rpres` 是教學投影片的 Markdown ，範例程式碼在 Rscripts 資料夾中
