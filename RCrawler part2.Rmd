@@ -107,43 +107,43 @@ vals = 1:3 %>% data.frame(a = ., b = .^2) %>%
 
 ```
 
-<!-- ## 好用套件介紹： [data.table](https://cran.r-project.org/web/packages/data.table/data.table.pdf) -->
+## 好用套件介紹： [data.table](https://cran.r-project.org/web/packages/data.table/data.table.pdf)
 
-<!-- ![](img/datatable.png) -->
+![](img/datatable.png)
 
-<!-- - 取代內建 data.frame 的好工具 -->
+- 取代內建 data.frame 的好工具
 
-<!-- - 運算效率高、節省記憶體 -->
+- 運算效率高、節省記憶體
 
-<!-- - 資料選取方便 -->
+- 資料選取方便
 
-<!-- ## 好用套件介紹： [data.table](https://cran.r-project.org/web/packages/data.table/data.table.pdf) -->
+## 好用套件介紹： [data.table](https://cran.r-project.org/web/packages/data.table/data.table.pdf)
 
-<!-- ```{r, warning=FALSE} -->
-<!-- library(data.table) -->
+```{r, warning=FALSE}
+library(data.table)
 
-<!-- DT = data.table(mtcars) -->
-<!-- DT %<>% data.table(name = rownames(mtcars), .)  -->
+DT = data.table(mtcars)
+DT %<>% data.table(name = rownames(mtcars), .)
 
-<!-- ``` -->
+```
 
-<!-- ## 好用套件介紹： [data.table](https://cran.r-project.org/web/packages/data.table/data.table.pdf) -->
+## 好用套件介紹： [data.table](https://cran.r-project.org/web/packages/data.table/data.table.pdf)
 
-<!-- ```{r} -->
-<!-- DT[cyl == 8] -->
-<!-- ``` -->
+```{r}
+DT[cyl == 8]
+```
 
-<!-- ## 好用套件介紹： [data.table](https://cran.r-project.org/web/packages/data.table/data.table.pdf) -->
+## 好用套件介紹： [data.table](https://cran.r-project.org/web/packages/data.table/data.table.pdf)
 
-<!-- ```{r} -->
-<!-- rr= DT[,.(Issue, Project, Date)] %>% .[,Date := factor(Date, levels=seq.date)] -->
+```{r}
+rr= DT[,.(Issue, Project, Date)] %>% .[,Date := factor(Date, levels=seq.date)]
 
-<!-- r =  -->
-<!--   rr[,.(Date=levels(Date), Count=c(table(Date))), by=.(Issue, Project)] %>% -->
-<!--   .[,.(Issue, Project, Date = Date %>% as.Date, Count)] %>% -->
-<!--   .[order(match(Issue, issue_table$Issue))] -->
-<!-- DT %>% .[,.(gear=gl(gear))] %>% .[,.(V1 = .N, by=gear)] -->
-<!-- ``` -->
+r =
+  rr[,.(Date=levels(Date), Count=c(table(Date))), by=.(Issue, Project)] %>%
+  .[,.(Issue, Project, Date = Date %>% as.Date, Count)] %>%
+  .[order(match(Issue, issue_table$Issue))]
+DT %>% .[,.(gear=gl(gear))] %>% .[,.(V1 = .N, by=gear)]
+```
 
 ## 再看一次爬蟲流程
 

@@ -12,10 +12,31 @@
   letter-spacing: 1px;
 }
 
-.small-code pre code {
-  font-size: 1em;
-  letter-spacing: 3px;　            
+.reveal pre code.r {
+  display: block; /* fixes a strange ie margin bug */
+  font-family: Courier New; 
+  font-size: 100%; 
+  overflow:auto; 
+  background: #f0f0f0 url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+  border: 1px solid #ccc;
+  padding: 10px 10px 10px 21px;
+  max-height:1000px; 
+  line-height: 1.2em;
+  font-weight:bold;
 }
+
+.reveal pre code {
+  display: block; /* fixes a strange ie margin bug */
+  font-family: Courier New; 
+  font-size: 100%; 
+  overflow:auto; 
+  background: #FFFFFF url(http://klcintw.images.googlepages.com/Code_BG.gif) left top repeat-y;
+  border: 1px solid #ccc;
+  padding: 10px 10px 10px 21px;
+  max-height:1000px; 
+  line-height: 1.2em;
+}
+
 .midcenter {
     position: fixed;
     top: 50%;
@@ -29,7 +50,7 @@
     letter-spacing: 3px;
 }
 .pinky .reveal .state-background {
-  background: #B088FF;
+  background: #95AABF;
 } 
 .pinky .reveal h1,
 .pinky .reveal h2,
