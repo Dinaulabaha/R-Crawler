@@ -1,0 +1,122 @@
+R Crawler 2
+========================================================
+author: Miao Chien
+date: 10/19
+autosize: true
+css: custom.css
+
+
+
+使用 RStudio 與下載示範檔案
+========================================================
+
+<div class="midcenter" style="margin-left:-500px; margin-top:-300px;">
+<img src="img/RStudio.png"></img>
+</div>
+
+使用 RStudio 與下載示範檔案
+========================================================
+
+進入這個專案的 [github](https://github.com/MiaoChien/R-Crawler)
+
+Clone or download > Download ZIP
+![](img/download.png)
+
+
+使用 RStudio 與下載示範檔案
+========================================================
+
+Step1. 將 ZIP 檔解壓縮至指定工作路徑
+
+Step2. 開啟 RStudio File > New Project...
+
+![](img/d1.png)
+
+
+使用 RStudio 與下載示範檔案
+========================================================
+</br>
+</br>
+Step3. 選擇 Existing Directory
+
+![](img/d2.png)
+
+***
+</br>
+</br>
+Step4. 讀入指定的工作路徑 
+
+![](img/d3.png)
+
+
+所需套件
+========================================================
+ Pipeline Coding
+- magrittr 
+
+Crawler’s toolkits in R
+- rvest: a web scraper based on httr and xml2
+- httr: toolkit of HTTP methods in R
+- XML : XML parser
+- xml2: xml parser based on libxml2
+
+Data ETL
+- stringr: string manipulaiton
+- data.table: extension of data.frame, a powerful ETL tool in R
+
+
+安裝所需套件
+========================================================
+程式碼在 `install_packages.R`
+
+
+```r
+pkg_list <- c("magrittr", "httr", "rvest", "stringr", "data.table","jsonlite", "RSQLite", "devtools")
+
+pkg_new <- pkg_list[!(pkg_list %in% installed.packages()[,"Package"])]
+
+if(length(pkg_new)) install.packages(pkg_new)
+
+if("xmlview" %in% pkg_new) {devtools::install_github("hrbrmstr/xmlview")}
+
+if("data.table" %in% pkg_new) {
+    install.packages("data.table", type = "source",
+                     repos = "https://Rdatatable.github.io/data.table")
+} else if (packageDescription("data.table")$Version < "1.9.7") {
+    install.packages("data.table", type = "source", 
+                     repos = "https://Rdatatable.github.io/data.table")
+}
+rm(pkg_new, pkg_list)
+```
+
+好用套件介紹：magrittr
+=========================================================
+<a href="https://cran.r-project.org/web/packages/magrittr/magrittr.pdf">magrittr package document</a> 
+<center>
+![](img/magrittr.png)
+</center>
+
+
+好用套件介紹：magrittr
+=========================================================
+
+![](img/magrittr2.png)
+
+- 把左手邊的參數用 **pipeline** 「 %>% 」傳送到右手邊的函式中
+
+- RStudio 輸入快捷鍵：
+    + Windows & Linux：<kbd class="light">Ctrl</kbd> + <kbd  class="light">Shift</kbd> + <kbd  class="light">M</kbd>
+    
+    + Mac：<kbd  class="light">⌘</kbd>+ <kbd  class="light">⇧</kbd> + <kbd class="light"> M</kbd>
+
+- Use the dot  **.**   as placeholder in a expression.
+
+    + x %>% f is equivalent to f(x)
+
+    + x %>% f(y) is equivalent to f(x, y)
+
+    + x %>% f %>% g %>% h is equivalent to h(g(f(x)))
+
+    + x %>% f(y, .) is equivalent to f(y, x)
+
+    + x %>% f(y, z = .) is equivalent to f(y, z = x)
