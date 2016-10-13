@@ -1,0 +1,38 @@
+.reveal h1, .reveal h2, .reveal h3 {
+  word-wrap: normal;
+  -moz-hyphens: none;
+  line-height: 72px;
+  letter-spacing: 3px;
+}
+.reveal h3{
+  line-height: 100px;
+}
+
+.slideContent, .reveal p{
+  letter-spacing: 1px;
+}
+
+.small-code pre code {
+  font-size: 1em;
+  letter-spacing: 3px;　            
+}
+.midcenter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+.footer {
+    color: black; background: #E8E8E8;
+    position: fixed; top: 90%;
+    text-align:center; width:100%;
+    letter-spacing: 3px;
+}
+.pinky .reveal .state-background {
+  background: #B088FF;
+} 
+.pinky .reveal h1,
+.pinky .reveal h2,
+.pinky .reveal p {
+  color: black;
+}
