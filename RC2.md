@@ -301,7 +301,7 @@ Step3. **Parser**：解析所得資料
 - 解析結構化資料（HTML、JSON）
 - 解析非結構化資料（strings）
 
-Step4. **Data**：資料處理、整理、儲存
+Step4. **Data**：資料處理與儲存
 
 
 先來看看一個完整的範例
@@ -345,7 +345,7 @@ getTable = function(url){
     html_nodes(xpath = "//tr/td/div/div//div") %>% 
     html_text()
   
-  # Data: 整理資料
+  # Data: 資料處理與儲存
   name = main = addr = vector()
   for(i in 1:length(a)){
     name = c(a[2+4*(i-1)], name)
@@ -398,7 +398,7 @@ write.csv(table, file = "tpe_temple.csv")
 ```
 
 
-Connection: GET Method
+【Connection】發送 HTTP request : GET Method
 ==================================================================
 
 起手式
@@ -412,11 +412,9 @@ res <- GET(
   set_cookies(c = 1, d = 2),
   query = list(q="hihi")
 )
-content(res, as = "text", encoding = "UTF-8")
-content(res, as = "parsed", encoding = "UTF-8")
 ```
 
-Connection: GET Method
+【Connection】發送 HTTP request : GET Method
 ==================================================================
 
 GET Method 示範：[PTT Gossiping](https://www.ptt.cc/bbs/Gossiping/index.html)
@@ -441,27 +439,33 @@ res %>%
 ```
 
 ```
- [1] "Re: [爆卦]北韓高機率發生動亂，有親友在南韓者注意"
- [2] "Re: [爆卦]北韓高機率發生動亂，有親友在南韓者注意"
- [3] "[問卦]金門 馬祖 澎湖的人會說台灣本島是內地嗎?"   
- [4] "Re: [問卦] 中國歷史悠久理工卻被洋人電爆"         
- [5] "[問卦] 為什麼高中女生對制服的喜惡差別如此巨大"   
- [6] "Re: [爆卦]北韓高機率發生動亂，有親友在南韓者注意"
- [7] "[問卦] 古代的台灣人，比現在有錢？"               
- [8] "[新聞] 中信金滅證奇案　辜仲諒前妹婿　急撤300"    
- [9] "[問卦] 醒來發現臉被換掉怎麼辦？"                 
-[10] "[問卦] 台灣的軍隊實力有辦法趁亂拿下泰國嗎?"      
-[11] "[問卦] 有沒有常常在生日時被分手的八卦"           
-[12] "[問卦] 有沒有民視還在打里約奧運的八卦?"          
-[13] "[新聞] 讀完大學獲負債和低薪？夜店公關勸世文惹"   
-[14] "[公告] 八卦板板規(2016.08.16)"                   
-[15] "[公告] 候選人政見傳送門"                         
-[16] "[公告] 八卦版版主選舉─投票開始！"               
-[17] "[徵求] 台北至苗栗西湖產業道路的行車紀錄器"       
-[18] "[公告] 十月份置底懶叫閒聊區^Q^"                  
+ [1] "[問卦] 日皇跟秦王誰比較大"                       
+ [2] "Re: [新聞] 男張開雙手嗆「開啊」 所長開槍射中右小"
+ [3] "[問卦] 姪女九歲生日要送她什麼?"                  
+ [4] "[問卦] \"小朋友\"系列遊戲可以破關到什麼程度?"    
+ [5] "Re: [新聞] 港人4成想出走 移民首選台灣"           
+ [6] "[新聞] 人魚公主再現！鍾麗緹海洋風喜帖曝光"       
+ [7] "[問卦] 米國俗辣如何遊台灣？"                     
+ [8] "[新聞] 民進黨1分鐘砍7天國假　學界連署要求重審"   
+ [9] "[問卦] 有沒有tsaib8的八卦"                       
+[10] "Re: [問卦] 誰 最有資格 開 私人監獄 "             
+[11] "Re: [問卦] 手機版PTT是不是已經屌打電腦版了?"     
+[12] "Re: [爆卦]北韓高機率發生動亂，有親友在南韓者注意"
+[13] "[新聞] 懷疑機車被偷　男持雙刀揮舞與警對峙"       
+[14] "[問卦] 有沒有台灣籃球的八卦"                     
+[15] "[問卦] 有沒有化核應子的八卦"                     
+[16] "[問卦] 音響版和耳機版的鄉民敢挑戰盲測嗎？"       
+[17] "[問卦] 蒸魚是最好的烹調手法嗎？"                 
+[18] "[問卦] 小s和魏如萱的歌聲你愛哪個"                
+[19] "[問卦] 八卦版在想什麼"                           
+[20] "[公告] 八卦板板規(2016.08.16)"                   
+[21] "[公告] 候選人政見傳送門"                         
+[22] "[公告] 八卦版版主選舉─投票開始！"               
+[23] "[徵求] 台北至苗栗西湖產業道路的行車紀錄器"       
+[24] "[公告] 十月份置底懶叫閒聊區^Q^"                  
 ```
 
-Connection: POST Method
+【Connection】發送 HTTP request : POST Method
 ==================================================================
 
 起手式
@@ -481,9 +485,73 @@ res <- POST(url = "http://httpbin.org/post",
             body = list(x = "hello",
                         y = "hihi"), # form data as list
             encode = "form")
-
-content(res, as = "text", encoding = "UTF-8")
-content(res, as = "parsed", encoding = "UTF-8")
 ```
 
 
+【Connection】發送 HTTP request : POST Method
+==================================================================
+
+POST Method 示範：[___](___)
+
+程式碼放在 `_____.R`
+
+
+
+
+【Connection】發送 HTTP request : 記得帶上通行證
+==================================================================
+Cookies 
+
+
+【Connection】發送 HTTP request : 記得帶上通行證
+==================================================================
+Set Header
+
+
+【Connection】發送 HTTP request : 檢查是否通行成功
+==================================================================
+Status Code
+
+【Connection】取得 HTTP response 
+==================================================================
+The Response Body
+
+
+【Connection】取得 HTTP response 
+==================================================================
+Encoding 問題
+
+
+【Parser】解析所得資料
+==================================================================
+結構化資料與非結構化資料
+
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+title:false
+
+HTML Tree
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+rvest 套件
+
+
+【Parser】解析所得資料：非結構化資料
+==================================================================
+Regular Expression + stringr套件
+
+
+【Data】資料處理與儲存
+==================================================================
+- `write.csv`: write data.frame as csv file
+- `download.file`: save html, jpeg, etc
+- `writeBin`: write binary object into disk
+- `RSQLite`: SQLite connector in R
+
+【Data】資料處理與儲存：各種資料庫
+==================================================================
+- [RSQLite](https://cran.r-project.org/web/packages/RSQLite/RSQLite.pdf)
+- [RMySQL](https://cran.r-project.org/web/packages/RMySQL/RMySQL.pdf)
+- [RPostgreSQL](https://cran.r-project.org/web/packages/RPostgreSQL/RPostgreSQL.pdf)

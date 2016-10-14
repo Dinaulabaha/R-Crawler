@@ -37,6 +37,10 @@
   line-height: 1.2em;
 }
 
+.reveal code {
+  background-color:#f0f0f0;
+}
+
 .midcenter {
     position: fixed;
     top: 50%;

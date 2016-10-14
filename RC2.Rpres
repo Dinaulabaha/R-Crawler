@@ -219,7 +219,7 @@ Step3. **Parser**：解析所得資料
 - 解析結構化資料（HTML、JSON）
 - 解析非結構化資料（strings）
 
-Step4. **Data**：資料處理、整理、儲存
+Step4. **Data**：資料處理與儲存
 
 
 先來看看一個完整的範例
@@ -261,7 +261,7 @@ getTable = function(url){
     html_nodes(xpath = "//tr/td/div/div//div") %>% 
     html_text()
   
-  # Data: 整理資料
+  # Data: 資料處理與儲存
   name = main = addr = vector()
   for(i in 1:length(a)){
     name = c(a[2+4*(i-1)], name)
@@ -297,7 +297,7 @@ write.csv(table, file = "tpe_temple.csv")
 ```
 
 
-Connection: GET Method
+【Connection】發送 HTTP request : GET Method
 ==================================================================
 
 起手式
@@ -310,11 +310,10 @@ res <- GET(
   set_cookies(c = 1, d = 2),
   query = list(q="hihi")
 )
-content(res, as = "text", encoding = "UTF-8")
-content(res, as = "parsed", encoding = "UTF-8")
+
 ```
 
-Connection: GET Method
+【Connection】發送 HTTP request : GET Method
 ==================================================================
 
 GET Method 示範：[PTT Gossiping](https://www.ptt.cc/bbs/Gossiping/index.html)
@@ -338,7 +337,7 @@ res %>%
 
 ```
 
-Connection: POST Method
+【Connection】發送 HTTP request : POST Method
 ==================================================================
 
 起手式
@@ -358,8 +357,76 @@ res <- POST(url = "http://httpbin.org/post",
                         y = "hihi"), # form data as list
             encode = "form")
 
-content(res, as = "text", encoding = "UTF-8")
-content(res, as = "parsed", encoding = "UTF-8")
+
 ```
 
 
+【Connection】發送 HTTP request : POST Method
+==================================================================
+
+POST Method 示範：[___](___)
+
+程式碼放在 `_____.R`
+
+```{r}
+
+```
+
+
+【Connection】發送 HTTP request : 記得帶上通行證
+==================================================================
+Cookies 
+
+
+【Connection】發送 HTTP request : 記得帶上通行證
+==================================================================
+Set Header
+
+
+【Connection】發送 HTTP request : 檢查是否通行成功
+==================================================================
+Status Code
+
+【Connection】取得 HTTP response 
+==================================================================
+The Response Body
+
+
+【Connection】取得 HTTP response 
+==================================================================
+Encoding 問題
+
+
+【Parser】解析所得資料
+==================================================================
+結構化資料與非結構化資料
+
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+title:false
+
+HTML Tree
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+rvest 套件
+
+
+【Parser】解析所得資料：非結構化資料
+==================================================================
+Regular Expression + stringr套件
+
+
+【Data】資料處理與儲存
+==================================================================
+- `write.csv`: write data.frame as csv file
+- `download.file`: save html, jpeg, etc
+- `writeBin`: write binary object into disk
+- `RSQLite`: SQLite connector in R
+
+【Data】資料處理與儲存：各種資料庫
+==================================================================
+- [RSQLite](https://cran.r-project.org/web/packages/RSQLite/RSQLite.pdf)
+- [RMySQL](https://cran.r-project.org/web/packages/RMySQL/RMySQL.pdf)
+- [RPostgreSQL](https://cran.r-project.org/web/packages/RPostgreSQL/RPostgreSQL.pdf)
