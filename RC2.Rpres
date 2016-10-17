@@ -1,0 +1,603 @@
+R Crawler 2
+========================================================
+author: Miao Chien
+date: 10/19
+autosize: true
+transition: concave
+css: custom.css
+font-import: http://fonts.googleapis.com/css?family=Proza+Libre
+font-family: 'Proza Libre'
+
+
+```{r setup, include=FALSE}
+setwd("~/Dropbox/practice/Teaching/R-Crawler")
+knitr::opts_chunk$set(warning = FALSE, cache=FALSE)
+```
+
+使用 RStudio 與下載示範檔案
+========================================================
+
+<div class="midcenter" style="margin-left:-500px; margin-top:-300px;">
+<img src="img/RStudio.png"></img>
+</div>
+
+使用 RStudio 與下載示範檔案
+========================================================
+
+進入這個專案的 [github](https://github.com/MiaoChien/R-Crawler)
+
+Clone or download > Download ZIP
+![](img/download.png)
+
+
+使用 RStudio 與下載示範檔案
+========================================================
+
+Step1. 將 ZIP 檔解壓縮至指定工作路徑
+
+Step2. 開啟 RStudio File > New Project...
+
+![](img/d1.png)
+
+
+使用 RStudio 與下載示範檔案
+========================================================
+
+</br>
+</br>
+Step3. 選擇 Existing Directory
+
+![](img/d2.png)
+
+***
+</br>
+</br>
+Step4. 讀入指定的工作路徑 
+
+![](img/d3.png)
+
+
+所需套件
+========================================================
+ Pipeline Coding
+- magrittr 
+
+Crawler’s toolkits in R
+- rvest: a web scraper based on httr and xml2
+- httr: toolkit of HTTP methods in R
+- XML : XML parser
+- xml2: xml parser based on libxml2
+
+Data manipulation
+- stringr: string manipulaiton
+- data.table: extension of data.frame, a powerful ETL tool in R
+
+
+安裝所需套件
+========================================================
+程式碼在 `install_packages.R`
+
+```{r install_packages, eval=FALSE}
+pkg_list <- c("magrittr", "httr", "rvest", "stringr", "data.table","jsonlite", "RSQLite", "devtools")
+
+pkg_new <- pkg_list[!(pkg_list %in% installed.packages()[,"Package"])]
+
+if(length(pkg_new)) install.packages(pkg_new)
+
+if("xmlview" %in% pkg_new) {devtools::install_github("hrbrmstr/xmlview")}
+
+if("data.table" %in% pkg_new) {
+    install.packages("data.table", type = "source",
+                     repos = "https://Rdatatable.github.io/data.table")
+} else if (packageDescription("data.table")$Version < "1.9.7") {
+    install.packages("data.table", type = "source", 
+                     repos = "https://Rdatatable.github.io/data.table")
+}
+rm(pkg_new, pkg_list)
+```
+
+好用套件介紹：magrittr
+=========================================================
+[magrittr package document](https://cran.r-project.org/web/packages/magrittr/magrittr.pdf)
+
+<center>
+![](img/magrittr.png)
+</center>
+
+
+好用套件介紹：magrittr
+=========================================================
+
+![](img/magrittr2.png)
+
+- 把左手邊的參數用 **pipeline** 「 %>% 」傳送到右手邊的函式中
+
+- RStudio 輸入快捷鍵：
+    + Windows & Linux：<kbd  class="light">Ctrl</kbd> + <kbd  class="light">Shift</kbd> + <kbd  class="light">M</kbd>
+    
+    + Mac：<kbd  class="light">⌘</kbd>+ <kbd  class="light">⇧</kbd> + <kbd class="light"> M</kbd>
+
+- Use the dot  **.**   as placeholder in a expression.
+
+    + x %>% f is equivalent to f(x)
+
+    + x %>% f(y) is equivalent to f(x, y)
+
+    + x %>% f %>% g %>% h is equivalent to h(g(f(x)))
+
+    + x %>% f(y, .) is equivalent to f(y, x)
+
+    + x %>% f(y, z = .) is equivalent to f(y, z = x)
+    
+    
+好用套件介紹：magrittr
+=========================================================
+
+舉例：
+
+```{r, eval=FALSE}
+a = 1:3
+df = data.frame(a, b=a^2)
+rownames(df) = LETTERS[1:3]
+vals = lm(b ~ a, data = df)
+```
+
+pipe chain 版本
+
+```{r}
+library(magrittr)
+vals = 1:3 %>% data.frame(a = ., b = .^2) %>%
+  set_rownames(LETTERS[1:3]) %>% lm(b ~ a, data = .)
+
+```
+
+
+好用套件介紹：data.table
+==================================================================
+
+[data.table package document](https://cran.r-project.org/web/packages/data.table/data.table.pdf)
+
+<center>
+![](img/datatable.png)
+</center>
+
+- 取代內建 data.frame 的好工具
+
+- 運算效率高、節省記憶體
+
+- 資料選取方便
+
+
+好用套件介紹：data.table
+==================================================================
+建立 data.table
+```{r, warning=FALSE, eval=TRUE}
+library(data.table)
+DT = data.table(mtcars)
+DT %<>% data.table(name = rownames(mtcars), .)
+DT 
+```
+
+好用套件介紹：data.table
+==================================================================
+篩選 data.table
+```{r}
+DT[cyl == 8] %>% head
+```
+
+好用套件介紹：data.table
+==================================================================
+
+...
+
+
+再看一次爬蟲流程
+==================================================================
+type: pinky
+
+<div class="midcenter" style="margin-left:-500px; margin-top:-300px;">
+<img src="img/User-Server.png"></img>
+</div>
+
+
+再看一次爬蟲流程
+==================================================================
+type: pinky
+
+Step1. **Data**：找出資料藏在哪個 request 裡
+
+- 找到資料頁，想像資料要長什麼樣子，設想產出的資料格式(schema)
+- 觀察網頁內容，找到資料所在的 request/response，再一層層往上解析，套上判斷式及迴圈， 完成爬蟲的自動化
+  
+Step2. **Connector**：拿取資料
+
+- 發送 HTTP request 
+- 取得 HTTP response
+    
+Step3. **Parser**：解析所得資料
+
+- 解析結構化資料（HTML、JSON）
+- 解析非結構化資料（strings）
+
+Step4. **Data**：資料處理與儲存
+
+
+先來看看一個完整的範例
+==================================================================
+
+目標：</br>抓取[台灣寺廟網](http://temple.twgod.com/)中，臺北寺廟的「寺廟名稱」、「供奉神祗」與「地址」
+
+完整程式碼放在 `Temples.R`
+
+Step1. 觀察目標網站
+
+Step2. 載入套件、創造要下載的 url
+
+```{r}
+library(httr)
+library(magrittr)
+library(data.table)
+library(rvest)
+urls = paste0("http://temple.twgod.com/CwP/P/P",29:40,".html")
+```
+
+一個完整的範例
+==================================================================
+title:false
+
+Step3. 建立一個叫做 `getTable` 的爬蟲函式，可以對每個 url 進行下載
+```{r}
+getTable = function(url){
+
+  # Connector: 用 httr::GET() 對目標網址發送 HTTP request 
+  res = GET(url)
+
+  # Connetor: 用 httr::content() 取得 HTTP response 的 xml_document
+  doc = content(res, as = "parsed", encoding = "utf-8")
+  
+  
+  # Parser: 用 rvest::html_nodes() 解析 xml_document
+  a = doc %>% 
+    html_nodes(xpath = "//tr/td/div/div//div") %>% 
+    html_text()
+  
+  # Data: 資料處理與儲存
+  name = main = addr = vector()
+  for(i in 1:length(a)){
+    name = c(a[2+4*(i-1)], name)
+    main = c(a[3+4*(i-1)], main)
+    addr = c(a[4+4*(i-1)], addr)
+  }
+  
+  table = data.table("name"= name,
+                     "deities"= main,
+                     "addr"= addr) %>% na.omit
+  
+  return(table)
+}
+```
+
+一個完整的範例
+==================================================================
+title:false
+
+將 `getTable` 函式套用在一開始創造的 urls 上，下載所有網址的資料表格
+```{r}
+table = 
+  lapply(urls, getTable) %>% # 用 lapply 套用函式 getTable 在 urls 上
+  do.call(rbind, .) %>% # 將結果 rbind 在一起
+  .[!duplicated(., by=c("name", "addr"))] # 移除重複的值
+
+table
+```
+
+儲存資料
+```{r, eval=FALSE}
+write.csv(table, file = "tpe_temple.csv")
+```
+
+
+【Connection】發送 HTTP request : GET Method
+==================================================================
+
+起手式
+
+```{r}
+library(httr)
+res <- GET(
+  url = "http://httpbin.org/get",
+  add_headers(a = 1, b = 2),
+  set_cookies(c = 1, d = 2),
+  query = list(q="hihi")
+)
+res
+```
+
+【Connection】發送 HTTP request : GET Method
+==================================================================
+
+GET Method 示範：[PTT Gossiping](https://www.ptt.cc/bbs/Gossiping/index.html)
+
+程式碼放在 `Gossiping.R`
+
+```{r, warning=FALSE}
+library(magrittr)
+library(httr)
+library(rvest)
+
+url <- "https://www.ptt.cc/bbs/Gossiping/index.html"
+res <- GET(url, set_cookies(over18="1"))  # over18 cookie
+
+res %>%
+  content(as = "text", encoding = "UTF-8") %>%
+  `Encoding<-`("UTF-8") %>%
+  read_html %>%
+  html_nodes(css = ".title a") %>%
+  html_text()
+
+```
+
+【Connection】發送 HTTP request : POST Method
+==================================================================
+
+起手式
+
+```{r}
+library(httr)
+
+res <- POST(url = "http://httpbin.org/post",
+            add_headers(a = 1, b = 2),
+            set_cookies(c = 1, d = 2),
+            body = "x=hello&y=hihi")  # raw string (need URLencode)
+
+res <- POST(url = "http://httpbin.org/post",
+            add_headers(a = 1, b = 2),
+            set_cookies(c = 1, d = 2),
+            body = list(x = "hello",
+                        y = "hihi"), # form data as list
+            encode = "form")
+
+res
+```
+
+
+【Connection】發送 HTTP request : POST Method
+==================================================================
+
+POST Method 示範：[公開資訊觀測站](http://mops.twse.com.tw/mops/web/t51sb01)
+
+[示範程式碼](http://leoluyi.github.io/RCrawler101_201605_Week2/resources/example/mops.html)
+
+
+
+【Connection】發送 HTTP request : 記得帶上通行證
+==================================================================
+**Cookies**</br>
+
+某些網站為了辨別用戶身分而儲存在用戶端（Client Side）上的資料
+
+```{r, eval=FALSE}
+set_cookies(a = 1, b = 2)
+set_cookies(.cookies = c(a = "1", b = "2"))
+```
+
+舉例：
+```{r, eval=FALSE}
+library(httr)
+url <- "https://www.ptt.cc/bbs/Gossiping/index.html"
+res <- GET(url, set_cookies('over18'='1'))  # over18 cookie
+```
+
+
+【Connection】發送 HTTP request : 記得帶上通行證
+==================================================================
+**Set Header**</br>
+
+有時候發出 Request 時，需要提供 HTTP header 才會被放行
+
+```{r, eval=FALSE}
+add_headers(a = 1, b = 2)
+add_headers(.headers = c(a = "1", b = "2"))
+```
+</br>
+
+Set_header 示範：[全家便利商店店舖查詢](http://www.family.com.tw/marketing/inquiry.aspx)
+
+[示範程式碼](http://leoluyi.github.io/RCrawler101_201605_Week2/resources/example/family_mart.html)
+
+
+【Connection】發送 HTTP request : 檢查是否通行成功
+==================================================================
+**Status Code**</br>
+
+用 `http_status()` 函式取得連線狀態
+```{r}
+url <- "https://www.ptt.cc/bbs/Gossiping/index.html"
+res <- GET(url, 
+           set_cookies('over18'='1'))  # over18 cookie
+http_status(res)
+```
+
+或者使用 `status_code()` 取得 http 狀態碼
+```{r}
+res$status_code
+status_code(res)
+```
+
+建議在寫爬蟲 function 時，可以將連線狀態的異常診斷函式加入 function 中，一旦連線出現異常，函式即會中斷並且出現提醒
+
+```{r}
+warn_for_status(res)
+stop_for_status(res)
+```
+
+
+【Connection】取得 HTTP request body
+==================================================================
+**The Response Body**</br>
+
+透過 `httr::content()` 取得 request body 有三種方法：
+![](img/ResponseBody.png)
+
+
+【Connection】取得 HTTP request body
+==================================================================
+**The Response Body**</br>
+
+raw request body
+```{r, eval=FALSE}
+library(jpeg)
+res <- GET("https://dl.dropboxusercontent.com/u/34850909/Blogger/template/cover/cover-cat.jpg")
+bin = content(res, as = "raw", encoding="utf8") 
+pic = readJPEG(bin)
+# writeJPEG(pic, target="pic.jpg") 
+```
+
+
+【Connection】取得 HTTP request body
+==================================================================
+**The Response Body**</br>
+
+text request body
+```{r}
+res = GET("https://www.ptt.cc/bbs/joke/M.1457839459.A.14A.html")
+content(res, as = "text", encoding = "UTF-8") %>%  `Encoding<-`("UTF-8") %>% head(100)
+```
+
+【Connection】取得 HTTP request body
+==================================================================
+**The Response Body**</br>
+
+parsed request body
+```{r}
+res = GET("https://www.ptt.cc/bbs/joke/M.1457839459.A.14A.html")
+content(res, as = "parsed")
+
+```
+
+
+【Connection】取得 HTTP response 
+==================================================================
+**Encoding 問題**</br>
+
+`?locales`  `?Encoding`  `?iconv`  `iconvlist()`
+
+For Unix-like
+```{r, eval=FALSE}
+## check out your system locale
+Sys.getlocale()
+#> [1] "en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8"
+aa <- "你好嗎"
+Encoding(aa)
+#> [1] "UTF-8"
+charToRaw(aa)
+#> [1] e4 bd a0 e5 a5 bd e5 97 8e
+
+(aa_big5 <- iconv(aa, from = "UTF-8", to = "Big5"))
+#> [1] "\xa7A\xa6n\xb6\xdc"
+Encoding(aa_big5)
+#> [1] "unknown"
+charToRaw(aa_big5)
+#> [1] a7 41 a6 6e b6 dc
+```
+
+【Connection】取得 HTTP response 
+==================================================================
+**Encoding 問題**</br>
+
+`?locales``?Encoding` `?iconv` `iconvlist()`
+
+For Windows
+```{r, eval=FALSE}
+# On Windows
+Sys.getlocale()
+#> "CP950"
+aa <- "你好嗎"
+Encoding(aa)
+#> "unknown"
+aa_utf8 <- iconv(aa, from = "Big5", to = "UTF-8")
+Encoding(aa_utf8)
+#> "UTF-8"
+```
+
+
+
+【Parser】解析所得資料
+==================================================================
+**結構化資料與非結構化資料**</br>
+
+結構化資料（Structured data）
+- html elements:  `rvest::html_node`
+- json, jsonp: PChome, 紫外線即時監測資料 `jsonlite::fromJSON`
+- html table: 公開資訊觀測站 `rvest::html_table`, `XML::readHtmlTable`
+- xml table: 7-11 `XML::xmlToDataFrame`
+</br>
+</br>
+</br>
+非結構化資料（Unstructured data）
+- RegEx: 東森房屋的地址
+
+
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**HTML Tree**</br>
+
+![](img/html.png)
+
+
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**用 rvest 套件解析結構化資料**</br>
+
+rvet: A web scraper designed to work with magrittr.
+Select parts of a document using css selectors or xpath</br>
+
+- `html_nodes(doc, css = "<css selector>")`</br>
+- `html_nodes(doc, xpath = "<xpath selector>")`
+
+Extract components with</br>
+
+- `html_name()` : the name of the tag
+- `html_text()` : all text inside the tag
+- `html_attr()` : contents of a single attribute
+- `html_attrs()` : all attributes
+- `html_table()` : parse tables into data frames
+
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**用 rvest 套件解析結構化資料**</br>
+
+起手式
+```{r, eval=FALSE}
+GET(url) %>% content(as="text") %>% rvest::read_html()
+```
+![](img/rvest1.png)
+
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**用 rvest 套件解析結構化資料**</br>
+
+
+
+
+【Parser】解析所得資料：非結構化資料
+==================================================================
+Regular Expression + stringr套件
+
+
+【Data】資料處理與儲存
+==================================================================
+- `write.csv`: write data.frame as csv file
+- `download.file`: save html, jpeg, etc
+- `writeBin`: write binary object into disk
+- `RSQLite`: SQLite connector in R
+
+【Data】資料處理與儲存：各種資料庫
+==================================================================
+- [RSQLite](https://cran.r-project.org/web/packages/RSQLite/RSQLite.pdf)
+- [RMySQL](https://cran.r-project.org/web/packages/RMySQL/RMySQL.pdf)
+- [RPostgreSQL](https://cran.r-project.org/web/packages/RPostgreSQL/RPostgreSQL.pdf)

@@ -1,12 +1,15 @@
 
-R Crawler
+R Crawler 1
 ========================================================
 author: Miao Chien
 date: 10/19
 autosize: true
 css: custom.css
 
-
+```{r setup, include=FALSE}
+setwd("~/Dropbox/practice/Teaching/R-Crawler")
+knitr::opts_chunk$set(warning = FALSE, cache=FALSE)
+```
 
 
 什麼是網路爬蟲（Crawler）
