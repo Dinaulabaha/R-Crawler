@@ -549,7 +549,7 @@ Encoding(aa_utf8)
 
 【Parser】解析所得資料：結構化資料
 ==================================================================
-**用 rvest 套件解析結構化資料**</br>
+**HTML 解析： rvest 套件**</br>
 
 rvet: A web scraper designed to work with magrittr.
 Select parts of a document using css selectors or xpath</br>
@@ -568,7 +568,7 @@ Extract components with</br>
 
 【Parser】解析所得資料：結構化資料
 ==================================================================
-**用 rvest 套件解析結構化資料**</br>
+**HTML 解析： rvest 套件**</br>
 
 起手式
 ```{r, eval=FALSE}
@@ -579,14 +579,113 @@ GET(url) %>% content(as="text") %>% rvest::read_html()
 
 【Parser】解析所得資料：結構化資料
 ==================================================================
-**用 rvest 套件解析結構化資料**</br>
+**HTML 解析： rvest 套件**</br>
+
+Extract html nodes: `html_nodes()`
+
+```{r}
+doc <- read_html("https://miaochien.github.io/R-Crawler/data/demo.html")
+doc %>% 
+  html_nodes(xpath = "//div[@id='title']") %>%  # select with xpath
+  as.character()
+```
+
+```{r}
+doc %>% 
+  html_nodes(css = "#title") %>%  # select with css
+  as.character()
+```
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**HTML 解析： rvest 套件**</br>
+
+Extract text: `html_text()`
+
+```{r}
+doc %>% 
+  html_nodes(xpath = "//div[@id='title']") %>% 
+  html_text()
+```
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**HTML 解析： rvest 套件**</br>
+
+Extract attributes: `html_attr()`
+
+```{r}
+doc %>% 
+  html_nodes(xpath = "//div[@id='title']/a") %>% 
+  html_attr("href")
+```
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**HTML 解析： rvest 套件**</br>
+
+Extract table: `html_table()`
+
+```{r}
+doc %>% html_table()
+```
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**XML 解析: XML::xmlToDataFrame()**</br>
+
+POST Method 示範：[7-11 門市查詢](http://emap.pcsc.com.tw/emap.aspx)
+
+[示範程式碼](http://leoluyi.github.io/RCrawler101_201605_Week2/resources/example/seven_eleven.html)
 
 
+【Parser】解析所得資料：結構化資料
+==================================================================
+**JSON 解析: jsonlite 套件**</br>
+
+![](img/json.png)
+
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**JSON 解析: jsonlite:fromJSON()**</br>
+
+範例：pchome
+```{r}
+library(jsonlite)
+library(magrittr)
+res = GET("http://ecshweb.pchome.com.tw/search/v3.3/all/results?q=apple&page=1&sort=rnk/dc")
+
+res_df = 
+  content(res, as = "text", encoding = "UTF-8") %>% 
+  `Encoding<-`("UTF-8") %>% 
+  fromJSON() 
+res_df
+```
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**JSON 解析: httr 套件**</br>
+
+`httr::content()` 會自動將 json 解析為 list 
+```{r}
+res_list <- content(res, as = "parsed")
+res_list
+```
 
 
 【Parser】解析所得資料：非結構化資料
 ==================================================================
-Regular Expression + stringr套件
+正則表達式 (Regular expressions) + 
+- `base::grep()`  
+- `base::grepl()`  
+- `base::gsub()`  
+- `stringr` 套件  
+</br>
+正則表達式[練習](https://regexone.com/)
+
+範例程式：RegEx.R
+
 
 
 【Data】資料處理與儲存
@@ -595,6 +694,7 @@ Regular Expression + stringr套件
 - `download.file`: save html, jpeg, etc
 - `writeBin`: write binary object into disk
 - `RSQLite`: SQLite connector in R
+
 
 【Data】資料處理與儲存：各種資料庫
 ==================================================================

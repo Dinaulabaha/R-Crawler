@@ -417,7 +417,7 @@ res
 
 ```
 Response [http://httpbin.org/get?q=hihi]
-  Date: 2016-10-17 16:54
+  Date: 2016-10-17 18:18
   Status: 200
   Content-Type: application/json
   Size: 382 B
@@ -459,26 +459,21 @@ res %>%
 ```
 
 ```
- [1] "Re: [問卦] 酒店和夜店的差別"                  
- [2] "Re: [問卦] SHE\"戀人未滿\"中的那三個字是什麼?"
- [3] "[問卦] 有沒有新竹市天天半夜高空煙火的八卦"    
- [4] "[問卦] 有沒有超商要賣全素食微波食品的八卦"    
- [5] "[問卦] 台南是不是超越高雄了"                  
- [6] "Re: [問卦]貼nono照片會不會被吉？？"           
- [7] "Re: [問卦] 替代役到底都在幹嘛?"               
- [8] "[問卦] 哪個老婆最不會過氣?"                   
- [9] "[問卦] 有沒有印象最深電視live畫面?"           
-[10] "[問卦] 原文書好煩怎麼辦?"                     
-[11] "[問卦] 在宿舍戴耳機跟戴耳塞哪個比較禮貌"      
-[12] "[問卦] 趙光義好糟糕喔"                        
-[13] "[問卦] 什麼菜，吃了會走火入魔？"              
-[14] "[新聞] 2015「窮、忙」行業，服務業佔最大宗"    
-[15] "[問卦] 有人參加過藝人見面會嗎?"               
-[16] "[問卦] 有沒有中國近代發明的八卦？"            
-[17] "[公告] 八卦板板規(2016.08.16)"                
-[18] "[公告] 版主選舉─總決賽投票開始！"            
-[19] "[協尋]10/12 11:00中山高北上28公里三重路段紀錄"
-[20] "[公告] 十月份置底懶叫閒聊區^Q^"               
+ [1] "[問卦] 阿湯哥守的住街亭嗎？"                   
+ [2] "[問卦] 去快炒店要吃哪一道菜?"                  
+ [3] "[新聞] 華碩謝明傑：ZenBo如期聖誕節上市　"      
+ [4] "[問卦] 小白臉好憂鬱該這麼辦"                   
+ [5] "[問卦] 兩點後的第一班列車不能搭？"             
+ [6] "[問卦] 有沒有樂高大雞雞的八卦"                 
+ [7] "[問卦] NSYSUKING守得住街亭嗎?"                 
+ [8] "[問卦] 欸！金城武睡了沒？錢"                   
+ [9] "Re: [問卦] 女友要出國工作怎辦？"               
+[10] "[問卦] 為啥大部分人的屁股線都黑黑的?"          
+[11] "Re: [新聞] 公投、集遊、私校法修法 民進黨團暫凍"
+[12] "[公告] 八卦板板規(2016.08.16)"                 
+[13] "[公告] 版主選舉─總決賽投票開始！"             
+[14] "[協尋]10/12 11:00中山高北上28公里三重路段紀錄" 
+[15] "[公告] 十月份置底懶叫閒聊區^Q^"                
 ```
 
 【Connection】發送 HTTP request : POST Method
@@ -507,7 +502,7 @@ res
 
 ```
 Response [http://httpbin.org/post]
-  Date: 2016-10-17 16:54
+  Date: 2016-10-17 18:18
   Status: 200
   Content-Type: application/json
   Size: 545 B
@@ -756,7 +751,7 @@ Encoding(aa_utf8)
 
 【Parser】解析所得資料：結構化資料
 ==================================================================
-**用 rvest 套件解析結構化資料**</br>
+**HTML 解析： rvest 套件**</br>
 
 rvet: A web scraper designed to work with magrittr.
 Select parts of a document using css selectors or xpath</br>
@@ -775,7 +770,7 @@ Extract components with</br>
 
 【Parser】解析所得資料：結構化資料
 ==================================================================
-**用 rvest 套件解析結構化資料**</br>
+**HTML 解析： rvest 套件**</br>
 
 起手式
 
@@ -787,14 +782,1137 @@ GET(url) %>% content(as="text") %>% rvest::read_html()
 
 【Parser】解析所得資料：結構化資料
 ==================================================================
-**用 rvest 套件解析結構化資料**</br>
+**HTML 解析： rvest 套件**</br>
+
+Extract html nodes: `html_nodes()`
 
 
+```r
+doc <- read_html("https://miaochien.github.io/R-Crawler/data/demo.html")
+doc %>% 
+  html_nodes(xpath = "//div[@id='title']") %>%  # select with xpath
+  as.character()
+```
+
+```
+[1] "<div id=\"title\" class=\"character\">\n            <a class=\"link\" href=\"http://www.ntu.edu.tw/\">National Taiwan University</a>\n    </div>"
+```
+
+
+```r
+doc %>% 
+  html_nodes(css = "#title") %>%  # select with css
+  as.character()
+```
+
+```
+[1] "<div id=\"title\" class=\"character\">\n            <a class=\"link\" href=\"http://www.ntu.edu.tw/\">National Taiwan University</a>\n    </div>"
+```
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**HTML 解析： rvest 套件**</br>
+
+Extract text: `html_text()`
+
+
+```r
+doc %>% 
+  html_nodes(xpath = "//div[@id='title']") %>% 
+  html_text()
+```
+
+```
+[1] "\n            National Taiwan University\n    "
+```
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**HTML 解析： rvest 套件**</br>
+
+Extract attributes: `html_attr()`
+
+
+```r
+doc %>% 
+  html_nodes(xpath = "//div[@id='title']/a") %>% 
+  html_attr("href")
+```
+
+```
+[1] "http://www.ntu.edu.tw/"
+```
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**HTML 解析： rvest 套件**</br>
+
+Extract table: `html_table()`
+
+
+```r
+doc %>% html_table()
+```
+
+```
+[[1]]
+  編號                 住址        電話
+1    1 台北市大安區羅斯福路 02-11223344
+2    2   新北市永和區文化路 02-12345678
+3    3         宜蘭縣中山路 03-99999999
+```
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**XML 解析: XML::xmlToDataFrame()**</br>
+
+POST Method 示範：[7-11 門市查詢](http://emap.pcsc.com.tw/emap.aspx)
+
+[示範程式碼](http://leoluyi.github.io/RCrawler101_201605_Week2/resources/example/seven_eleven.html)
+
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**JSON 解析: jsonlite 套件**</br>
+
+![](img/json.png)
+
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**JSON 解析: jsonlite:fromJSON()**</br>
+
+範例：pchome
+
+```r
+library(jsonlite)
+library(magrittr)
+res = GET("http://ecshweb.pchome.com.tw/search/v3.3/all/results?q=apple&page=1&sort=rnk/dc")
+
+res_df = 
+  content(res, as = "text", encoding = "UTF-8") %>% 
+  `Encoding<-`("UTF-8") %>% 
+  fromJSON() 
+res_df
+```
+
+```
+$QTime
+[1] 93
+
+$totalRows
+[1] 56141
+
+$totalPage
+[1] 2808
+
+$range
+$range$min
+[1] 21
+
+$range$max
+[1] 205000
+
+
+$cateName
+[1] ""
+
+$q
+[1] "apple"
+
+$subq
+[1] ""
+
+$token
+[1] "apple"
+
+$prods
+                 Id cateId
+1  DYAJ84-A9007I8H1 DYAJ86
+2  DYAJ83-A9007IBJY DYAJ83
+3  DYAJ83-A9007IDT3 DYAJ83
+4  DYAJ83-A9007IBBS DYAJ83
+5  DYAJ81-A9007IDT5 DYAJ81
+6  DYAF5D-A9006U8CN DYAF6L
+7  DYAJ81-A9007I9KO DYAJ86
+8  DYAJ7F-A900799ZD DYAJ7F
+9  DYAF54-A9006QTSD DYAP00
+10 DYAJ81-A9007I9D9 DYAJ83
+11 DYAJ81-A9007I9J9 DYAJ86
+12 DYAJ84-A9007KFVA DYAJ84
+13 QAANAL-A9007I61F QAANAL
+14 DYAJ83-A9007IDPG DYAJ83
+15 DYAI6B-A9007INQL DYAI6B
+16 DYAJ83-A9007J1XP DYAJ83
+17 DYAJ81-A9007I82T DYAJ83
+18 DYAJ84-A9007I8IU DYAJ84
+19 DGBWAV-A9005RJBR DYAM59
+20 DYAJ7F-A9007IPOW DYAJ7F
+                                                                          picS
+1  /pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8H1000_57d7b636dc001.jpg
+2  /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBJY000_57dad31bc2bfb.jpg
+3  /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IDT3000_57d941c728d56.jpg
+4  /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBBS000_57d94a278d691.jpg
+5  /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IDT5000_57d93ee659028.jpg
+6  /pic/v1/data/item/201602/D/Y/A/F/5/D/sDYAF5D-A9006U8CN000_56c14c7cc7e99.jpg
+7  /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9KO000_57dafe0947c50.jpg
+8  /pic/v1/data/item/201605/D/Y/A/J/7/F/sDYAJ7F-A900799ZD000_5742e8e64dacc.jpg
+9  /pic/v1/data/item/201512/D/Y/A/F/5/4/sDYAF54-A9006QTSD000_5680d9439fe62.jpg
+10 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D9000_57dad9556e595.jpg
+11 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9J9000_57dafcac6141f.jpg
+12 /pic/v1/data/item/201610/D/Y/A/J/8/4/sDYAJ84-A9007KFVA000_57fc53b7b6285.jpg
+13 /pic/v1/data/item/201609/Q/A/A/N/A/L/sQAANAL-A9007I61F000_57d66f0e56027.jpg
+14 /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IDPG000_57dade334c951.jpg
+15 /pic/v1/data/item/201609/D/Y/A/I/6/B/sDYAI6B-A9007INQL000_57dfd372bb376.jpg
+16 /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007J1XP000_57e41caec5788.jpg
+17 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I82T000_57d791ec23934.jpg
+18 /pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8IU000_57d7b6a554a95.jpg
+19 /pic/v1/data/item/201412/D/G/B/W/A/V/sDGBWAV-A9005RJBR000_54915252218fe.jpg
+20 /pic/v1/data/item/201609/D/Y/A/J/7/F/sDYAJ7F-A9007IPOW000_57e0db460e24c.png
+                                                                         picB
+1  /pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8H1000_57d8b0d140874.jpg
+2  /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IBJY000_57e91dd933954.jpg
+3  /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IDT3000_57d941c7277d5.jpg
+4  /pic/v1/data/item/201610/D/Y/A/J/8/3/DYAJ83-A9007IBBS000_57fc4fc37d8da.jpg
+5  /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007IDT5000_57d93ee657847.jpg
+6  /pic/v1/data/item/201610/D/Y/A/F/5/D/DYAF5D-A9006U8CN000_580438d82c579.jpg
+7  /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9KO000_57d94ed0760cf.jpg
+8  /pic/v1/data/item/201610/D/Y/A/J/7/F/DYAJ7F-A900799ZD000_57fd9b8c7cb6b.jpg
+9  /pic/v1/data/item/201512/D/Y/A/F/5/4/DYAF54-A9006QTSD000_5680d9439b426.jpg
+10 /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D9000_58043733b29e4.jpg
+11 /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9J9000_57d94ef40d8bb.jpg
+12 /pic/v1/data/item/201610/D/Y/A/J/8/4/DYAJ84-A9007KFVA000_57fc53b7b503e.jpg
+13 /pic/v1/data/item/201609/Q/A/A/N/A/L/QAANAL-A9007I61F000_57d66f0e53530.jpg
+14 /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IDPG000_57d949628186d.jpg
+15 /pic/v1/data/item/201609/D/Y/A/I/6/B/DYAI6B-A9007INQL000_57dfd372ba4b5.jpg
+16 /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007J1XP000_57e41caec2c8d.jpg
+17 /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I82T000_57d8b0ab6c145.jpg
+18 /pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8IU000_57d8b0f5b5eb5.jpg
+19 /pic/v1/data/item/201608/D/G/B/W/A/V/DGBWAV-A9005RJBR000_57c4ebebb7e91.jpg
+20 /pic/v1/data/item/201609/D/Y/A/J/7/F/DYAJ7F-A9007IPOW000_57e0db460bf33.png
+                                                                        name
+1                                                 Apple iPhone 7 Plus (128G)
+2                                                    Apple iPhone 7 (128G)★
+3                                                      Apple iPhone 7 (128G)
+4                                                      Apple iPhone 7 (128G)
+5                                                       Apple iPhone 7 (32G)
+6                             【COTEetCI】Apple iPhone Lightning 8pin 充電座
+7                                                 Apple iPhone 7 Plus (128G)
+8                                                       Apple iPhone SE(64G)
+9  Apple Lightning 8pin 原廠USB傳輸線/充電線 兼容 Apple iPhone / iPad / iPod
+10                                                     Apple iPhone 7 (128G)
+11                                                Apple iPhone 7 Plus (128G)
+12                                                 Apple iPhone 7 Plus (32G)
+13                                 Apple iPhone 7 Plus (128GB)高階防水智慧機
+14                                                   Apple iPhone 7 (128G)★
+15                    Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶
+16                                                    Apple iPhone 7 (128G) 
+17                                                     Apple iPhone 7 (128G)
+18                                                 Apple iPhone 7 Plus (32G)
+19                                                  Apple iPad Air2 WiFi 64G
+20                                                Apple iPhone SE 64G 福利品
+                                                                                                            describe
+1                                                          ★行電萬用週邊組!!★Apple iPhone 7 Plus (128G) 智慧型手機
+2                                                                  黑色|玫瑰金★行電防護週邊組Apple iPhone 7 (128G) 
+3                                                       四色★送行動電源+專屬氣墊空壓殼+保護貼Apple iPhone 7 (128G) 
+4                                                                          ★搭配保護殼+玻璃貼Apple iPhone 7 (128G) 
+5                                                   四色★加送藍牙耳機+氣墊空壓殼+保護貼+觸控筆Apple iPhone 7 (32G) 
+6        ★for iPhone 7/7plus★【COTEetCI】新一代Apple iPhone Lightning 8pin充電座 鋁合金支架充電器“BASE8”系列底座
+7                                                                   銀色|金色★行電周邊組Apple iPhone 7 Plus (128G) 
+8                                                          ★送Kitty行電+MFi線+授權保貼+授權保殼Apple iPhone SE(64G)
+9  for Apple iPhone 6/6 Plus iPhone 6s/6s Plus iPhon 5S/5 原廠傳輸線/充電線Lightning 兼容 Apple iPhone / iPad / iPod
+10                                                                   銀色|金色★藍牙喇叭週邊組Apple iPhone 7 (128G) 
+11                                                            黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) 
+12                                                        三色★送藍芽耳機+觸控筆+手機立架Apple iPhone 7 Plus (32G) 
+13                                                 ★預購★  ★贈保護套★  Apple iPhone 7 Plus (128GB)高階防水智慧機
+14                                                                     玫瑰金★Kitty行電周邊組Apple iPhone 7 (128G) 
+15                                                            Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶
+16                           ★贈9H強化玻璃保護貼+手機背蓋+觸控筆+ i 線頭保護套 Apple iPhone 7 (128GB)高階防水智慧機
+17                                                              ★行電萬用週邊組!!★Apple iPhone 7 (128G) 智慧型手機
+18                                                        ★行電萬用週邊組!!★ Apple iPhone 7 Plus (32G) 智慧型手機 
+19                                                                                   Apple iPad Air2 9.7吋 WiFi 64G 
+20                                                                                        Apple iPhone SE 64G 福利品
+   price author brand publishDate isNC17
+1  35900                               0
+2  29900                               0
+3  29888                               0
+4  29700                               0
+5  25990                               0
+6    699                               0
+7  36500                               0
+8  18500                               0
+9    349                               0
+10 29900                               0
+11 36900                               0
+12 31999                               0
+13 34500                               0
+14 29900                               0
+15 13500                               0
+16 29800                               0
+17 30690                               0
+18 31690                               0
+19 15690                               0
+20 15690                               0
+                                                     couponActid
+1                                                               
+2                                                               
+3                                                               
+4                                                               
+5                                                               
+6                                                               
+7                                                               
+8                                                               
+9                                                               
+10                                                              
+11                                                              
+12 C000474, C000475, C000477, C000473, C000479, C000476, C000480
+13                                                              
+14                                                              
+15                                                              
+16                                                              
+17                                                              
+18                                                              
+19                                                              
+20                                                              
+```
+
+【Parser】解析所得資料：結構化資料
+==================================================================
+**JSON 解析: httr 套件**</br>
+
+`httr::content()` 會自動將 json 解析為 list 
+
+```r
+res_list <- content(res, as = "parsed")
+res_list
+```
+
+```
+$QTime
+[1] 93
+
+$totalRows
+[1] 56141
+
+$totalPage
+[1] 2808
+
+$range
+$range$min
+[1] 21
+
+$range$max
+[1] 205000
+
+
+$cateName
+[1] ""
+
+$q
+[1] "apple"
+
+$subq
+[1] ""
+
+$token
+$token[[1]]
+[1] "apple"
+
+
+$prods
+$prods[[1]]
+$prods[[1]]$Id
+[1] "DYAJ84-A9007I8H1"
+
+$prods[[1]]$cateId
+[1] "DYAJ86"
+
+$prods[[1]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8H1000_57d7b636dc001.jpg"
+
+$prods[[1]]$picB
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8H1000_57d8b0d140874.jpg"
+
+$prods[[1]]$name
+[1] "Apple iPhone 7 Plus (128G)"
+
+$prods[[1]]$describe
+[1] "★行電萬用週邊組!!★Apple iPhone 7 Plus (128G) 智慧型手機"
+
+$prods[[1]]$price
+[1] 35900
+
+$prods[[1]]$author
+[1] ""
+
+$prods[[1]]$brand
+[1] ""
+
+$prods[[1]]$publishDate
+[1] ""
+
+$prods[[1]]$isNC17
+[1] 0
+
+$prods[[1]]$couponActid
+list()
+
+
+$prods[[2]]
+$prods[[2]]$Id
+[1] "DYAJ83-A9007IBJY"
+
+$prods[[2]]$cateId
+[1] "DYAJ83"
+
+$prods[[2]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBJY000_57dad31bc2bfb.jpg"
+
+$prods[[2]]$picB
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IBJY000_57e91dd933954.jpg"
+
+$prods[[2]]$name
+[1] "Apple iPhone 7 (128G)★"
+
+$prods[[2]]$describe
+[1] "黑色|玫瑰金★行電防護週邊組Apple iPhone 7 (128G) "
+
+$prods[[2]]$price
+[1] 29900
+
+$prods[[2]]$author
+[1] ""
+
+$prods[[2]]$brand
+[1] ""
+
+$prods[[2]]$publishDate
+[1] ""
+
+$prods[[2]]$isNC17
+[1] 0
+
+$prods[[2]]$couponActid
+list()
+
+
+$prods[[3]]
+$prods[[3]]$Id
+[1] "DYAJ83-A9007IDT3"
+
+$prods[[3]]$cateId
+[1] "DYAJ83"
+
+$prods[[3]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IDT3000_57d941c728d56.jpg"
+
+$prods[[3]]$picB
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IDT3000_57d941c7277d5.jpg"
+
+$prods[[3]]$name
+[1] "Apple iPhone 7 (128G)"
+
+$prods[[3]]$describe
+[1] "四色★送行動電源+專屬氣墊空壓殼+保護貼Apple iPhone 7 (128G) "
+
+$prods[[3]]$price
+[1] 29888
+
+$prods[[3]]$author
+[1] ""
+
+$prods[[3]]$brand
+[1] ""
+
+$prods[[3]]$publishDate
+[1] ""
+
+$prods[[3]]$isNC17
+[1] 0
+
+$prods[[3]]$couponActid
+list()
+
+
+$prods[[4]]
+$prods[[4]]$Id
+[1] "DYAJ83-A9007IBBS"
+
+$prods[[4]]$cateId
+[1] "DYAJ83"
+
+$prods[[4]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBBS000_57d94a278d691.jpg"
+
+$prods[[4]]$picB
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/3/DYAJ83-A9007IBBS000_57fc4fc37d8da.jpg"
+
+$prods[[4]]$name
+[1] "Apple iPhone 7 (128G)"
+
+$prods[[4]]$describe
+[1] "★搭配保護殼+玻璃貼Apple iPhone 7 (128G) "
+
+$prods[[4]]$price
+[1] 29700
+
+$prods[[4]]$author
+[1] ""
+
+$prods[[4]]$brand
+[1] ""
+
+$prods[[4]]$publishDate
+[1] ""
+
+$prods[[4]]$isNC17
+[1] 0
+
+$prods[[4]]$couponActid
+list()
+
+
+$prods[[5]]
+$prods[[5]]$Id
+[1] "DYAJ81-A9007IDT5"
+
+$prods[[5]]$cateId
+[1] "DYAJ81"
+
+$prods[[5]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IDT5000_57d93ee659028.jpg"
+
+$prods[[5]]$picB
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007IDT5000_57d93ee657847.jpg"
+
+$prods[[5]]$name
+[1] "Apple iPhone 7 (32G)"
+
+$prods[[5]]$describe
+[1] "四色★加送藍牙耳機+氣墊空壓殼+保護貼+觸控筆Apple iPhone 7 (32G) "
+
+$prods[[5]]$price
+[1] 25990
+
+$prods[[5]]$author
+[1] ""
+
+$prods[[5]]$brand
+[1] ""
+
+$prods[[5]]$publishDate
+[1] ""
+
+$prods[[5]]$isNC17
+[1] 0
+
+$prods[[5]]$couponActid
+list()
+
+
+$prods[[6]]
+$prods[[6]]$Id
+[1] "DYAF5D-A9006U8CN"
+
+$prods[[6]]$cateId
+[1] "DYAF6L"
+
+$prods[[6]]$picS
+[1] "/pic/v1/data/item/201602/D/Y/A/F/5/D/sDYAF5D-A9006U8CN000_56c14c7cc7e99.jpg"
+
+$prods[[6]]$picB
+[1] "/pic/v1/data/item/201610/D/Y/A/F/5/D/DYAF5D-A9006U8CN000_580438d82c579.jpg"
+
+$prods[[6]]$name
+[1] "【COTEetCI】Apple iPhone Lightning 8pin 充電座"
+
+$prods[[6]]$describe
+[1] "★for iPhone 7/7plus★【COTEetCI】新一代Apple iPhone Lightning 8pin充電座 鋁合金支架充電器“BASE8”系列底座"
+
+$prods[[6]]$price
+[1] 699
+
+$prods[[6]]$author
+[1] ""
+
+$prods[[6]]$brand
+[1] ""
+
+$prods[[6]]$publishDate
+[1] ""
+
+$prods[[6]]$isNC17
+[1] 0
+
+$prods[[6]]$couponActid
+list()
+
+
+$prods[[7]]
+$prods[[7]]$Id
+[1] "DYAJ81-A9007I9KO"
+
+$prods[[7]]$cateId
+[1] "DYAJ86"
+
+$prods[[7]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9KO000_57dafe0947c50.jpg"
+
+$prods[[7]]$picB
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9KO000_57d94ed0760cf.jpg"
+
+$prods[[7]]$name
+[1] "Apple iPhone 7 Plus (128G)"
+
+$prods[[7]]$describe
+[1] "銀色|金色★行電周邊組Apple iPhone 7 Plus (128G) "
+
+$prods[[7]]$price
+[1] 36500
+
+$prods[[7]]$author
+[1] ""
+
+$prods[[7]]$brand
+[1] ""
+
+$prods[[7]]$publishDate
+[1] ""
+
+$prods[[7]]$isNC17
+[1] 0
+
+$prods[[7]]$couponActid
+list()
+
+
+$prods[[8]]
+$prods[[8]]$Id
+[1] "DYAJ7F-A900799ZD"
+
+$prods[[8]]$cateId
+[1] "DYAJ7F"
+
+$prods[[8]]$picS
+[1] "/pic/v1/data/item/201605/D/Y/A/J/7/F/sDYAJ7F-A900799ZD000_5742e8e64dacc.jpg"
+
+$prods[[8]]$picB
+[1] "/pic/v1/data/item/201610/D/Y/A/J/7/F/DYAJ7F-A900799ZD000_57fd9b8c7cb6b.jpg"
+
+$prods[[8]]$name
+[1] "Apple iPhone SE(64G)"
+
+$prods[[8]]$describe
+[1] "★送Kitty行電+MFi線+授權保貼+授權保殼Apple iPhone SE(64G)"
+
+$prods[[8]]$price
+[1] 18500
+
+$prods[[8]]$author
+[1] ""
+
+$prods[[8]]$brand
+[1] ""
+
+$prods[[8]]$publishDate
+[1] ""
+
+$prods[[8]]$isNC17
+[1] 0
+
+$prods[[8]]$couponActid
+list()
+
+
+$prods[[9]]
+$prods[[9]]$Id
+[1] "DYAF54-A9006QTSD"
+
+$prods[[9]]$cateId
+[1] "DYAP00"
+
+$prods[[9]]$picS
+[1] "/pic/v1/data/item/201512/D/Y/A/F/5/4/sDYAF54-A9006QTSD000_5680d9439fe62.jpg"
+
+$prods[[9]]$picB
+[1] "/pic/v1/data/item/201512/D/Y/A/F/5/4/DYAF54-A9006QTSD000_5680d9439b426.jpg"
+
+$prods[[9]]$name
+[1] "Apple Lightning 8pin 原廠USB傳輸線/充電線 兼容 Apple iPhone / iPad / iPod"
+
+$prods[[9]]$describe
+[1] "for Apple iPhone 6/6 Plus iPhone 6s/6s Plus iPhon 5S/5 原廠傳輸線/充電線Lightning 兼容 Apple iPhone / iPad / iPod"
+
+$prods[[9]]$price
+[1] 349
+
+$prods[[9]]$author
+[1] ""
+
+$prods[[9]]$brand
+[1] ""
+
+$prods[[9]]$publishDate
+[1] ""
+
+$prods[[9]]$isNC17
+[1] 0
+
+$prods[[9]]$couponActid
+list()
+
+
+$prods[[10]]
+$prods[[10]]$Id
+[1] "DYAJ81-A9007I9D9"
+
+$prods[[10]]$cateId
+[1] "DYAJ83"
+
+$prods[[10]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D9000_57dad9556e595.jpg"
+
+$prods[[10]]$picB
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D9000_58043733b29e4.jpg"
+
+$prods[[10]]$name
+[1] "Apple iPhone 7 (128G)"
+
+$prods[[10]]$describe
+[1] "銀色|金色★藍牙喇叭週邊組Apple iPhone 7 (128G) "
+
+$prods[[10]]$price
+[1] 29900
+
+$prods[[10]]$author
+[1] ""
+
+$prods[[10]]$brand
+[1] ""
+
+$prods[[10]]$publishDate
+[1] ""
+
+$prods[[10]]$isNC17
+[1] 0
+
+$prods[[10]]$couponActid
+list()
+
+
+$prods[[11]]
+$prods[[11]]$Id
+[1] "DYAJ81-A9007I9J9"
+
+$prods[[11]]$cateId
+[1] "DYAJ86"
+
+$prods[[11]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9J9000_57dafcac6141f.jpg"
+
+$prods[[11]]$picB
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9J9000_57d94ef40d8bb.jpg"
+
+$prods[[11]]$name
+[1] "Apple iPhone 7 Plus (128G)"
+
+$prods[[11]]$describe
+[1] "黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) "
+
+$prods[[11]]$price
+[1] 36900
+
+$prods[[11]]$author
+[1] ""
+
+$prods[[11]]$brand
+[1] ""
+
+$prods[[11]]$publishDate
+[1] ""
+
+$prods[[11]]$isNC17
+[1] 0
+
+$prods[[11]]$couponActid
+list()
+
+
+$prods[[12]]
+$prods[[12]]$Id
+[1] "DYAJ84-A9007KFVA"
+
+$prods[[12]]$cateId
+[1] "DYAJ84"
+
+$prods[[12]]$picS
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/4/sDYAJ84-A9007KFVA000_57fc53b7b6285.jpg"
+
+$prods[[12]]$picB
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/4/DYAJ84-A9007KFVA000_57fc53b7b503e.jpg"
+
+$prods[[12]]$name
+[1] "Apple iPhone 7 Plus (32G)"
+
+$prods[[12]]$describe
+[1] "三色★送藍芽耳機+觸控筆+手機立架Apple iPhone 7 Plus (32G) "
+
+$prods[[12]]$price
+[1] 31999
+
+$prods[[12]]$author
+[1] ""
+
+$prods[[12]]$brand
+[1] ""
+
+$prods[[12]]$publishDate
+[1] ""
+
+$prods[[12]]$isNC17
+[1] 0
+
+$prods[[12]]$couponActid
+$prods[[12]]$couponActid[[1]]
+[1] "C000474"
+
+$prods[[12]]$couponActid[[2]]
+[1] "C000475"
+
+$prods[[12]]$couponActid[[3]]
+[1] "C000477"
+
+$prods[[12]]$couponActid[[4]]
+[1] "C000473"
+
+$prods[[12]]$couponActid[[5]]
+[1] "C000479"
+
+$prods[[12]]$couponActid[[6]]
+[1] "C000476"
+
+$prods[[12]]$couponActid[[7]]
+[1] "C000480"
+
+
+
+$prods[[13]]
+$prods[[13]]$Id
+[1] "QAANAL-A9007I61F"
+
+$prods[[13]]$cateId
+[1] "QAANAL"
+
+$prods[[13]]$picS
+[1] "/pic/v1/data/item/201609/Q/A/A/N/A/L/sQAANAL-A9007I61F000_57d66f0e56027.jpg"
+
+$prods[[13]]$picB
+[1] "/pic/v1/data/item/201609/Q/A/A/N/A/L/QAANAL-A9007I61F000_57d66f0e53530.jpg"
+
+$prods[[13]]$name
+[1] "Apple iPhone 7 Plus (128GB)高階防水智慧機"
+
+$prods[[13]]$describe
+[1] "★預購★  ★贈保護套★  Apple iPhone 7 Plus (128GB)高階防水智慧機"
+
+$prods[[13]]$price
+[1] 34500
+
+$prods[[13]]$author
+[1] ""
+
+$prods[[13]]$brand
+[1] ""
+
+$prods[[13]]$publishDate
+[1] ""
+
+$prods[[13]]$isNC17
+[1] 0
+
+$prods[[13]]$couponActid
+list()
+
+
+$prods[[14]]
+$prods[[14]]$Id
+[1] "DYAJ83-A9007IDPG"
+
+$prods[[14]]$cateId
+[1] "DYAJ83"
+
+$prods[[14]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IDPG000_57dade334c951.jpg"
+
+$prods[[14]]$picB
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IDPG000_57d949628186d.jpg"
+
+$prods[[14]]$name
+[1] "Apple iPhone 7 (128G)★"
+
+$prods[[14]]$describe
+[1] "玫瑰金★Kitty行電周邊組Apple iPhone 7 (128G) "
+
+$prods[[14]]$price
+[1] 29900
+
+$prods[[14]]$author
+[1] ""
+
+$prods[[14]]$brand
+[1] ""
+
+$prods[[14]]$publishDate
+[1] ""
+
+$prods[[14]]$isNC17
+[1] 0
+
+$prods[[14]]$couponActid
+list()
+
+
+$prods[[15]]
+$prods[[15]]$Id
+[1] "DYAI6B-A9007INQL"
+
+$prods[[15]]$cateId
+[1] "DYAI6B"
+
+$prods[[15]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/I/6/B/sDYAI6B-A9007INQL000_57dfd372bb376.jpg"
+
+$prods[[15]]$picB
+[1] "/pic/v1/data/item/201609/D/Y/A/I/6/B/DYAI6B-A9007INQL000_57dfd372ba4b5.jpg"
+
+$prods[[15]]$name
+[1] "Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶"
+
+$prods[[15]]$describe
+[1] "Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶"
+
+$prods[[15]]$price
+[1] 13500
+
+$prods[[15]]$author
+[1] ""
+
+$prods[[15]]$brand
+[1] ""
+
+$prods[[15]]$publishDate
+[1] ""
+
+$prods[[15]]$isNC17
+[1] 0
+
+$prods[[15]]$couponActid
+list()
+
+
+$prods[[16]]
+$prods[[16]]$Id
+[1] "DYAJ83-A9007J1XP"
+
+$prods[[16]]$cateId
+[1] "DYAJ83"
+
+$prods[[16]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007J1XP000_57e41caec5788.jpg"
+
+$prods[[16]]$picB
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007J1XP000_57e41caec2c8d.jpg"
+
+$prods[[16]]$name
+[1] "Apple iPhone 7 (128G) "
+
+$prods[[16]]$describe
+[1] "★贈9H強化玻璃保護貼+手機背蓋+觸控筆+ i 線頭保護套 Apple iPhone 7 (128GB)高階防水智慧機"
+
+$prods[[16]]$price
+[1] 29800
+
+$prods[[16]]$author
+[1] ""
+
+$prods[[16]]$brand
+[1] ""
+
+$prods[[16]]$publishDate
+[1] ""
+
+$prods[[16]]$isNC17
+[1] 0
+
+$prods[[16]]$couponActid
+list()
+
+
+$prods[[17]]
+$prods[[17]]$Id
+[1] "DYAJ81-A9007I82T"
+
+$prods[[17]]$cateId
+[1] "DYAJ83"
+
+$prods[[17]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I82T000_57d791ec23934.jpg"
+
+$prods[[17]]$picB
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I82T000_57d8b0ab6c145.jpg"
+
+$prods[[17]]$name
+[1] "Apple iPhone 7 (128G)"
+
+$prods[[17]]$describe
+[1] "★行電萬用週邊組!!★Apple iPhone 7 (128G) 智慧型手機"
+
+$prods[[17]]$price
+[1] 30690
+
+$prods[[17]]$author
+[1] ""
+
+$prods[[17]]$brand
+[1] ""
+
+$prods[[17]]$publishDate
+[1] ""
+
+$prods[[17]]$isNC17
+[1] 0
+
+$prods[[17]]$couponActid
+list()
+
+
+$prods[[18]]
+$prods[[18]]$Id
+[1] "DYAJ84-A9007I8IU"
+
+$prods[[18]]$cateId
+[1] "DYAJ84"
+
+$prods[[18]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8IU000_57d7b6a554a95.jpg"
+
+$prods[[18]]$picB
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8IU000_57d8b0f5b5eb5.jpg"
+
+$prods[[18]]$name
+[1] "Apple iPhone 7 Plus (32G)"
+
+$prods[[18]]$describe
+[1] "★行電萬用週邊組!!★ Apple iPhone 7 Plus (32G) 智慧型手機 "
+
+$prods[[18]]$price
+[1] 31690
+
+$prods[[18]]$author
+[1] ""
+
+$prods[[18]]$brand
+[1] ""
+
+$prods[[18]]$publishDate
+[1] ""
+
+$prods[[18]]$isNC17
+[1] 0
+
+$prods[[18]]$couponActid
+list()
+
+
+$prods[[19]]
+$prods[[19]]$Id
+[1] "DGBWAV-A9005RJBR"
+
+$prods[[19]]$cateId
+[1] "DYAM59"
+
+$prods[[19]]$picS
+[1] "/pic/v1/data/item/201412/D/G/B/W/A/V/sDGBWAV-A9005RJBR000_54915252218fe.jpg"
+
+$prods[[19]]$picB
+[1] "/pic/v1/data/item/201608/D/G/B/W/A/V/DGBWAV-A9005RJBR000_57c4ebebb7e91.jpg"
+
+$prods[[19]]$name
+[1] "Apple iPad Air2 WiFi 64G"
+
+$prods[[19]]$describe
+[1] "Apple iPad Air2 9.7吋 WiFi 64G "
+
+$prods[[19]]$price
+[1] 15690
+
+$prods[[19]]$author
+[1] ""
+
+$prods[[19]]$brand
+[1] ""
+
+$prods[[19]]$publishDate
+[1] ""
+
+$prods[[19]]$isNC17
+[1] 0
+
+$prods[[19]]$couponActid
+list()
+
+
+$prods[[20]]
+$prods[[20]]$Id
+[1] "DYAJ7F-A9007IPOW"
+
+$prods[[20]]$cateId
+[1] "DYAJ7F"
+
+$prods[[20]]$picS
+[1] "/pic/v1/data/item/201609/D/Y/A/J/7/F/sDYAJ7F-A9007IPOW000_57e0db460e24c.png"
+
+$prods[[20]]$picB
+[1] "/pic/v1/data/item/201609/D/Y/A/J/7/F/DYAJ7F-A9007IPOW000_57e0db460bf33.png"
+
+$prods[[20]]$name
+[1] "Apple iPhone SE 64G 福利品"
+
+$prods[[20]]$describe
+[1] "Apple iPhone SE 64G 福利品"
+
+$prods[[20]]$price
+[1] 15690
+
+$prods[[20]]$author
+[1] ""
+
+$prods[[20]]$brand
+[1] ""
+
+$prods[[20]]$publishDate
+[1] ""
+
+$prods[[20]]$isNC17
+[1] 0
+
+$prods[[20]]$couponActid
+list()
+```
 
 
 【Parser】解析所得資料：非結構化資料
 ==================================================================
-Regular Expression + stringr套件
+正則表達式 (Regular expressions) + 
+- `base::grep()`  
+- `base::grepl()`  
+- `base::gsub()`  
+- `stringr` 套件  
+</br>
+正則表達式[練習](https://regexone.com/)
+
+範例程式：RegEx.R
+
 
 
 【Data】資料處理與儲存
@@ -803,6 +1921,7 @@ Regular Expression + stringr套件
 - `download.file`: save html, jpeg, etc
 - `writeBin`: write binary object into disk
 - `RSQLite`: SQLite connector in R
+
 
 【Data】資料處理與儲存：各種資料庫
 ==================================================================
