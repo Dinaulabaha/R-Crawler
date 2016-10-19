@@ -3,6 +3,7 @@ R Crawler 1
 ========================================================
 author: Miao Chien
 date: 10/19
+width: 1500
 height: 1400
 transition: concave
 css: custom.css
