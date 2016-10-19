@@ -280,7 +280,7 @@ HTML 的樹狀結構與 DOM Selector
 
 <div class="footer" style="text-align:left;margin-top:-50px;font-size:120%;color:red";>
        CSS Path: p#c3h3 > a </br></br>
-       XPath: //p[@id='c3h3]/a
+       XPath: //p[@id='c3h3']/a
 </div>
 
 
