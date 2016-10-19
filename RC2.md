@@ -133,7 +133,7 @@ rm(pkg_new, pkg_list)
 好用套件介紹：magrittr
 =========================================================
 </br></br>
-舉例：
+一般寫法
 
 
 ```r
@@ -141,6 +141,17 @@ a = 1:3
 df = data.frame(a, b=a^2)
 rownames(df) = LETTERS[1:3]
 vals = lm(b ~ a, data = df)
+vals
+```
+
+```
+
+Call:
+lm(formula = b ~ a, data = df)
+
+Coefficients:
+(Intercept)            a  
+     -3.333        4.000  
 ```
 ***
 </br></br>
@@ -149,8 +160,20 @@ pipe chain 版本
 
 ```r
 library(magrittr)
-vals = 1:3 %>% data.frame(a = ., b = .^2) %>%
-  set_rownames(LETTERS[1:3]) %>% lm(b ~ a, data = .)
+1:3 %>% 
+  data.frame(a = ., b = .^2) %>%
+  set_rownames(LETTERS[1:3]) %>% 
+  lm(b ~ a, data = .)
+```
+
+```
+
+Call:
+lm(formula = b ~ a, data = .)
+
+Coefficients:
+(Intercept)            a  
+     -3.333        4.000  
 ```
 
 
@@ -177,7 +200,8 @@ vals = 1:3 %>% data.frame(a = ., b = .^2) %>%
 ```r
 library(data.table)
 dt = data.table(mtcars)
-dt %<>% data.table(name = rownames(mtcars), .)
+dt %<>% 
+  data.table(name = rownames(mtcars), .)
 dt 
 ```
 
@@ -255,133 +279,104 @@ dt
 好用套件介紹：data.table
 ==================================================================
 </br></br>
-篩選 data.table
+篩選與排序 
 
 ```r
-data = readRDS("data/demo_data.rds")
-data
+dt %>%
+  .[mpg>22 & mpg<27] %>%
+  .[order(mpg)]
 ```
 
 ```
-              Issue         Project       Date                       Type
-  1: Climate&Energy            Coal 2016-04-01 International news article
-  2: Climate&Energy            Coal 2016-04-01 International news article
-  3: Climate&Energy            Coal 2016-04-01 International news article
-  4:        General  General-Others 2016-04-01 International news article
-  5:        General  General-Others 2016-04-01 International news article
- ---                                                                     
-901:          Detox Overconsumption 2016-06-29         Local news article
-902:          Detox Overconsumption 2016-06-29         Local news article
-903:         Oceans     Yellow_card 2016-06-29         Local news article
-904:  Food-for-Life             GMO 2016-06-30 International news article
-905:  Food-for-Life             GMO 2016-06-30 International news article
-     Activity          Media
-  1:     Wire          HiNet
-  2:     Wire        MSN台灣
-  3:     Wire 台灣蘋果日報網
-  4:   Others     世界新聞網
-  5:   Others   東網(台灣版)
- ---                        
-901:    Press       台灣醒報
-902:    Press         快點TV
-903:     Cite     聯合新聞網
-904:   Others 台灣蘋果日報網
-905:   Others   新浪網(臺灣)
-                                                          Title
-  1:             「燃煤之疾」！ 全球蚊子電廠1500座 浪費近兆美元
-  2:             「燃煤之疾」！ 全球蚊子電廠1500座 浪費近兆美元
-  3: 【環境資訊】「燃煤之疾」！ 全球蚊子電廠1500座 浪費近兆美元
-  4:                                     喜萊莉怒斥綠色和平份子
-  5:                          「我很反感」 希拉蕊罕有被問到發火
- ---                                                           
-901:                  快時尚後遺症 國人年丟520萬件衣、540萬雙鞋
-902:                  每分鐘丟9.9件 台每年丟520萬舊衣塞爆回收站
-903:                              查獲鯊魚翅 索羅門群島扣我漁船
-904:                        基改作物能救窮人 諾貝爾得主連署力挺
-905:     百余諾獎得主發公開信強烈要求綠色和平組織停止反對轉基因
-                  Author         Pic      GP_Pic      GP_Mention
-  1:         環資-鄒敏惠          No          No Main mentioning
-  2:         環資-鄒敏惠 Yes-Colored          No Main mentioning
-  3:         環資-鄒敏惠 Yes-Colored          No Side mentioning
-  4:                  NA Yes-Colored Yes-Colored           Title
-  5:                  NA Yes-Colored          No Side mentioning
- ---                                                            
-901:         聯合-陳宛茜          No          No Side mentioning
-902:         環資-賴品瑀 Yes-Colored Yes-Colored Main mentioning
-903: 聯合-董俞佳、蔣繼平          No          No Main mentioning
-904:         蘋果-余浚安 Yes-Colored          No Main mentioning
-905:                  NA Yes-Colored          No           Title
+            name  mpg cyl  disp hp drat   wt  qsec vs am gear carb
+1:    Datsun 710 22.8   4 108.0 93 3.85 2.32 18.61  1  1    4    1
+2:      Merc 230 22.8   4 140.8 95 3.92 3.15 22.90  1  0    4    2
+3:     Merc 240D 24.4   4 146.7 62 3.69 3.19 20.00  1  0    4    2
+4: Porsche 914-2 26.0   4 120.3 91 4.43 2.14 16.70  0  1    5    2
 ```
 ***
 </br></br></br>
 
 ```r
-data %>% .[Issue=="Climate&Energy"]
+dt %>%
+  .[,.(mpg, indexX=gear*disp)]
 ```
 
 ```
-              Issue          Project       Date                       Type
-  1: Climate&Energy             Coal 2016-04-01 International news article
-  2: Climate&Energy             Coal 2016-04-01 International news article
-  3: Climate&Energy             Coal 2016-04-01 International news article
-  4: Climate&Energy Renewable_energy 2016-04-01         Local news article
-  5: Climate&Energy Renewable_energy 2016-04-01         Local news article
- ---                                                                      
-233: Climate&Energy            Nukes 2016-06-20 International news article
-234: Climate&Energy            Nukes 2016-06-21 International news article
-235: Climate&Energy            Nukes 2016-06-22 International news article
-236: Climate&Energy Renewable_energy 2016-06-24                      Op-ed
-237: Climate&Energy Renewable_energy 2016-06-24                      Op-ed
-     Activity          Media
-  1:     Wire          HiNet
-  2:     Wire        MSN台灣
-  3:     Wire 台灣蘋果日報網
-  4:    Press          HiNet
-  5:    Press    Match生活網
- ---                        
-233:     Cite   中時電子報網
-234:     Cite    Taipeitimes
-235:     Cite   新浪網(臺灣)
-236:     Cite          HiNet
-237:     Cite        MSN台灣
-                                                          Title
-  1:             「燃煤之疾」！ 全球蚊子電廠1500座 浪費近兆美元
-  2:             「燃煤之疾」！ 全球蚊子電廠1500座 浪費近兆美元
-  3: 【環境資訊】「燃煤之疾」！ 全球蚊子電廠1500座 浪費近兆美元
-  4:                                 環團質疑日月光列蘋果供應商
-  5:                                 環團質疑日月光列蘋果供應商
- ---                                                           
-233:                          關西高濱核電廠40歲 日本再延長20年
-234:              Aging nuclear reactors can stay online: Japan
-235:                             日本核反應堆「退休返聘」遭質疑
-236:                         英國再生能源小探：綠能的潛力與失落
-237:                         英國再生能源小探：綠能的潛力與失落
-                    Author         Pic GP_Pic      GP_Mention
-  1:           環資-鄒敏惠          No     No Main mentioning
-  2:           環資-鄒敏惠 Yes-Colored     No Main mentioning
-  3:           環資-鄒敏惠 Yes-Colored     No Side mentioning
-  4: 中央社-余曉涵、鍾榮峰          No     No Side mentioning
-  5: 中央社-余曉涵、鍾榮峰          No     No Side mentioning
- ---                                                         
-233:           中時-陳穎芃          No     No Side mentioning
-234:                   AFP          No     No Main mentioning
-235:                    NA          No     No Side mentioning
-236:                柯妤萱 Yes-Colored     No Side mentioning
-237:                柯妤萱 Yes-Colored     No Side mentioning
+     mpg indexX
+ 1: 21.0  640.0
+ 2: 21.0  640.0
+ 3: 22.8  432.0
+ 4: 21.4  774.0
+ 5: 18.7 1080.0
+ 6: 18.1  675.0
+ 7: 14.3 1080.0
+ 8: 24.4  586.8
+ 9: 22.8  563.2
+10: 19.2  670.4
+11: 17.8  670.4
+12: 16.4  827.4
+13: 17.3  827.4
+14: 15.2  827.4
+15: 10.4 1416.0
+16: 10.4 1380.0
+17: 14.7 1320.0
+18: 32.4  314.8
+19: 30.4  302.8
+20: 33.9  284.4
+21: 21.5  360.3
+22: 15.5  954.0
+23: 15.2  912.0
+24: 13.3 1050.0
+25: 19.2 1200.0
+26: 27.3  316.0
+27: 26.0  601.5
+28: 30.4  475.5
+29: 15.8 1755.0
+30: 19.7  725.0
+31: 15.0 1505.0
+32: 21.4  484.0
+     mpg indexX
 ```
 
-<!-- 好用套件介紹：data.table -->
-<!-- ================================================================== -->
+好用套件介紹：data.table
+==================================================================
+</br></br>
+計算
 
-<!-- 篩選 + 欄位黏合 +  -->
-<!-- ```{r} -->
-<!-- seq.date = seq(as.Date("2016/4/1"), as.Date("2016/6/30"), "days") %>% as.character -->
-<!-- gg=data[,.(Issue, Date)] %>% .[,Date := factor(Date, levels=seq.date)] -->
-<!-- g = gg[,.(Date=levels(Date), Count=c(table(Date))), by=.(Issue)] %>% -->
-<!--   .[order(match(Issue, issue_table$Issue))] -->
+```r
+dt %>%
+  .[,.(Count=.N), by=.(gear)]
+```
 
+```
+   gear Count
+1:    4    12
+2:    3    15
+3:    5     5
+```
+***
+</br></br></br>
 
-<!-- ``` -->
+```r
+dt %>%
+  .[,.(Count=.N), by=.(gear, carb)]
+```
+
+```
+    gear carb Count
+ 1:    4    4     4
+ 2:    4    1     4
+ 3:    3    1     3
+ 4:    3    2     4
+ 5:    3    4     5
+ 6:    4    2     4
+ 7:    3    3     3
+ 8:    5    2     2
+ 9:    5    4     1
+10:    5    6     1
+11:    5    8     1
+```
 
 
 
@@ -530,7 +525,7 @@ res
 
 ```
 Response [http://httpbin.org/get?q=hihi]
-  Date: 2016-10-19 02:04
+  Date: 2016-10-19 02:51
   Status: 200
   Content-Type: application/json
   Size: 382 B
@@ -572,24 +567,21 @@ res %>%
 ```
 
 ```
- [1] "[新聞] 秋老虎發威 10月恐限電"                 
- [2] "[新聞] 下月洪習會 柱：談和平協議"             
- [3] "[徵求] 10/17有經重新路四段97號前的行車記錄器" 
- [4] "[問卦] 「蒙提霍爾問題」 文組看得懂嗎?"        
- [5] "[新聞] 宜蘭縣政府在日本沖繩成立駐沖繩辦事處  "
- [6] "[問卦] 在公車上撐傘的八卦？"                  
- [7] "[新聞] 陸神舟11號與天宮2號太空實驗室 今晨成功"
- [8] "[問卦] 有沒有YAMAHA機車的八卦"                
- [9] "[新聞] 盼落實性交易合法化 日日春北市府外抗議" 
-[10] "[問卦] 台南有難吃的店嗎？"                    
-[11] "[問卦] 巴爾的摩"                              
-[12] "[新聞] 銀行最怕卡友怒剪卡　3種留客手法大揭密" 
-[13] "[新聞] 修法推動綠電　林全：對電價有好處"      
-[14] "[公告] 八卦板板規(2016.08.16)"                
-[15] "[公告] 版主選舉─總決賽投票開始！"            
-[16] "[協尋]10/12 11:00中山高北上28公里三重路段紀錄"
-[17] "[協尋]9/28 汐止costco附近死亡車禍目擊或畫面"  
-[18] "[公告] 十月份置底閒聊區^Q^"                   
+ [1] "[問卦] 台灣人的心態?"                            
+ [2] "[問卦] 大台北汽機車排放廢氣這麼多，仍是好空氣"   
+ [3] "[新聞] 首例！台中國家歌劇院上月啟用 這月就成"    
+ [4] "[問卦] 有沒有相信武術大師都是什麼人的八卦？"     
+ [5] "Re: [新聞] 大緊急！大林五號機又跳機 限電緊戒紅燈"
+ [6] "Re: [新聞] 電業法將送審　政院保證電價凍漲"       
+ [7] "[新聞] 官威好大？BMW掛上立院停車證　無視店家"    
+ [8] "Re: [問卦] 為什麼禿頭不能根治？"                 
+ [9] "[問卦] 有女士官長的八卦嗎？"                     
+[10] "[問卦] 要如何取日文名字"                         
+[11] "[公告] 八卦板板規(2016.08.16)"                   
+[12] "[公告] 版主選舉─總決賽投票開始！"               
+[13] "[協尋]10/12 11:00中山高北上28公里三重路段紀錄"   
+[14] "[協尋]9/28 汐止costco附近死亡車禍目擊或畫面"     
+[15] "[公告] 十月份置底閒聊區^Q^"                      
 ```
 
 【Connection】發送 HTTP request : POST Method
@@ -618,7 +610,7 @@ res
 
 ```
 Response [http://httpbin.org/post]
-  Date: 2016-10-19 02:05
+  Date: 2016-10-19 02:51
   Status: 200
   Content-Type: application/json
   Size: 545 B
@@ -651,7 +643,7 @@ POST Method 示範：[公開資訊觀測站](http://mops.twse.com.tw/mops/web/t5
 
 某些網站為了辨別用戶身分而儲存在用戶端（Client Side）上的資料
 </br>
-Chrome extension [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?hl=zh-TW&utm_source=chrome-ntp-launcher)
+- Chrome extension [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?hl=zh-TW&utm_source=chrome-ntp-launcher)
 
 
 ```r
@@ -1016,10 +1008,10 @@ res_df
 
 ```
 $QTime
-[1] 148
+[1] 60
 
 $totalRows
-[1] 56256
+[1] 56258
 
 $totalPage
 [1] 2813
@@ -1091,7 +1083,7 @@ $prods
 1  /pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8H1000_57d8b0d140874.jpg
 2  /pic/v1/data/item/201610/D/Y/A/P/0/0/DYAP00-A9006VVZN000_58057e27c3080.jpg
 3  /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IBJY000_57e91dd933954.jpg
-4  /pic/v1/data/item/201610/D/Y/A/M/6/K/DYAM6K-A90078VOR000_5804a65f511b5.jpg
+4  /pic/v1/data/item/201610/D/Y/A/M/6/K/DYAM6K-A90078VOR000_5806d6f3d6d85.jpg
 5  /pic/v1/data/item/201609/D/Y/A/J/8/6/DYAJ86-A9007IBEX000_57d94eb84fa9f.jpg
 6  /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IDT3000_57d941c7277d5.jpg
 7  /pic/v1/data/item/201610/D/Y/A/J/8/3/DYAJ83-A9007IBBS000_57fc4fc37d8da.jpg
@@ -1133,7 +1125,7 @@ $prods
 1                                                                        ★行電萬用週邊組!!★Apple iPhone 7 Plus (128G) 智慧型手機
 2   ▼每日強檔‧瘋殺特賣▼★Apple Lightning 8pin新款 原廠傳輸線-200cm★USB充電線/數據線 for iPhone 7/7plus/6s/6 Plus/ipad air2/air
 3                                                                                黑色|玫瑰金★行電防護週邊組Apple iPhone 7 (128G) 
-4                                                                                  ▼每日強檔‧瘋殺特賣▼9.7吋 iPad Pro Wi-Fi 32GB
+4                                                                             ▼送9H 耐磨鋼化玻璃保護貼▼9.7吋 iPad Pro Wi-Fi 32GB
 5                                                                       四色★搭配保殼+玻璃貼+MFi傳輸線Apple iPhone 7 Plus (128G) 
 6                                                                     四色★送行動電源+專屬氣墊空壓殼+保護貼Apple iPhone 7 (128G) 
 7                                                                                        ★搭配保護殼+玻璃貼Apple iPhone 7 (128G) 
@@ -1154,7 +1146,7 @@ $prods
 1  35900                               0                 
 2    480                               0                 
 3  29900                               0                 
-4  19190                               0                 
+4  19900                               0                 
 5  34990                               0                 
 6  29888                               0                 
 7  29700                               0                 
@@ -1186,10 +1178,10 @@ res_list
 
 ```
 $QTime
-[1] 148
+[1] 60
 
 $totalRows
-[1] 56256
+[1] 56258
 
 $totalPage
 [1] 2813
@@ -1342,16 +1334,16 @@ $prods[[4]]$picS
 [1] "/pic/v1/data/item/201605/D/Y/A/M/6/K/sDYAM6K-A90078VOR000_573afef9962c0.jpg"
 
 $prods[[4]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/M/6/K/DYAM6K-A90078VOR000_5804a65f511b5.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/M/6/K/DYAM6K-A90078VOR000_5806d6f3d6d85.jpg"
 
 $prods[[4]]$name
 [1] "Apple 9.7吋 iPad Pro WiFi版 32GB"
 
 $prods[[4]]$describe
-[1] "▼每日強檔‧瘋殺特賣▼9.7吋 iPad Pro Wi-Fi 32GB"
+[1] "▼送9H 耐磨鋼化玻璃保護貼▼9.7吋 iPad Pro Wi-Fi 32GB"
 
 $prods[[4]]$price
-[1] 19190
+[1] 19900
 
 $prods[[4]]$author
 [1] ""

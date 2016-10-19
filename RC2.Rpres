@@ -135,13 +135,14 @@ rm(pkg_new, pkg_list)
 好用套件介紹：magrittr
 =========================================================
 </br></br>
-舉例：
+一般寫法
 
 ```{r}
 a = 1:3
 df = data.frame(a, b=a^2)
 rownames(df) = LETTERS[1:3]
 vals = lm(b ~ a, data = df)
+vals
 ```
 ***
 </br></br>
@@ -149,8 +150,10 @@ pipe chain 版本
 
 ```{r}
 library(magrittr)
-vals = 1:3 %>% data.frame(a = ., b = .^2) %>%
-  set_rownames(LETTERS[1:3]) %>% lm(b ~ a, data = .)
+1:3 %>% 
+  data.frame(a = ., b = .^2) %>%
+  set_rownames(LETTERS[1:3]) %>% 
+  lm(b ~ a, data = .)
 
 ```
 
@@ -177,7 +180,8 @@ vals = 1:3 %>% data.frame(a = ., b = .^2) %>%
 ```{r, warning=FALSE, eval=TRUE}
 library(data.table)
 dt = data.table(mtcars)
-dt %<>% data.table(name = rownames(mtcars), .)
+dt %<>% 
+  data.table(name = rownames(mtcars), .)
 dt 
 
 ```
@@ -185,30 +189,33 @@ dt
 好用套件介紹：data.table
 ==================================================================
 </br></br>
-篩選 data.table
+篩選與排序 
 ```{r}
-data = readRDS("data/demo_data.rds")
-data
-
+dt %>%
+  .[mpg>22 & mpg<27] %>%
+  .[order(mpg)]
 ```
 ***
 </br></br></br>
 ```{r}
-data %>% .[Issue=="Climate&Energy"]
+dt %>%
+  .[,.(mpg, indexX=gear*disp)]
 ```
 
-<!-- 好用套件介紹：data.table -->
-<!-- ================================================================== -->
-
-<!-- 篩選 + 欄位黏合 +  -->
-<!-- ```{r} -->
-<!-- seq.date = seq(as.Date("2016/4/1"), as.Date("2016/6/30"), "days") %>% as.character -->
-<!-- gg=data[,.(Issue, Date)] %>% .[,Date := factor(Date, levels=seq.date)] -->
-<!-- g = gg[,.(Date=levels(Date), Count=c(table(Date))), by=.(Issue)] %>% -->
-<!--   .[order(match(Issue, issue_table$Issue))] -->
-
-
-<!-- ``` -->
+好用套件介紹：data.table
+==================================================================
+</br></br>
+計算
+```{r}
+dt %>%
+  .[,.(Count=.N), by=.(gear)]
+```
+***
+</br></br></br>
+```{r}
+dt %>%
+  .[,.(Count=.N), by=.(gear, carb)]
+```
 
 
 
@@ -398,7 +405,7 @@ POST Method 示範：[公開資訊觀測站](http://mops.twse.com.tw/mops/web/t5
 
 某些網站為了辨別用戶身分而儲存在用戶端（Client Side）上的資料
 </br>
-Chrome extension [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?hl=zh-TW&utm_source=chrome-ntp-launcher)
+- Chrome extension [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?hl=zh-TW&utm_source=chrome-ntp-launcher)
 
 ```{r, eval=FALSE}
 set_cookies(a = 1, b = 2)
