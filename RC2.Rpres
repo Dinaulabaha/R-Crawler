@@ -165,11 +165,12 @@ library(magrittr)
 library(plotly)
 set.seed(100)
 d <- diamonds[sample(nrow(diamonds), 1000), ]
-p <- plot_ly(d, x = ~carat, y = ~price, z = ~depth) %>%
+p <- plot_ly(d, x = ~carat, y = ~price, z = ~depth, color = ~color) %>%
   add_markers(text = ~paste("Clarity: ", clarity))
+htmlwidgets::saveWidget(as.widget(p), file = "demo.html")
 
 ```
-<iframe src="data/plotly_demo.html" style="position:absolute;height:150%;width:150%"></iframe>
+<iframe src="https://miaochien.github.io/R-Crawler/data/plotly_demo.html" style="position:absolute;height:auto;width:auto"></iframe>
 
 
 
