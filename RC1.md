@@ -319,7 +319,7 @@ HOMEWORK
 
 * 安裝 [RStudio](https://www.rstudio.com/products/rstudio/download3/)
 
-* 執行 install_packages.R 以安裝所需套件
+* 執行 [install_packages.R](https://github.com/MiaoChien/R-Crawler/blob/master/Rscripts/install_packages.R) 以安裝所需套件
 
 HOMEWORK
 ========================================================

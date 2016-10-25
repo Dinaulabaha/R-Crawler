@@ -3,7 +3,7 @@ R Crawler 2
 author: Miao Chien
 date: 10/19
 width: 1500
-height: 1400
+height: 2000
 transition: concave
 css: custom.css
 font-import: http://fonts.googleapis.com/css?family=Proza+Libre
@@ -144,8 +144,8 @@ rownames(df) = LETTERS[1:3]
 vals = lm(b ~ a, data = df)
 vals
 ```
-***
-</br></br>
+
+</br>
 pipe chain 版本
 
 ```{r}
@@ -156,6 +156,22 @@ library(magrittr)
   lm(b ~ a, data = .)
 
 ```
+
+
+好用套件介紹：magrittr
+=========================================================
+配合視覺化作圖
+```{r}
+library(plotly)
+kd = with(MASS::geyser, 
+           MASS::kde2d(duration, waiting, n = 50))
+p = 
+  plot_ly(x = kd$x, y = kd$y, z = kd$z) %>% 
+  add_surface()
+
+```
+<iframe src="https://miaochien.github.io/R-Crawler/data/plotly_demo.html" style="position:absolute;height:1500px;width:1800px"></iframe>
+
 
 
 好用套件介紹：data.table
@@ -195,8 +211,8 @@ dt %>%
   .[mpg>22 & mpg<27] %>%
   .[order(mpg)]
 ```
-***
-</br></br></br>
+
+快速運算並建立新欄位
 ```{r}
 dt %>%
   .[,.(mpg, indexX=gear*disp)]
@@ -205,16 +221,16 @@ dt %>%
 好用套件介紹：data.table
 ==================================================================
 </br></br>
-計算
-```{r}
-dt %>%
-  .[,.(Count=.N), by=.(gear)]
-```
-***
-</br></br></br>
+計算個數
 ```{r}
 dt %>%
   .[,.(Count=.N), by=.(gear, carb)]
+```
+
+分組敘述統計
+```{r}
+dt %>%
+  .[,.(disp_Mean=mean(disp), disp_SD=sd(disp)), by=.(gear)]
 ```
 
 
@@ -562,9 +578,7 @@ content(res, as = "parsed")
 - json, jsonp: PChome、紫外線即時監測資料 `jsonlite::fromJSON`
 - html table: 公開資訊觀測站 `rvest::html_table`, `XML::readHtmlTable`
 - xml table: 7-11 `XML::xmlToDataFrame`
-</br>
-</br>
-</br>
+
 非結構化資料（Unstructured data）
 - RegEx: 東森房屋的地址
 
@@ -661,6 +675,11 @@ Extract table: `html_table()`
 doc %>% html_table()
 ```
 
+```{r}
+doc %>% html_table() %>% .[[1]]
+```
+
+
 【Parser】解析所得資料：結構化資料
 ==================================================================
 **XML 解析: XML::xmlToDataFrame()**</br>
@@ -717,7 +736,7 @@ res_list
 </br>
 正則表達式[練習](https://regexone.com/)
 
-範例程式：RegEx.R
+範例程式：[RegEx.R](https://github.com/MiaoChien/R-Crawler/blob/master/Rscripts/RegEx.R)
 
 
 
@@ -734,3 +753,7 @@ res_list
 - [RSQLite](https://cran.r-project.org/web/packages/RSQLite/RSQLite.pdf)
 - [RMySQL](https://cran.r-project.org/web/packages/RMySQL/RMySQL.pdf)
 - [RPostgreSQL](https://cran.r-project.org/web/packages/RPostgreSQL/RPostgreSQL.pdf)
+
+
+爬蟲自動化
+==================================================================

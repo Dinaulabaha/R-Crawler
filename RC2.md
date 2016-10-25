@@ -3,7 +3,7 @@ R Crawler 2
 author: Miao Chien
 date: 10/19
 width: 1500
-height: 1400
+height: 2000
 transition: concave
 css: custom.css
 font-import: http://fonts.googleapis.com/css?family=Proza+Libre
@@ -153,8 +153,8 @@ Coefficients:
 (Intercept)            a  
      -3.333        4.000  
 ```
-***
-</br></br>
+
+</br>
 pipe chain 版本
 
 
@@ -175,6 +175,22 @@ Coefficients:
 (Intercept)            a  
      -3.333        4.000  
 ```
+
+
+好用套件介紹：magrittr
+=========================================================
+配合視覺化作圖
+
+```r
+library(plotly)
+kd = with(MASS::geyser, 
+           MASS::kde2d(duration, waiting, n = 50))
+p = 
+  plot_ly(x = kd$x, y = kd$y, z = kd$z) %>% 
+  add_surface()
+```
+<iframe src="https://miaochien.github.io/R-Crawler/data/plotly_demo.html" style="position:absolute;height:1500px;width:1800px"></iframe>
+
 
 
 好用套件介紹：data.table
@@ -294,8 +310,8 @@ dt %>%
 3:     Merc 240D 24.4   4 146.7 62 3.69 3.19 20.00  1  0    4    2
 4: Porsche 914-2 26.0   4 120.3 91 4.43 2.14 16.70  0  1    5    2
 ```
-***
-</br></br></br>
+
+快速運算並建立新欄位
 
 ```r
 dt %>%
@@ -342,21 +358,7 @@ dt %>%
 好用套件介紹：data.table
 ==================================================================
 </br></br>
-計算
-
-```r
-dt %>%
-  .[,.(Count=.N), by=.(gear)]
-```
-
-```
-   gear Count
-1:    4    12
-2:    3    15
-3:    5     5
-```
-***
-</br></br></br>
+計算個數
 
 ```r
 dt %>%
@@ -376,6 +378,20 @@ dt %>%
  9:    5    4     1
 10:    5    6     1
 11:    5    8     1
+```
+
+分組敘述統計
+
+```r
+dt %>%
+  .[,.(disp_Mean=mean(disp), disp_SD=sd(disp)), by=.(gear)]
+```
+
+```
+   gear disp_Mean   disp_SD
+1:    4  123.0167  38.90926
+2:    3  326.3000  94.85274
+3:    5  202.4800 115.49064
 ```
 
 
@@ -525,7 +541,11 @@ res
 
 ```
 Response [http://httpbin.org/get?q=hihi]
+<<<<<<< HEAD
   Date: 2016-10-25 13:58
+=======
+  Date: 2016-10-25 14:25
+>>>>>>> gh-pages
   Status: 200
   Content-Type: application/json
   Size: 380 B
@@ -567,6 +587,7 @@ res %>%
 ```
 
 ```
+<<<<<<< HEAD
  [1] "[問卦] 蘇美第一個想要站內信認識的女生是誰？"  
  [2] "[問卦] 杜特蒂的外交策略明明很正確鄉民一直噓？"
  [3] "[問卦] 男森怎麼都這樣?"                       
@@ -587,6 +608,22 @@ res %>%
 [18] "[爆卦] 10/25拒砍七天假大遊行"                 
 [19] "[協尋]10/17高雄市中正一路與大同一路行車紀錄器"
 [20] "[公告] 十月份置底懶叫閒聊區^Q^"               
+=======
+ [1] "Re: [問卦] 為什麼打擊海盜會有國際疑慮？"      
+ [2] "[問卦] 美加邊界 美墨邊界怎麼差這麼多？"       
+ [3] "[問卦] 女生比較好約跑嗎？"                    
+ [4] "[問卦] 這個時間點千萬不能看的影片。"          
+ [5] "[問卦] 有沒有網襪配破褲的八卦？"              
+ [6] "Fw: [協尋]博美被比特咬死、求轉證人"           
+ [7] "[問卦] 那些辱罵是沒被吉過哦？"                
+ [8] "[問卦] 女生喜歡穿Derrick Rose的1號球衣?"      
+ [9] "[問卦]花學姐比較喜歡中國還是美國?"            
+[10] "[公告] 八卦板板規(2016.08.16)"                
+[11] "[爆卦] 10/25拒砍七天假大遊行"                 
+[12] "[協尋]10/17高雄市中正一路與大同一路行車紀錄器"
+[13] "[公告] 十月份置底懶叫閒聊區^Q^"               
+[14] "[協尋] 幫高調-協尋車號AJF-3090 鐵灰馬5"       
+>>>>>>> gh-pages
 ```
 
 【Connection】發送 HTTP request : POST Method
@@ -615,7 +652,11 @@ res
 
 ```
 Response [http://httpbin.org/post]
+<<<<<<< HEAD
   Date: 2016-10-25 13:58
+=======
+  Date: 2016-10-25 14:25
+>>>>>>> gh-pages
   Status: 200
   Content-Type: application/json
   Size: 543 B
@@ -846,9 +887,7 @@ content(res, as = "parsed")
 - json, jsonp: PChome、紫外線即時監測資料 `jsonlite::fromJSON`
 - html table: 公開資訊觀測站 `rvest::html_table`, `XML::readHtmlTable`
 - xml table: 7-11 `XML::xmlToDataFrame`
-</br>
-</br>
-</br>
+
 非結構化資料（Unstructured data）
 - RegEx: 東森房屋的地址
 
@@ -975,6 +1014,19 @@ doc %>% html_table()
 3    3         宜蘭縣中山路 03-99999999
 ```
 
+
+```r
+doc %>% html_table() %>% .[[1]]
+```
+
+```
+  編號                 住址        電話
+1    1 台北市大安區羅斯福路 02-11223344
+2    2   新北市永和區文化路 02-12345678
+3    3         宜蘭縣中山路 03-99999999
+```
+
+
 【Parser】解析所得資料：結構化資料
 ==================================================================
 **XML 解析: XML::xmlToDataFrame()**</br>
@@ -1013,7 +1065,11 @@ res_df
 
 ```
 $QTime
+<<<<<<< HEAD
 [1] 58
+=======
+[1] 59
+>>>>>>> gh-pages
 
 $totalRows
 [1] 56504
@@ -1183,7 +1239,11 @@ res_list
 
 ```
 $QTime
+<<<<<<< HEAD
 [1] 58
+=======
+[1] 59
+>>>>>>> gh-pages
 
 $totalRows
 [1] 56504
@@ -1985,7 +2045,7 @@ list()
 </br>
 正則表達式[練習](https://regexone.com/)
 
-範例程式：RegEx.R
+範例程式：[RegEx.R](https://github.com/MiaoChien/R-Crawler/blob/master/Rscripts/RegEx.R)
 
 
 
@@ -2002,3 +2062,7 @@ list()
 - [RSQLite](https://cran.r-project.org/web/packages/RSQLite/RSQLite.pdf)
 - [RMySQL](https://cran.r-project.org/web/packages/RMySQL/RMySQL.pdf)
 - [RPostgreSQL](https://cran.r-project.org/web/packages/RPostgreSQL/RPostgreSQL.pdf)
+
+
+爬蟲自動化
+==================================================================
