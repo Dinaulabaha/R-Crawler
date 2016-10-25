@@ -525,10 +525,10 @@ res
 
 ```
 Response [http://httpbin.org/get?q=hihi]
-  Date: 2016-10-19 02:51
+  Date: 2016-10-25 13:58
   Status: 200
   Content-Type: application/json
-  Size: 382 B
+  Size: 380 B
 {
   "args": {
     "q": "hihi"
@@ -567,21 +567,26 @@ res %>%
 ```
 
 ```
- [1] "[問卦] 台灣人的心態?"                            
- [2] "[問卦] 大台北汽機車排放廢氣這麼多，仍是好空氣"   
- [3] "[新聞] 首例！台中國家歌劇院上月啟用 這月就成"    
- [4] "[問卦] 有沒有相信武術大師都是什麼人的八卦？"     
- [5] "Re: [新聞] 大緊急！大林五號機又跳機 限電緊戒紅燈"
- [6] "Re: [新聞] 電業法將送審　政院保證電價凍漲"       
- [7] "[新聞] 官威好大？BMW掛上立院停車證　無視店家"    
- [8] "Re: [問卦] 為什麼禿頭不能根治？"                 
- [9] "[問卦] 有女士官長的八卦嗎？"                     
-[10] "[問卦] 要如何取日文名字"                         
-[11] "[公告] 八卦板板規(2016.08.16)"                   
-[12] "[公告] 版主選舉─總決賽投票開始！"               
-[13] "[協尋]10/12 11:00中山高北上28公里三重路段紀錄"   
-[14] "[協尋]9/28 汐止costco附近死亡車禍目擊或畫面"     
-[15] "[公告] 十月份置底閒聊區^Q^"                      
+ [1] "[問卦] 蘇美第一個想要站內信認識的女生是誰？"  
+ [2] "[問卦] 杜特蒂的外交策略明明很正確鄉民一直噓？"
+ [3] "[問卦] 男森怎麼都這樣?"                       
+ [4] "[問卦] Ace Attorney最經典的劇情是哪一段"      
+ [5] "[問卦] 吵架鬥嘴贏了之後呢？"                  
+ [6] "Re: [問卦] 教徒所謂的女生標準到底是啥?"       
+ [7] "[爆卦] 甲鐵城無名1/7比例模型化拉!!!!"         
+ [8] "[問卦] 中年夫妻很容易因為手機吵架？"          
+ [9] "Re: [新聞] 朴槿惠盼任內通過修憲 准許總統連任" 
+[10] "[問卦] 新垣結衣要被シェアー怎麼辦？"          
+[11] "[問卦] 黑暗騎士中的Rachel是母豬嗎?"           
+[12] "[問卦] 有沒有二戰美軍AA的八卦?"               
+[13] "Re: [ＦＢ] 閃亮(亮亮)"                        
+[14] "[問卦] 有沒有立遺囑的網站阿？"                
+[15] "Re: [問卦] 約跑完可以嫌對方臭嗎"              
+[16] "[公告] 八卦板板規(2016.08.16)"                
+[17] "10/20 Am0800-1030 基隆仁一路與愛三路行車記錄" 
+[18] "[爆卦] 10/25拒砍七天假大遊行"                 
+[19] "[協尋]10/17高雄市中正一路與大同一路行車紀錄器"
+[20] "[公告] 十月份置底懶叫閒聊區^Q^"               
 ```
 
 【Connection】發送 HTTP request : POST Method
@@ -610,10 +615,10 @@ res
 
 ```
 Response [http://httpbin.org/post]
-  Date: 2016-10-19 02:51
+  Date: 2016-10-25 13:58
   Status: 200
   Content-Type: application/json
-  Size: 545 B
+  Size: 543 B
 {
   "args": {}, 
   "data": "", 
@@ -1008,13 +1013,13 @@ res_df
 
 ```
 $QTime
-[1] 60
+[1] 58
 
 $totalRows
-[1] 56258
+[1] 56504
 
 $totalPage
-[1] 2813
+[1] 2826
 
 $range
 $range$min
@@ -1039,130 +1044,130 @@ $token
 $prods
                  Id cateId
 1  DYAJ84-A9007I8H1 DYAJ86
-2  DYAP00-A9006VVZN DYAP00
-3  DYAJ83-A9007IBJY DYAJ83
-4  DYAM6K-A90078VOR DYAM6K
+2  DYAJ81-A9007I9EM DYAJ83
+3  DYAJ83-A9007IBBS DYAJ83
+4  DYAJ83-A9007IDT3 DYAJ83
 5  DYAJ86-A9007IBEX DYAJ86
-6  DYAJ83-A9007IDT3 DYAJ83
-7  DYAJ83-A9007IBBS DYAJ83
-8  DYAJ86-A9007IBLG DYAJ86
-9  DYAF54-A9006QTSD DYAP00
-10 DYAJ81-A9007IDT5 DYAJ81
-11 DYAJ83-A9007JH3N DYAJ86
-12 DYAJ81-A9007I9KO DYAJ86
-13 DYAJ87-A9007ID8H DYAJ87
-14 QAANAL-A9007I61F QAANAL
-15 DYAJ7F-A900799ZD DYAJ7F
-16 DYAJ84-A9007I8HJ DYAJ85
-17 DYAJ84-A9007KFVA DYAJ84
-18 DGBWAV-A9005RJBR DYAM59
-19 DYAJ81-A9007I82T DYAJ83
-20 DYAJ84-A9007I8IU DYAJ84
+6  DYAJ86-A9007IBLG DYAJ86
+7  DYAF54-A9006QTSD DYAP00
+8  DYAJ81-A9007IBBO DYAJ81
+9  DYAJ81-A9007I9J9 DYAJ86
+10 DGAX73-A9006LF1U DGAX73
+11 DYAJ86-A9007L0C8 DYAJ86
+12 DYAJ81-A9007I9D9 DYAJ83
+13 DYAJ83-A9007IBJY DYAJ83
+14 DYAJ84-A9007I8HJ DYAJ85
+15 DYAJ81-A9007IDT5 DYAJ81
+16 DYAJ86-A9007KOI7 DYAJ86
+17 DYAJ81-A9007I9D3 DYAJ81
+18 DYAJ81-A9007I9KO DYAJ86
+19 DYAI6B-A9007INQL DYAI6B
+20 DYAM6K-A90078VOR DYAM6K
                                                                           picS
 1  /pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8H1000_57d7b636dc001.jpg
-2  /pic/v1/data/item/201609/D/Y/A/P/0/0/sDYAP00-A9006VVZN000_57d67b65dd78b.jpg
-3  /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBJY000_57dad31bc2bfb.jpg
-4  /pic/v1/data/item/201605/D/Y/A/M/6/K/sDYAM6K-A90078VOR000_573afef9962c0.jpg
+2  /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9EM000_57ec7c2e969b4.jpg
+3  /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBBS000_57d94a278d691.jpg
+4  /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IDT3000_57d941c728d56.jpg
 5  /pic/v1/data/item/201609/D/Y/A/J/8/6/sDYAJ86-A9007IBEX000_57d94eb850e79.jpg
-6  /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IDT3000_57d941c728d56.jpg
-7  /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBBS000_57d94a278d691.jpg
-8  /pic/v1/data/item/201609/D/Y/A/J/8/6/sDYAJ86-A9007IBLG000_57daff1722be3.jpg
-9  /pic/v1/data/item/201512/D/Y/A/F/5/4/sDYAF54-A9006QTSD000_5680d9439fe62.jpg
-10 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IDT5000_57d93ee659028.jpg
-11 /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007JH3N000_57ec8e7556210.jpg
-12 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9KO000_57dafe0947c50.jpg
-13 /pic/v1/data/item/201609/D/Y/A/J/8/7/sDYAJ87-A9007ID8H000_57d955682b1da.jpg
-14 /pic/v1/data/item/201609/Q/A/A/N/A/L/sQAANAL-A9007I61F000_57d66f0e56027.jpg
-15 /pic/v1/data/item/201605/D/Y/A/J/7/F/sDYAJ7F-A900799ZD000_5742e8e64dacc.jpg
-16 /pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8HJ000_57d7b66b5c2f1.jpg
-17 /pic/v1/data/item/201610/D/Y/A/J/8/4/sDYAJ84-A9007KFVA000_57fc53b7b6285.jpg
-18 /pic/v1/data/item/201412/D/G/B/W/A/V/sDGBWAV-A9005RJBR000_54915252218fe.jpg
-19 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I82T000_57d791ec23934.jpg
-20 /pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8IU000_57d7b6a554a95.jpg
+6  /pic/v1/data/item/201609/D/Y/A/J/8/6/sDYAJ86-A9007IBLG000_57daff1722be3.jpg
+7  /pic/v1/data/item/201512/D/Y/A/F/5/4/sDYAF54-A9006QTSD000_5680d9439fe62.jpg
+8  /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IBBO000_57d93f818e5ae.jpg
+9  /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9J9000_57dafcac6141f.jpg
+10 /pic/v1/data/item/201510/D/G/A/X/7/3/sDGAX73-A9006LF1U000_56331db66b5d3.jpg
+11 /pic/v1/data/item/201610/D/Y/A/J/8/6/sDYAJ86-A9007L0C8000_5804773694972.jpg
+12 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D9000_57dad9556e595.jpg
+13 /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBJY000_57dad31bc2bfb.jpg
+14 /pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8HJ000_57d7b66b5c2f1.jpg
+15 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IDT5000_57d93ee659028.jpg
+16 /pic/v1/data/item/201610/D/Y/A/J/8/6/sDYAJ86-A9007KOI7000_57ff1212b6c0a.jpg
+17 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D3000_57daaa9098d9e.jpg
+18 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9KO000_57dafe0947c50.jpg
+19 /pic/v1/data/item/201609/D/Y/A/I/6/B/sDYAI6B-A9007INQL000_57dfd372bb376.jpg
+20 /pic/v1/data/item/201605/D/Y/A/M/6/K/sDYAM6K-A90078VOR000_573afef9962c0.jpg
                                                                          picB
 1  /pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8H1000_57d8b0d140874.jpg
-2  /pic/v1/data/item/201610/D/Y/A/P/0/0/DYAP00-A9006VVZN000_58057e27c3080.jpg
-3  /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IBJY000_57e91dd933954.jpg
-4  /pic/v1/data/item/201610/D/Y/A/M/6/K/DYAM6K-A90078VOR000_5806d6f3d6d85.jpg
+2  /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9EM000_580d66431a6fc.jpg
+3  /pic/v1/data/item/201610/D/Y/A/J/8/3/DYAJ83-A9007IBBS000_57fc4fc37d8da.jpg
+4  /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IDT3000_57d941c7277d5.jpg
 5  /pic/v1/data/item/201609/D/Y/A/J/8/6/DYAJ86-A9007IBEX000_57d94eb84fa9f.jpg
-6  /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IDT3000_57d941c7277d5.jpg
-7  /pic/v1/data/item/201610/D/Y/A/J/8/3/DYAJ83-A9007IBBS000_57fc4fc37d8da.jpg
-8  /pic/v1/data/item/201609/D/Y/A/J/8/6/DYAJ86-A9007IBLG000_57d94e8665e50.jpg
-9  /pic/v1/data/item/201512/D/Y/A/F/5/4/DYAF54-A9006QTSD000_5680d9439b426.jpg
-10 /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007IDT5000_57d93ee657847.jpg
-11 /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007JH3N000_57ec8e75513f5.jpg
-12 /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9KO000_57d94ed0760cf.jpg
-13 /pic/v1/data/item/201609/D/Y/A/J/8/7/DYAJ87-A9007ID8H000_57d9556829b82.jpg
-14 /pic/v1/data/item/201609/Q/A/A/N/A/L/QAANAL-A9007I61F000_57d66f0e53530.jpg
-15 /pic/v1/data/item/201610/D/Y/A/J/7/F/DYAJ7F-A900799ZD000_57fd9b8c7cb6b.jpg
-16 /pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8HJ000_57d8b0e4d5f7f.jpg
-17 /pic/v1/data/item/201610/D/Y/A/J/8/4/DYAJ84-A9007KFVA000_57fc53b7b503e.jpg
-18 /pic/v1/data/item/201608/D/G/B/W/A/V/DGBWAV-A9005RJBR000_57c4ebebb7e91.jpg
-19 /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I82T000_57d8b0ab6c145.jpg
-20 /pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8IU000_57d8b0f5b5eb5.jpg
+6  /pic/v1/data/item/201609/D/Y/A/J/8/6/DYAJ86-A9007IBLG000_57d94e8665e50.jpg
+7  /pic/v1/data/item/201512/D/Y/A/F/5/4/DYAF54-A9006QTSD000_5680d9439b426.jpg
+8  /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007IBBO000_580d70548ba9f.jpg
+9  /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9J9000_57d94ef40d8bb.jpg
+10 /pic/v1/data/item/201610/D/G/A/X/7/3/DGAX73-A9006LF1U000_580c4c063befe.png
+11 /pic/v1/data/item/201610/D/Y/A/J/8/6/DYAJ86-A9007L0C8000_580477369264a.jpg
+12 /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D9000_580d668e36dd3.jpg
+13 /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IBJY000_57e91dd933954.jpg
+14 /pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8HJ000_57d8b0e4d5f7f.jpg
+15 /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007IDT5000_57d93ee657847.jpg
+16 /pic/v1/data/item/201610/D/Y/A/J/8/6/DYAJ86-A9007KOI7000_57ff1212b50d0.jpg
+17 /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D3000_580d70f996889.jpg
+18 /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9KO000_57d94ed0760cf.jpg
+19 /pic/v1/data/item/201609/D/Y/A/I/6/B/DYAI6B-A9007INQL000_57dfd372ba4b5.jpg
+20 /pic/v1/data/item/201610/D/Y/A/M/6/K/DYAM6K-A90078VOR000_5806d6f3d6d85.jpg
                                                                         name
 1                                                 Apple iPhone 7 Plus (128G)
-2                                  APPLE Lightning 8Pin 原廠傳輸充電線 200cm
-3                                                    Apple iPhone 7 (128G)★
-4                                           Apple 9.7吋 iPad Pro WiFi版 32GB
+2                                                      Apple iPhone 7 (128G)
+3                                                      Apple iPhone 7 (128G)
+4                                                      Apple iPhone 7 (128G)
 5                                                 Apple iPhone 7 Plus (128G)
-6                                                      Apple iPhone 7 (128G)
-7                                                      Apple iPhone 7 (128G)
-8                                               Apple iPhone 7 Plus (128G)★
-9  Apple Lightning 8pin 原廠USB傳輸線/充電線 兼容 Apple iPhone / iPad / iPod
-10                                                      Apple iPhone 7 (32G)
-11                                                Apple iPhone 7 Plus (128G)
-12                                                Apple iPhone 7 Plus (128G)
-13                                                     Apple iPhone 6s (32G)
-14                                 Apple iPhone 7 Plus (128GB)高階防水智慧機
-15                                                      Apple iPhone SE(64G)
-16                                                Apple iPhone 7 Plus (256G)
-17                                                 Apple iPhone 7 Plus (32G)
-18                                                  Apple iPad Air2 WiFi 64G
-19                                                     Apple iPhone 7 (128G)
-20                                                 Apple iPhone 7 Plus (32G)
+6                                               Apple iPhone 7 Plus (128G)★
+7  Apple Lightning 8pin 原廠USB傳輸線/充電線 兼容 Apple iPhone / iPad / iPod
+8                                                       Apple iPhone 7 (32G)
+9                                                 Apple iPhone 7 Plus (128G)
+10                                                   Apple TV 32G(MGY52TA/A)
+11                                          Apple iPhone 7 Plus (128G)曜石黑
+12                                                     Apple iPhone 7 (128G)
+13                                                   Apple iPhone 7 (128G)★
+14                                                Apple iPhone 7 Plus (256G)
+15                                                      Apple iPhone 7 (32G)
+16                                                Apple iPhone 7 Plus (128G)
+17                                                      Apple iPhone 7 (32G)
+18                                                Apple iPhone 7 Plus (128G)
+19                    Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶
+20                                          Apple 9.7吋 iPad Pro WiFi版 32GB
                                                                                                                           describe
 1                                                                        ★行電萬用週邊組!!★Apple iPhone 7 Plus (128G) 智慧型手機
-2   ▼每日強檔‧瘋殺特賣▼★Apple Lightning 8pin新款 原廠傳輸線-200cm★USB充電線/數據線 for iPhone 7/7plus/6s/6 Plus/ipad air2/air
-3                                                                                黑色|玫瑰金★行電防護週邊組Apple iPhone 7 (128G) 
-4                                                                             ▼送9H 耐磨鋼化玻璃保護貼▼9.7吋 iPad Pro Wi-Fi 32GB
-5                                                                       四色★搭配保殼+玻璃貼+MFi傳輸線Apple iPhone 7 Plus (128G) 
-6                                                                     四色★送行動電源+專屬氣墊空壓殼+保護貼Apple iPhone 7 (128G) 
-7                                                                                        ★搭配保護殼+玻璃貼Apple iPhone 7 (128G) 
-8                                                                           黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) 
-9                for Apple iPhone 6/6 Plus iPhone 6s/6s Plus iPhon 5S/5 原廠傳輸線/充電線Lightning 兼容 Apple iPhone / iPad / iPod
-10                                                                四色★加送藍牙耳機+氣墊空壓殼+保護貼+觸控筆Apple iPhone 7 (32G) 
-11                                                                           黑∥粉★送玻璃保貼+藍牙耳機Apple iPhone 7 Plus (128G)
-12                                                                                銀色|金色★行電周邊組Apple iPhone 7 Plus (128G) 
-13                                                                                 灰金銀★Line充電器周邊組★Apple iPhone 6s (32G)
-14                                                               ★預購★  ★贈保護套★  Apple iPhone 7 Plus (128GB)高階防水智慧機
-15                                                                       ★送Kitty行電+MFi線+授權保貼+授權保殼Apple iPhone SE(64G)
-16                                                                       ★行電萬用週邊組!!★Apple iPhone 7 Plus (256G) 智慧型手機
-17                                                                      三色★送藍芽耳機+觸控筆+手機立架Apple iPhone 7 Plus (32G) 
-18                                                                                                 Apple iPad Air2 9.7吋 WiFi 64G 
-19                                                                            ★行電萬用週邊組!!★Apple iPhone 7 (128G) 智慧型手機
-20                                                                      ★行電萬用週邊組!!★ Apple iPhone 7 Plus (32G) 智慧型手機 
-   price author brand publishDate isNC17      couponActid
-1  35900                               0                 
-2    480                               0                 
-3  29900                               0                 
-4  19900                               0                 
-5  34990                               0                 
-6  29888                               0                 
-7  29700                               0                 
-8  36500                               0                 
-9    349                               0                 
-10 25990                               0                 
-11 36990                               0                 
-12 36500                               0                 
-13 21990                               0                 
-14 34500                               0                 
-15 18500                               0                 
-16 39900                               0                 
-17 31999                               0 C000479, C000480
-18 15690                               0                 
-19 30690                               0                 
-20 31690                               0                 
+2                                                         ▼每日強檔‧瘋殺特賣▼黑色|玫瑰金★送保護殼+玻璃貼Apple iPhone 7 (128G) 
+3                                                                                        ★搭配保護殼+玻璃貼Apple iPhone 7 (128G) 
+4                                                                     四色★送行動電源+專屬氣墊空壓殼+保護貼Apple iPhone 7 (128G) 
+5                                                                                      四色★行電周邊組Apple iPhone 7 Plus (128G) 
+6                                                                           黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) 
+7  for Apple iphone7/7Plus iPhone 6/6 Plus iPhone 6s/6s Plus iPhon 5S/5 原廠傳輸線/充電線Lightning 兼容 Apple iPhone / iPad / iPod
+8                                                                                         ★搭配保護殼+玻璃貼Apple iPhone 7 (32G) 
+9                                                                           黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) 
+10                                                                                   ▼每日強檔‧瘋殺特賣▼Apple TV 32G(MGY52TA/A)
+11                                                               ★行電萬用週邊組!!★Apple iPhone 7 Plus (128G) 智慧型手機-曜石黑 
+12                                                          ▼每日強檔‧瘋殺特賣▼銀色|金色★送保護殼+玻璃貼Apple iPhone 7 (128G) 
+13                                                                               黑色|玫瑰金★行電防護週邊組Apple iPhone 7 (128G) 
+14                                                                       ★行電萬用週邊組!!★Apple iPhone 7 Plus (256G) 智慧型手機
+15                                                                四色★加送藍牙耳機+氣墊空壓殼+保護貼+觸控筆Apple iPhone 7 (32G) 
+16                                                                                     黑色★行電週邊組Apple iPhone 7 Plus (128G) 
+17                                                              ▼每日強檔‧瘋殺特賣▼黑色|玫瑰金★週邊防護組Apple iPhone 7 (32G) 
+18                                                                                銀色|金色★行電周邊組Apple iPhone 7 Plus (128G) 
+19                                                                          Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶
+20                                                                            ▼送9H 耐磨鋼化玻璃保護貼▼9.7吋 iPad Pro Wi-Fi 32GB
+   price author brand publishDate isNC17 couponActid
+1  35900                               0        NULL
+2  28990                               0        NULL
+3  28990                               0        NULL
+4  29888                               0        NULL
+5  36500                               0        NULL
+6  36500                               0        NULL
+7    349                               0        NULL
+8  25900                               0        NULL
+9  36900                               0        NULL
+10  5190                               0        NULL
+11 37900                               0        NULL
+12 28990                               0        NULL
+13 29900                               0        NULL
+14 39900                               0        NULL
+15 25990                               0        NULL
+16 36900                               0        NULL
+17 24990                               0        NULL
+18 36500                               0        NULL
+19 13500                               0        NULL
+20 19900                               0        NULL
 ```
 
 【Parser】解析所得資料：結構化資料
@@ -1178,13 +1183,13 @@ res_list
 
 ```
 $QTime
-[1] 60
+[1] 58
 
 $totalRows
-[1] 56258
+[1] 56504
 
 $totalPage
-[1] 2813
+[1] 2826
 
 $range
 $range$min
@@ -1249,25 +1254,25 @@ list()
 
 $prods[[2]]
 $prods[[2]]$Id
-[1] "DYAP00-A9006VVZN"
+[1] "DYAJ81-A9007I9EM"
 
 $prods[[2]]$cateId
-[1] "DYAP00"
+[1] "DYAJ83"
 
 $prods[[2]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/P/0/0/sDYAP00-A9006VVZN000_57d67b65dd78b.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9EM000_57ec7c2e969b4.jpg"
 
 $prods[[2]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/P/0/0/DYAP00-A9006VVZN000_58057e27c3080.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9EM000_580d66431a6fc.jpg"
 
 $prods[[2]]$name
-[1] "APPLE Lightning 8Pin 原廠傳輸充電線 200cm"
+[1] "Apple iPhone 7 (128G)"
 
 $prods[[2]]$describe
-[1] " ▼每日強檔‧瘋殺特賣▼★Apple Lightning 8pin新款 原廠傳輸線-200cm★USB充電線/數據線 for iPhone 7/7plus/6s/6 Plus/ipad air2/air"
+[1] "▼每日強檔‧瘋殺特賣▼黑色|玫瑰金★送保護殼+玻璃貼Apple iPhone 7 (128G) "
 
 $prods[[2]]$price
-[1] 480
+[1] 28990
 
 $prods[[2]]$author
 [1] ""
@@ -1287,25 +1292,25 @@ list()
 
 $prods[[3]]
 $prods[[3]]$Id
-[1] "DYAJ83-A9007IBJY"
+[1] "DYAJ83-A9007IBBS"
 
 $prods[[3]]$cateId
 [1] "DYAJ83"
 
 $prods[[3]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBJY000_57dad31bc2bfb.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBBS000_57d94a278d691.jpg"
 
 $prods[[3]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IBJY000_57e91dd933954.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/3/DYAJ83-A9007IBBS000_57fc4fc37d8da.jpg"
 
 $prods[[3]]$name
-[1] "Apple iPhone 7 (128G)★"
+[1] "Apple iPhone 7 (128G)"
 
 $prods[[3]]$describe
-[1] "黑色|玫瑰金★行電防護週邊組Apple iPhone 7 (128G) "
+[1] "★搭配保護殼+玻璃貼Apple iPhone 7 (128G) "
 
 $prods[[3]]$price
-[1] 29900
+[1] 28990
 
 $prods[[3]]$author
 [1] ""
@@ -1325,25 +1330,25 @@ list()
 
 $prods[[4]]
 $prods[[4]]$Id
-[1] "DYAM6K-A90078VOR"
+[1] "DYAJ83-A9007IDT3"
 
 $prods[[4]]$cateId
-[1] "DYAM6K"
+[1] "DYAJ83"
 
 $prods[[4]]$picS
-[1] "/pic/v1/data/item/201605/D/Y/A/M/6/K/sDYAM6K-A90078VOR000_573afef9962c0.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IDT3000_57d941c728d56.jpg"
 
 $prods[[4]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/M/6/K/DYAM6K-A90078VOR000_5806d6f3d6d85.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IDT3000_57d941c7277d5.jpg"
 
 $prods[[4]]$name
-[1] "Apple 9.7吋 iPad Pro WiFi版 32GB"
+[1] "Apple iPhone 7 (128G)"
 
 $prods[[4]]$describe
-[1] "▼送9H 耐磨鋼化玻璃保護貼▼9.7吋 iPad Pro Wi-Fi 32GB"
+[1] "四色★送行動電源+專屬氣墊空壓殼+保護貼Apple iPhone 7 (128G) "
 
 $prods[[4]]$price
-[1] 19900
+[1] 29888
 
 $prods[[4]]$author
 [1] ""
@@ -1378,10 +1383,10 @@ $prods[[5]]$name
 [1] "Apple iPhone 7 Plus (128G)"
 
 $prods[[5]]$describe
-[1] "四色★搭配保殼+玻璃貼+MFi傳輸線Apple iPhone 7 Plus (128G) "
+[1] "四色★行電周邊組Apple iPhone 7 Plus (128G) "
 
 $prods[[5]]$price
-[1] 34990
+[1] 36500
 
 $prods[[5]]$author
 [1] ""
@@ -1401,25 +1406,25 @@ list()
 
 $prods[[6]]
 $prods[[6]]$Id
-[1] "DYAJ83-A9007IDT3"
+[1] "DYAJ86-A9007IBLG"
 
 $prods[[6]]$cateId
-[1] "DYAJ83"
+[1] "DYAJ86"
 
 $prods[[6]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IDT3000_57d941c728d56.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/6/sDYAJ86-A9007IBLG000_57daff1722be3.jpg"
 
 $prods[[6]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IDT3000_57d941c7277d5.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/6/DYAJ86-A9007IBLG000_57d94e8665e50.jpg"
 
 $prods[[6]]$name
-[1] "Apple iPhone 7 (128G)"
+[1] "Apple iPhone 7 Plus (128G)★"
 
 $prods[[6]]$describe
-[1] "四色★送行動電源+專屬氣墊空壓殼+保護貼Apple iPhone 7 (128G) "
+[1] "黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) "
 
 $prods[[6]]$price
-[1] 29888
+[1] 36500
 
 $prods[[6]]$author
 [1] ""
@@ -1439,25 +1444,25 @@ list()
 
 $prods[[7]]
 $prods[[7]]$Id
-[1] "DYAJ83-A9007IBBS"
+[1] "DYAF54-A9006QTSD"
 
 $prods[[7]]$cateId
-[1] "DYAJ83"
+[1] "DYAP00"
 
 $prods[[7]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBBS000_57d94a278d691.jpg"
+[1] "/pic/v1/data/item/201512/D/Y/A/F/5/4/sDYAF54-A9006QTSD000_5680d9439fe62.jpg"
 
 $prods[[7]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/J/8/3/DYAJ83-A9007IBBS000_57fc4fc37d8da.jpg"
+[1] "/pic/v1/data/item/201512/D/Y/A/F/5/4/DYAF54-A9006QTSD000_5680d9439b426.jpg"
 
 $prods[[7]]$name
-[1] "Apple iPhone 7 (128G)"
+[1] "Apple Lightning 8pin 原廠USB傳輸線/充電線 兼容 Apple iPhone / iPad / iPod"
 
 $prods[[7]]$describe
-[1] "★搭配保護殼+玻璃貼Apple iPhone 7 (128G) "
+[1] "for Apple iphone7/7Plus iPhone 6/6 Plus iPhone 6s/6s Plus iPhon 5S/5 原廠傳輸線/充電線Lightning 兼容 Apple iPhone / iPad / iPod"
 
 $prods[[7]]$price
-[1] 29700
+[1] 349
 
 $prods[[7]]$author
 [1] ""
@@ -1477,25 +1482,25 @@ list()
 
 $prods[[8]]
 $prods[[8]]$Id
-[1] "DYAJ86-A9007IBLG"
+[1] "DYAJ81-A9007IBBO"
 
 $prods[[8]]$cateId
-[1] "DYAJ86"
+[1] "DYAJ81"
 
 $prods[[8]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/6/sDYAJ86-A9007IBLG000_57daff1722be3.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IBBO000_57d93f818e5ae.jpg"
 
 $prods[[8]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/6/DYAJ86-A9007IBLG000_57d94e8665e50.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007IBBO000_580d70548ba9f.jpg"
 
 $prods[[8]]$name
-[1] "Apple iPhone 7 Plus (128G)★"
+[1] "Apple iPhone 7 (32G)"
 
 $prods[[8]]$describe
-[1] "黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) "
+[1] "★搭配保護殼+玻璃貼Apple iPhone 7 (32G) "
 
 $prods[[8]]$price
-[1] 36500
+[1] 25900
 
 $prods[[8]]$author
 [1] ""
@@ -1515,25 +1520,25 @@ list()
 
 $prods[[9]]
 $prods[[9]]$Id
-[1] "DYAF54-A9006QTSD"
+[1] "DYAJ81-A9007I9J9"
 
 $prods[[9]]$cateId
-[1] "DYAP00"
+[1] "DYAJ86"
 
 $prods[[9]]$picS
-[1] "/pic/v1/data/item/201512/D/Y/A/F/5/4/sDYAF54-A9006QTSD000_5680d9439fe62.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9J9000_57dafcac6141f.jpg"
 
 $prods[[9]]$picB
-[1] "/pic/v1/data/item/201512/D/Y/A/F/5/4/DYAF54-A9006QTSD000_5680d9439b426.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9J9000_57d94ef40d8bb.jpg"
 
 $prods[[9]]$name
-[1] "Apple Lightning 8pin 原廠USB傳輸線/充電線 兼容 Apple iPhone / iPad / iPod"
+[1] "Apple iPhone 7 Plus (128G)"
 
 $prods[[9]]$describe
-[1] "for Apple iPhone 6/6 Plus iPhone 6s/6s Plus iPhon 5S/5 原廠傳輸線/充電線Lightning 兼容 Apple iPhone / iPad / iPod"
+[1] "黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) "
 
 $prods[[9]]$price
-[1] 349
+[1] 36900
 
 $prods[[9]]$author
 [1] ""
@@ -1553,25 +1558,25 @@ list()
 
 $prods[[10]]
 $prods[[10]]$Id
-[1] "DYAJ81-A9007IDT5"
+[1] "DGAX73-A9006LF1U"
 
 $prods[[10]]$cateId
-[1] "DYAJ81"
+[1] "DGAX73"
 
 $prods[[10]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IDT5000_57d93ee659028.jpg"
+[1] "/pic/v1/data/item/201510/D/G/A/X/7/3/sDGAX73-A9006LF1U000_56331db66b5d3.jpg"
 
 $prods[[10]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007IDT5000_57d93ee657847.jpg"
+[1] "/pic/v1/data/item/201610/D/G/A/X/7/3/DGAX73-A9006LF1U000_580c4c063befe.png"
 
 $prods[[10]]$name
-[1] "Apple iPhone 7 (32G)"
+[1] "Apple TV 32G(MGY52TA/A)"
 
 $prods[[10]]$describe
-[1] "四色★加送藍牙耳機+氣墊空壓殼+保護貼+觸控筆Apple iPhone 7 (32G) "
+[1] " ▼每日強檔‧瘋殺特賣▼Apple TV 32G(MGY52TA/A)"
 
 $prods[[10]]$price
-[1] 25990
+[1] 5190
 
 $prods[[10]]$author
 [1] ""
@@ -1591,25 +1596,25 @@ list()
 
 $prods[[11]]
 $prods[[11]]$Id
-[1] "DYAJ83-A9007JH3N"
+[1] "DYAJ86-A9007L0C8"
 
 $prods[[11]]$cateId
 [1] "DYAJ86"
 
 $prods[[11]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007JH3N000_57ec8e7556210.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/6/sDYAJ86-A9007L0C8000_5804773694972.jpg"
 
 $prods[[11]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007JH3N000_57ec8e75513f5.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/6/DYAJ86-A9007L0C8000_580477369264a.jpg"
 
 $prods[[11]]$name
-[1] "Apple iPhone 7 Plus (128G)"
+[1] "Apple iPhone 7 Plus (128G)曜石黑"
 
 $prods[[11]]$describe
-[1] "黑∥粉★送玻璃保貼+藍牙耳機Apple iPhone 7 Plus (128G)"
+[1] "★行電萬用週邊組!!★Apple iPhone 7 Plus (128G) 智慧型手機-曜石黑 "
 
 $prods[[11]]$price
-[1] 36990
+[1] 37900
 
 $prods[[11]]$author
 [1] ""
@@ -1629,25 +1634,25 @@ list()
 
 $prods[[12]]
 $prods[[12]]$Id
-[1] "DYAJ81-A9007I9KO"
+[1] "DYAJ81-A9007I9D9"
 
 $prods[[12]]$cateId
-[1] "DYAJ86"
+[1] "DYAJ83"
 
 $prods[[12]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9KO000_57dafe0947c50.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D9000_57dad9556e595.jpg"
 
 $prods[[12]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9KO000_57d94ed0760cf.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D9000_580d668e36dd3.jpg"
 
 $prods[[12]]$name
-[1] "Apple iPhone 7 Plus (128G)"
+[1] "Apple iPhone 7 (128G)"
 
 $prods[[12]]$describe
-[1] "銀色|金色★行電周邊組Apple iPhone 7 Plus (128G) "
+[1] "▼每日強檔‧瘋殺特賣▼銀色|金色★送保護殼+玻璃貼Apple iPhone 7 (128G) "
 
 $prods[[12]]$price
-[1] 36500
+[1] 28990
 
 $prods[[12]]$author
 [1] ""
@@ -1667,25 +1672,25 @@ list()
 
 $prods[[13]]
 $prods[[13]]$Id
-[1] "DYAJ87-A9007ID8H"
+[1] "DYAJ83-A9007IBJY"
 
 $prods[[13]]$cateId
-[1] "DYAJ87"
+[1] "DYAJ83"
 
 $prods[[13]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/7/sDYAJ87-A9007ID8H000_57d955682b1da.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBJY000_57dad31bc2bfb.jpg"
 
 $prods[[13]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/7/DYAJ87-A9007ID8H000_57d9556829b82.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IBJY000_57e91dd933954.jpg"
 
 $prods[[13]]$name
-[1] "Apple iPhone 6s (32G)"
+[1] "Apple iPhone 7 (128G)★"
 
 $prods[[13]]$describe
-[1] "灰金銀★Line充電器周邊組★Apple iPhone 6s (32G)"
+[1] "黑色|玫瑰金★行電防護週邊組Apple iPhone 7 (128G) "
 
 $prods[[13]]$price
-[1] 21990
+[1] 29900
 
 $prods[[13]]$author
 [1] ""
@@ -1705,25 +1710,25 @@ list()
 
 $prods[[14]]
 $prods[[14]]$Id
-[1] "QAANAL-A9007I61F"
+[1] "DYAJ84-A9007I8HJ"
 
 $prods[[14]]$cateId
-[1] "QAANAL"
+[1] "DYAJ85"
 
 $prods[[14]]$picS
-[1] "/pic/v1/data/item/201609/Q/A/A/N/A/L/sQAANAL-A9007I61F000_57d66f0e56027.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8HJ000_57d7b66b5c2f1.jpg"
 
 $prods[[14]]$picB
-[1] "/pic/v1/data/item/201609/Q/A/A/N/A/L/QAANAL-A9007I61F000_57d66f0e53530.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8HJ000_57d8b0e4d5f7f.jpg"
 
 $prods[[14]]$name
-[1] "Apple iPhone 7 Plus (128GB)高階防水智慧機"
+[1] "Apple iPhone 7 Plus (256G)"
 
 $prods[[14]]$describe
-[1] "★預購★  ★贈保護套★  Apple iPhone 7 Plus (128GB)高階防水智慧機"
+[1] "★行電萬用週邊組!!★Apple iPhone 7 Plus (256G) 智慧型手機"
 
 $prods[[14]]$price
-[1] 34500
+[1] 39900
 
 $prods[[14]]$author
 [1] ""
@@ -1743,25 +1748,25 @@ list()
 
 $prods[[15]]
 $prods[[15]]$Id
-[1] "DYAJ7F-A900799ZD"
+[1] "DYAJ81-A9007IDT5"
 
 $prods[[15]]$cateId
-[1] "DYAJ7F"
+[1] "DYAJ81"
 
 $prods[[15]]$picS
-[1] "/pic/v1/data/item/201605/D/Y/A/J/7/F/sDYAJ7F-A900799ZD000_5742e8e64dacc.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IDT5000_57d93ee659028.jpg"
 
 $prods[[15]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/J/7/F/DYAJ7F-A900799ZD000_57fd9b8c7cb6b.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007IDT5000_57d93ee657847.jpg"
 
 $prods[[15]]$name
-[1] "Apple iPhone SE(64G)"
+[1] "Apple iPhone 7 (32G)"
 
 $prods[[15]]$describe
-[1] "★送Kitty行電+MFi線+授權保貼+授權保殼Apple iPhone SE(64G)"
+[1] "四色★加送藍牙耳機+氣墊空壓殼+保護貼+觸控筆Apple iPhone 7 (32G) "
 
 $prods[[15]]$price
-[1] 18500
+[1] 25990
 
 $prods[[15]]$author
 [1] ""
@@ -1781,25 +1786,25 @@ list()
 
 $prods[[16]]
 $prods[[16]]$Id
-[1] "DYAJ84-A9007I8HJ"
+[1] "DYAJ86-A9007KOI7"
 
 $prods[[16]]$cateId
-[1] "DYAJ85"
+[1] "DYAJ86"
 
 $prods[[16]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8HJ000_57d7b66b5c2f1.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/6/sDYAJ86-A9007KOI7000_57ff1212b6c0a.jpg"
 
 $prods[[16]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8HJ000_57d8b0e4d5f7f.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/6/DYAJ86-A9007KOI7000_57ff1212b50d0.jpg"
 
 $prods[[16]]$name
-[1] "Apple iPhone 7 Plus (256G)"
+[1] "Apple iPhone 7 Plus (128G)"
 
 $prods[[16]]$describe
-[1] "★行電萬用週邊組!!★Apple iPhone 7 Plus (256G) 智慧型手機"
+[1] "黑色★行電週邊組Apple iPhone 7 Plus (128G) "
 
 $prods[[16]]$price
-[1] 39900
+[1] 36900
 
 $prods[[16]]$author
 [1] ""
@@ -1819,25 +1824,25 @@ list()
 
 $prods[[17]]
 $prods[[17]]$Id
-[1] "DYAJ84-A9007KFVA"
+[1] "DYAJ81-A9007I9D3"
 
 $prods[[17]]$cateId
-[1] "DYAJ84"
+[1] "DYAJ81"
 
 $prods[[17]]$picS
-[1] "/pic/v1/data/item/201610/D/Y/A/J/8/4/sDYAJ84-A9007KFVA000_57fc53b7b6285.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D3000_57daaa9098d9e.jpg"
 
 $prods[[17]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/J/8/4/DYAJ84-A9007KFVA000_57fc53b7b503e.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D3000_580d70f996889.jpg"
 
 $prods[[17]]$name
-[1] "Apple iPhone 7 Plus (32G)"
+[1] "Apple iPhone 7 (32G)"
 
 $prods[[17]]$describe
-[1] "三色★送藍芽耳機+觸控筆+手機立架Apple iPhone 7 Plus (32G) "
+[1] "▼每日強檔‧瘋殺特賣▼黑色|玫瑰金★週邊防護組Apple iPhone 7 (32G) "
 
 $prods[[17]]$price
-[1] 31999
+[1] 24990
 
 $prods[[17]]$author
 [1] ""
@@ -1852,35 +1857,30 @@ $prods[[17]]$isNC17
 [1] 0
 
 $prods[[17]]$couponActid
-$prods[[17]]$couponActid[[1]]
-[1] "C000479"
-
-$prods[[17]]$couponActid[[2]]
-[1] "C000480"
-
+list()
 
 
 $prods[[18]]
 $prods[[18]]$Id
-[1] "DGBWAV-A9005RJBR"
+[1] "DYAJ81-A9007I9KO"
 
 $prods[[18]]$cateId
-[1] "DYAM59"
+[1] "DYAJ86"
 
 $prods[[18]]$picS
-[1] "/pic/v1/data/item/201412/D/G/B/W/A/V/sDGBWAV-A9005RJBR000_54915252218fe.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9KO000_57dafe0947c50.jpg"
 
 $prods[[18]]$picB
-[1] "/pic/v1/data/item/201608/D/G/B/W/A/V/DGBWAV-A9005RJBR000_57c4ebebb7e91.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9KO000_57d94ed0760cf.jpg"
 
 $prods[[18]]$name
-[1] "Apple iPad Air2 WiFi 64G"
+[1] "Apple iPhone 7 Plus (128G)"
 
 $prods[[18]]$describe
-[1] "Apple iPad Air2 9.7吋 WiFi 64G "
+[1] "銀色|金色★行電周邊組Apple iPhone 7 Plus (128G) "
 
 $prods[[18]]$price
-[1] 15690
+[1] 36500
 
 $prods[[18]]$author
 [1] ""
@@ -1900,25 +1900,25 @@ list()
 
 $prods[[19]]
 $prods[[19]]$Id
-[1] "DYAJ81-A9007I82T"
+[1] "DYAI6B-A9007INQL"
 
 $prods[[19]]$cateId
-[1] "DYAJ83"
+[1] "DYAI6B"
 
 $prods[[19]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I82T000_57d791ec23934.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/I/6/B/sDYAI6B-A9007INQL000_57dfd372bb376.jpg"
 
 $prods[[19]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I82T000_57d8b0ab6c145.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/I/6/B/DYAI6B-A9007INQL000_57dfd372ba4b5.jpg"
 
 $prods[[19]]$name
-[1] "Apple iPhone 7 (128G)"
+[1] "Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶"
 
 $prods[[19]]$describe
-[1] "★行電萬用週邊組!!★Apple iPhone 7 (128G) 智慧型手機"
+[1] "Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶"
 
 $prods[[19]]$price
-[1] 30690
+[1] 13500
 
 $prods[[19]]$author
 [1] ""
@@ -1938,25 +1938,25 @@ list()
 
 $prods[[20]]
 $prods[[20]]$Id
-[1] "DYAJ84-A9007I8IU"
+[1] "DYAM6K-A90078VOR"
 
 $prods[[20]]$cateId
-[1] "DYAJ84"
+[1] "DYAM6K"
 
 $prods[[20]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8IU000_57d7b6a554a95.jpg"
+[1] "/pic/v1/data/item/201605/D/Y/A/M/6/K/sDYAM6K-A90078VOR000_573afef9962c0.jpg"
 
 $prods[[20]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8IU000_57d8b0f5b5eb5.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/M/6/K/DYAM6K-A90078VOR000_5806d6f3d6d85.jpg"
 
 $prods[[20]]$name
-[1] "Apple iPhone 7 Plus (32G)"
+[1] "Apple 9.7吋 iPad Pro WiFi版 32GB"
 
 $prods[[20]]$describe
-[1] "★行電萬用週邊組!!★ Apple iPhone 7 Plus (32G) 智慧型手機 "
+[1] "▼送9H 耐磨鋼化玻璃保護貼▼9.7吋 iPad Pro Wi-Fi 32GB"
 
 $prods[[20]]$price
-[1] 31690
+[1] 19900
 
 $prods[[20]]$author
 [1] ""
