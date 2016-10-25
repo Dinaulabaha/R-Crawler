@@ -183,12 +183,13 @@ Coefficients:
 
 ```r
 library(plotly)
-set.seed(100)
-d <- diamonds[sample(nrow(diamonds), 1000), ]
-p <- plot_ly(d, x = ~carat, y = ~price, z = ~depth, color = ~color) %>%
-  add_markers(text = ~paste("Clarity: ", clarity))
+kd = with(MASS::geyser, 
+           MASS::kde2d(duration, waiting, n = 50))
+p = 
+  plot_ly(x = kd$x, y = kd$y, z = kd$z) %>% 
+  add_surface()
 ```
-<iframe src="https://miaochien.github.io/R-Crawler/data/plotly_demo.html" style="position:absolute;height:150%;width:150%"></iframe>
+<iframe src="https://miaochien.github.io/R-Crawler/data/plotly_demo.html" style="position:absolute;height:1500px;width:1800px"></iframe>
 
 
 
@@ -540,7 +541,7 @@ res
 
 ```
 Response [http://httpbin.org/get?q=hihi]
-  Date: 2016-10-25 14:07
+  Date: 2016-10-25 14:25
   Status: 200
   Content-Type: application/json
   Size: 380 B
@@ -582,16 +583,20 @@ res %>%
 ```
 
 ```
- [1] "[問卦] 有沒有帶風向的八卦"                    
- [2] "[ＦＢ] Peter Su  喵~"                         
- [3] "Re: [問卦] 娶大陸新娘花20萬 娶越南新娘35萬"   
- [4] "[新聞] 被海盜囚禁的日子　沈瑞章：水是他們的武"
- [5] "[問卦] 明天要考解剖學，男友還在看中職"        
- [6] "[公告] 八卦板板規(2016.08.16)"                
- [7] "10/20 Am0800-1030 基隆仁一路與愛三路行車記錄" 
- [8] "[爆卦] 10/25拒砍七天假大遊行"                 
- [9] "[協尋]10/17高雄市中正一路與大同一路行車紀錄器"
-[10] "[公告] 十月份置底懶叫閒聊區^Q^"               
+ [1] "Re: [問卦] 為什麼打擊海盜會有國際疑慮？"      
+ [2] "[問卦] 美加邊界 美墨邊界怎麼差這麼多？"       
+ [3] "[問卦] 女生比較好約跑嗎？"                    
+ [4] "[問卦] 這個時間點千萬不能看的影片。"          
+ [5] "[問卦] 有沒有網襪配破褲的八卦？"              
+ [6] "Fw: [協尋]博美被比特咬死、求轉證人"           
+ [7] "[問卦] 那些辱罵是沒被吉過哦？"                
+ [8] "[問卦] 女生喜歡穿Derrick Rose的1號球衣?"      
+ [9] "[問卦]花學姐比較喜歡中國還是美國?"            
+[10] "[公告] 八卦板板規(2016.08.16)"                
+[11] "[爆卦] 10/25拒砍七天假大遊行"                 
+[12] "[協尋]10/17高雄市中正一路與大同一路行車紀錄器"
+[13] "[公告] 十月份置底懶叫閒聊區^Q^"               
+[14] "[協尋] 幫高調-協尋車號AJF-3090 鐵灰馬5"       
 ```
 
 【Connection】發送 HTTP request : POST Method
@@ -620,7 +625,7 @@ res
 
 ```
 Response [http://httpbin.org/post]
-  Date: 2016-10-25 14:07
+  Date: 2016-10-25 14:25
   Status: 200
   Content-Type: application/json
   Size: 543 B
@@ -1029,7 +1034,7 @@ res_df
 
 ```
 $QTime
-[1] 57
+[1] 59
 
 $totalRows
 [1] 56504
@@ -1199,7 +1204,7 @@ res_list
 
 ```
 $QTime
-[1] 57
+[1] 59
 
 $totalRows
 [1] 56504
@@ -2001,7 +2006,7 @@ list()
 </br>
 正則表達式[練習](https://regexone.com/)
 
-範例程式：RegEx.R
+範例程式：[RegEx.R](https://github.com/MiaoChien/R-Crawler/blob/master/Rscripts/RegEx.R)
 
 
 
@@ -2018,3 +2023,7 @@ list()
 - [RSQLite](https://cran.r-project.org/web/packages/RSQLite/RSQLite.pdf)
 - [RMySQL](https://cran.r-project.org/web/packages/RMySQL/RMySQL.pdf)
 - [RPostgreSQL](https://cran.r-project.org/web/packages/RPostgreSQL/RPostgreSQL.pdf)
+
+
+爬蟲自動化
+==================================================================

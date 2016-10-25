@@ -163,14 +163,14 @@ library(magrittr)
 配合視覺化作圖
 ```{r}
 library(plotly)
-set.seed(100)
-d <- diamonds[sample(nrow(diamonds), 1000), ]
-p <- plot_ly(d, x = ~carat, y = ~price, z = ~depth, color = ~color) %>%
-  add_markers(text = ~paste("Clarity: ", clarity))
-
+kd = with(MASS::geyser, 
+           MASS::kde2d(duration, waiting, n = 50))
+p = 
+  plot_ly(x = kd$x, y = kd$y, z = kd$z) %>% 
+  add_surface()
 
 ```
-<iframe src="https://miaochien.github.io/R-Crawler/data/plotly_demo.html" style="position:absolute;height:150%;width:150%"></iframe>
+<iframe src="https://miaochien.github.io/R-Crawler/data/plotly_demo.html" style="position:absolute;height:1500px;width:1800px"></iframe>
 
 
 
@@ -736,7 +736,7 @@ res_list
 </br>
 正則表達式[練習](https://regexone.com/)
 
-範例程式：RegEx.R
+範例程式：[RegEx.R](https://github.com/MiaoChien/R-Crawler/blob/master/Rscripts/RegEx.R)
 
 
 
@@ -753,3 +753,7 @@ res_list
 - [RSQLite](https://cran.r-project.org/web/packages/RSQLite/RSQLite.pdf)
 - [RMySQL](https://cran.r-project.org/web/packages/RMySQL/RMySQL.pdf)
 - [RPostgreSQL](https://cran.r-project.org/web/packages/RPostgreSQL/RPostgreSQL.pdf)
+
+
+爬蟲自動化
+==================================================================
