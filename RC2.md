@@ -536,10 +536,10 @@ res
 
 ```
 Response [http://httpbin.org/get?q=hihi]
-  Date: 2016-10-25 14:47
+  Date: 2016-10-26 03:10
   Status: 200
   Content-Type: application/json
-  Size: 380 B
+  Size: 381 B
 {
   "args": {
     "q": "hihi"
@@ -578,20 +578,16 @@ res %>%
 ```
 
 ```
- [1] "Re: [新聞] 蔡英文拍板　修法讓陸生納健保"          
- [2] "[新聞] 反砍假遊行　勞團不同調　桃市產總衝立院"    
- [3] "Re: [問卦] 這次母豬事件誰最傷？苗妞？渣本？蘇"    
- [4] "Re: [新聞] 談海盜綁架案　馬英九：過去外交部想介入"
- [5] "Re: [新聞] 挽救「斷崖式減少」　觀光局擬放寬陸客"  
- [6] "Re: [新聞] 勞基法修正案 協商破局 政院傾向 今年7天"
- [7] "[問卦] 若穆斯林反同婚，覺醒青年會轉彎嗎"          
- [8] "Re: [問卦] 世界大賽跟日本大賽  對台灣大賽的收視率"
- [9] "[問卦] 有沒有養ID就是為了約炮的八卦"              
-[10] "[公告] 八卦板板規(2016.08.16)"                    
-[11] "[爆卦] 10/25拒砍七天假大遊行"                     
-[12] "[協尋]10/17高雄市中正一路與大同一路行車紀錄器"    
-[13] "[公告] 十月份置底懶叫閒聊區^Q^"                   
-[14] "[協尋] 幫高調-協尋車號AJF-3090 鐵灰馬5"           
+ [1] "Re: [新聞] 陸客人潮銳減 士林夜市爆店面退租潮" 
+ [2] "[問卦] 會計師的槍（無雷）"                    
+ [3] "[問卦] AA到底錯在哪???"                       
+ [4] "Re: [問卦] 蘇美都還沒出手 怎麼人渣就先崩了?"  
+ [5] "[新聞] 韓國瑜嗆段宜康吞曲棍球 柯p：曲棍球多大"
+ [6] "[公告] 八卦板板規(2016.08.16)"                
+ [7] "[爆卦] 10/25拒砍七天假大遊行"                 
+ [8] "[協尋]10/17高雄市中山一路與大同一路行車紀錄器"
+ [9] "[協尋] 幫高調-協尋車號AJF-3090 鐵灰馬5"       
+[10] "[公告] 十月份置底懶叫閒聊區^Q^"               
 ```
 
 【Connection】發送 HTTP request : POST Method
@@ -620,10 +616,10 @@ res
 
 ```
 Response [http://httpbin.org/post]
-  Date: 2016-10-25 14:47
+  Date: 2016-10-26 03:10
   Status: 200
   Content-Type: application/json
-  Size: 543 B
+  Size: 544 B
 {
   "args": {}, 
   "data": "", 
@@ -1029,13 +1025,13 @@ res_df
 
 ```
 $QTime
-[1] 62
+[1] 87
 
 $totalRows
-[1] 56504
+[1] 56567
 
 $totalPage
-[1] 2826
+[1] 2829
 
 $range
 $range$min
@@ -1061,129 +1057,129 @@ $prods
                  Id cateId
 1  DYAJ84-A9007I8H1 DYAJ86
 2  DYAJ81-A9007I9EM DYAJ83
-3  DYAJ83-A9007IBBS DYAJ83
+3  DYAJ86-A9007IBEX DYAJ86
 4  DYAJ83-A9007IDT3 DYAJ83
-5  DYAJ86-A9007IBEX DYAJ86
+5  DYAP00-A9007KZQL DYAP00
 6  DYAJ86-A9007IBLG DYAJ86
 7  DYAF54-A9006QTSD DYAP00
-8  DYAJ81-A9007IBBO DYAJ81
-9  DYAJ81-A9007I9J9 DYAJ86
-10 DGAX73-A9006LF1U DGAX73
-11 DYAJ86-A9007L0C8 DYAJ86
-12 DYAJ81-A9007I9D9 DYAJ83
-13 DYAJ83-A9007IBJY DYAJ83
-14 DYAJ84-A9007I8HJ DYAJ85
-15 DYAJ81-A9007IDT5 DYAJ81
-16 DYAJ86-A9007KOI7 DYAJ86
-17 DYAJ81-A9007I9D3 DYAJ81
-18 DYAJ81-A9007I9KO DYAJ86
-19 DYAI6B-A9007INQL DYAI6B
-20 DYAM6K-A90078VOR DYAM6K
+8  DYAJ81-A9007I9J9 DYAJ86
+9  DYAJ81-A9007IBBO DYAJ81
+10 DYAJ83-A9007IBJY DYAJ83
+11 DYAJ81-A9007I9D9 DYAJ83
+12 DYAGBG-A9006WILK DYAR00
+13 DYAJ84-A9007I8HJ DYAJ85
+14 DYAJ81-A9007I9D3 DYAJ81
+15 DYAI6B-A9007INQL DYAI6B
+16 DYAJ81-A9007I9KO DYAJ86
+17 DGAX73-A9006LF1U DGAX73
+18 DYAM6K-A90078VOR DYAM6K
+19 DYAJ81-A9007IDT5 DYAJ81
+20 DYAJ84-A9007KFVA DYAJ84
                                                                           picS
 1  /pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8H1000_57d7b636dc001.jpg
 2  /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9EM000_57ec7c2e969b4.jpg
-3  /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBBS000_57d94a278d691.jpg
+3  /pic/v1/data/item/201609/D/Y/A/J/8/6/sDYAJ86-A9007IBEX000_57d94eb850e79.jpg
 4  /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IDT3000_57d941c728d56.jpg
-5  /pic/v1/data/item/201609/D/Y/A/J/8/6/sDYAJ86-A9007IBEX000_57d94eb850e79.jpg
+5  /pic/v1/data/item/201610/D/Y/A/P/0/0/sDYAP00-A9007KZQL000_58045be01eb9c.jpg
 6  /pic/v1/data/item/201609/D/Y/A/J/8/6/sDYAJ86-A9007IBLG000_57daff1722be3.jpg
 7  /pic/v1/data/item/201512/D/Y/A/F/5/4/sDYAF54-A9006QTSD000_5680d9439fe62.jpg
-8  /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IBBO000_57d93f818e5ae.jpg
-9  /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9J9000_57dafcac6141f.jpg
-10 /pic/v1/data/item/201510/D/G/A/X/7/3/sDGAX73-A9006LF1U000_56331db66b5d3.jpg
-11 /pic/v1/data/item/201610/D/Y/A/J/8/6/sDYAJ86-A9007L0C8000_5804773694972.jpg
-12 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D9000_57dad9556e595.jpg
-13 /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBJY000_57dad31bc2bfb.jpg
-14 /pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8HJ000_57d7b66b5c2f1.jpg
-15 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IDT5000_57d93ee659028.jpg
-16 /pic/v1/data/item/201610/D/Y/A/J/8/6/sDYAJ86-A9007KOI7000_57ff1212b6c0a.jpg
-17 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D3000_57daaa9098d9e.jpg
-18 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9KO000_57dafe0947c50.jpg
-19 /pic/v1/data/item/201609/D/Y/A/I/6/B/sDYAI6B-A9007INQL000_57dfd372bb376.jpg
-20 /pic/v1/data/item/201605/D/Y/A/M/6/K/sDYAM6K-A90078VOR000_573afef9962c0.jpg
+8  /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9J9000_57dafcac6141f.jpg
+9  /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IBBO000_57d93f818e5ae.jpg
+10 /pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBJY000_57dad31bc2bfb.jpg
+11 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D9000_57dad9556e595.jpg
+12 /pic/v1/data/item/201603/D/Y/A/G/B/G/sDYAGBG-A9006WILK000_56ea94f2d5706.jpg
+13 /pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8HJ000_57d7b66b5c2f1.jpg
+14 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D3000_57daaa9098d9e.jpg
+15 /pic/v1/data/item/201609/D/Y/A/I/6/B/sDYAI6B-A9007INQL000_57dfd372bb376.jpg
+16 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9KO000_57dafe0947c50.jpg
+17 /pic/v1/data/item/201510/D/G/A/X/7/3/sDGAX73-A9006LF1U000_56331db66b5d3.jpg
+18 /pic/v1/data/item/201605/D/Y/A/M/6/K/sDYAM6K-A90078VOR000_573afef9962c0.jpg
+19 /pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IDT5000_57d93ee659028.jpg
+20 /pic/v1/data/item/201610/D/Y/A/J/8/4/sDYAJ84-A9007KFVA000_57fc53b7b6285.jpg
                                                                          picB
 1  /pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8H1000_57d8b0d140874.jpg
-2  /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9EM000_580d66431a6fc.jpg
-3  /pic/v1/data/item/201610/D/Y/A/J/8/3/DYAJ83-A9007IBBS000_57fc4fc37d8da.jpg
+2  /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9EM000_5810115e38380.jpg
+3  /pic/v1/data/item/201609/D/Y/A/J/8/6/DYAJ86-A9007IBEX000_57d94eb84fa9f.jpg
 4  /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IDT3000_57d941c7277d5.jpg
-5  /pic/v1/data/item/201609/D/Y/A/J/8/6/DYAJ86-A9007IBEX000_57d94eb84fa9f.jpg
+5  /pic/v1/data/item/201610/D/Y/A/P/0/0/DYAP00-A9007KZQL000_58101314ed60a.jpg
 6  /pic/v1/data/item/201609/D/Y/A/J/8/6/DYAJ86-A9007IBLG000_57d94e8665e50.jpg
 7  /pic/v1/data/item/201512/D/Y/A/F/5/4/DYAF54-A9006QTSD000_5680d9439b426.jpg
-8  /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007IBBO000_580d70548ba9f.jpg
-9  /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9J9000_57d94ef40d8bb.jpg
-10 /pic/v1/data/item/201610/D/G/A/X/7/3/DGAX73-A9006LF1U000_580c4c063befe.png
-11 /pic/v1/data/item/201610/D/Y/A/J/8/6/DYAJ86-A9007L0C8000_580477369264a.jpg
-12 /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D9000_580d668e36dd3.jpg
-13 /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IBJY000_57e91dd933954.jpg
-14 /pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8HJ000_57d8b0e4d5f7f.jpg
-15 /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007IDT5000_57d93ee657847.jpg
-16 /pic/v1/data/item/201610/D/Y/A/J/8/6/DYAJ86-A9007KOI7000_57ff1212b50d0.jpg
-17 /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D3000_580d70f996889.jpg
-18 /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9KO000_57d94ed0760cf.jpg
-19 /pic/v1/data/item/201609/D/Y/A/I/6/B/DYAI6B-A9007INQL000_57dfd372ba4b5.jpg
-20 /pic/v1/data/item/201610/D/Y/A/M/6/K/DYAM6K-A90078VOR000_5806d6f3d6d85.jpg
-                                                                        name
-1                                                 Apple iPhone 7 Plus (128G)
-2                                                      Apple iPhone 7 (128G)
-3                                                      Apple iPhone 7 (128G)
-4                                                      Apple iPhone 7 (128G)
-5                                                 Apple iPhone 7 Plus (128G)
-6                                               Apple iPhone 7 Plus (128G)★
-7  Apple Lightning 8pin 原廠USB傳輸線/充電線 兼容 Apple iPhone / iPad / iPod
-8                                                       Apple iPhone 7 (32G)
-9                                                 Apple iPhone 7 Plus (128G)
-10                                                   Apple TV 32G(MGY52TA/A)
-11                                          Apple iPhone 7 Plus (128G)曜石黑
-12                                                     Apple iPhone 7 (128G)
-13                                                   Apple iPhone 7 (128G)★
-14                                                Apple iPhone 7 Plus (256G)
-15                                                      Apple iPhone 7 (32G)
-16                                                Apple iPhone 7 Plus (128G)
-17                                                      Apple iPhone 7 (32G)
-18                                                Apple iPhone 7 Plus (128G)
-19                    Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶
-20                                          Apple 9.7吋 iPad Pro WiFi版 32GB
+8  /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9J9000_57d94ef40d8bb.jpg
+9  /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007IBBO000_580d70548ba9f.jpg
+10 /pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IBJY000_57e91dd933954.jpg
+11 /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D9000_5810113d9c932.jpg
+12 /pic/v1/data/item/201610/D/Y/A/G/B/G/DYAGBG-A9006WILK000_58100f06d35ae.jpg
+13 /pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8HJ000_57d8b0e4d5f7f.jpg
+14 /pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D3000_580d70f996889.jpg
+15 /pic/v1/data/item/201609/D/Y/A/I/6/B/DYAI6B-A9007INQL000_57dfd372ba4b5.jpg
+16 /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9KO000_57d94ed0760cf.jpg
+17 /pic/v1/data/item/201610/D/G/A/X/7/3/DGAX73-A9006LF1U000_58100f55d1584.jpg
+18 /pic/v1/data/item/201610/D/Y/A/M/6/K/DYAM6K-A90078VOR000_5806d6f3d6d85.jpg
+19 /pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007IDT5000_57d93ee657847.jpg
+20 /pic/v1/data/item/201610/D/Y/A/J/8/4/DYAJ84-A9007KFVA000_57fc53b7b503e.jpg
+                                                                                   name
+1                                                            Apple iPhone 7 Plus (128G)
+2                                                                 Apple iPhone 7 (128G)
+3                                                            Apple iPhone 7 Plus (128G)
+4                                                                 Apple iPhone 7 (128G)
+5                                       Apple Lightning 8pin iPhone/iPad 原廠充電傳輸線
+6                                                          Apple iPhone 7 Plus (128G)★
+7             Apple Lightning 8pin 原廠USB傳輸線/充電線 兼容 Apple iPhone / iPad / iPod
+8                                                            Apple iPhone 7 Plus (128G)
+9                                                                  Apple iPhone 7 (32G)
+10                                                              Apple iPhone 7 (128G)★
+11                                                                Apple iPhone 7 (128G)
+12 ESR億色 Apple iPhone 6 Plus/6s Plus手機殼 保護殼 晶耀系列 蘋果6背殼 超薄電鍍邊框軟殼
+13                                                           Apple iPhone 7 Plus (256G)
+14                                                                 Apple iPhone 7 (32G)
+15                               Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶
+16                                                           Apple iPhone 7 Plus (128G)
+17                                                              Apple TV 32G(MGY52TA/A)
+18                                                     Apple 9.7吋 iPad Pro WiFi版 32GB
+19                                                                 Apple iPhone 7 (32G)
+20                                                            Apple iPhone 7 Plus (32G)
                                                                                                                           describe
 1                                                                        ★行電萬用週邊組!!★Apple iPhone 7 Plus (128G) 智慧型手機
-2                                                         ▼每日強檔‧瘋殺特賣▼黑色|玫瑰金★送保護殼+玻璃貼Apple iPhone 7 (128G) 
-3                                                                                        ★搭配保護殼+玻璃貼Apple iPhone 7 (128G) 
+2                                                                                黑色|玫瑰金★藍牙喇叭週邊組Apple iPhone 7 (128G) 
+3                                                                                      四色★行電周邊組Apple iPhone 7 Plus (128G) 
 4                                                                     四色★送行動電源+專屬氣墊空壓殼+保護貼Apple iPhone 7 (128G) 
-5                                                                                      四色★行電周邊組Apple iPhone 7 Plus (128G) 
+5                                                                                  Apple Lightning 8pin iPhone/iPad 原廠充電傳輸線
 6                                                                           黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) 
 7  for Apple iphone7/7Plus iPhone 6/6 Plus iPhone 6s/6s Plus iPhon 5S/5 原廠傳輸線/充電線Lightning 兼容 Apple iPhone / iPad / iPod
-8                                                                                         ★搭配保護殼+玻璃貼Apple iPhone 7 (32G) 
-9                                                                           黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) 
-10                                                                                   ▼每日強檔‧瘋殺特賣▼Apple TV 32G(MGY52TA/A)
-11                                                               ★行電萬用週邊組!!★Apple iPhone 7 Plus (128G) 智慧型手機-曜石黑 
-12                                                          ▼每日強檔‧瘋殺特賣▼銀色|金色★送保護殼+玻璃貼Apple iPhone 7 (128G) 
-13                                                                               黑色|玫瑰金★行電防護週邊組Apple iPhone 7 (128G) 
-14                                                                       ★行電萬用週邊組!!★Apple iPhone 7 Plus (256G) 智慧型手機
-15                                                                四色★加送藍牙耳機+氣墊空壓殼+保護貼+觸控筆Apple iPhone 7 (32G) 
-16                                                                                     黑色★行電週邊組Apple iPhone 7 Plus (128G) 
-17                                                              ▼每日強檔‧瘋殺特賣▼黑色|玫瑰金★週邊防護組Apple iPhone 7 (32G) 
-18                                                                                銀色|金色★行電周邊組Apple iPhone 7 Plus (128G) 
-19                                                                          Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶
-20                                                                            ▼送9H 耐磨鋼化玻璃保護貼▼9.7吋 iPad Pro Wi-Fi 32GB
+8                                                                           黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) 
+9                                                                                         ★搭配保護殼+玻璃貼Apple iPhone 7 (32G) 
+10                                                                               黑色|玫瑰金★行電防護週邊組Apple iPhone 7 (128G) 
+11                                                                                 銀色|金色★藍牙喇叭週邊組Apple iPhone 7 (128G) 
+12           ESR Apple iPhone 6 Plus/6s Plus手機殼/保護殼 初色晶耀系列 蘋果iPhone6 Plus/6s Plus背殼 電鍍邊框軟殼 超薄手機保護殼/套
+13                                                                       ★行電萬用週邊組!!★Apple iPhone 7 Plus (256G) 智慧型手機
+14                                                              ▼每日強檔‧瘋殺特賣▼黑色|玫瑰金★週邊防護組Apple iPhone 7 (32G) 
+15                                                                          Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶
+16                                                                                銀色|金色★行電周邊組Apple iPhone 7 Plus (128G) 
+17                                                                                                         Apple TV 32G(MGY52TA/A)
+18                                                                            ▼送9H 耐磨鋼化玻璃保護貼▼9.7吋 iPad Pro Wi-Fi 32GB
+19                                                                四色★加送藍牙耳機+氣墊空壓殼+保護貼+觸控筆Apple iPhone 7 (32G) 
+20                                                                    三色★送藍芽耳機+氣墊空壓殼+觸控筆Apple iPhone 7 Plus (32G) 
    price author brand publishDate isNC17 couponActid
 1  35900                               0        NULL
-2  28990                               0        NULL
-3  28990                               0        NULL
+2  29900                               0        NULL
+3  36500                               0        NULL
 4  29888                               0        NULL
-5  36500                               0        NULL
+5    399                               0        NULL
 6  36500                               0        NULL
 7    349                               0        NULL
-8  25900                               0        NULL
-9  36900                               0        NULL
-10  5190                               0        NULL
-11 37900                               0        NULL
-12 28990                               0        NULL
-13 29900                               0        NULL
-14 39900                               0        NULL
-15 25990                               0        NULL
-16 36900                               0        NULL
-17 24990                               0        NULL
-18 36500                               0        NULL
-19 13500                               0        NULL
-20 19900                               0        NULL
+8  36900                               0        NULL
+9  25900                               0        NULL
+10 29900                               0        NULL
+11 29900                               0        NULL
+12   179                               0        NULL
+13 39900                               0        NULL
+14 24990                               0        NULL
+15 13500                               0        NULL
+16 36500                               0        NULL
+17  5190                               0        NULL
+18 19900                               0        NULL
+19 25990                               0        NULL
+20 31999                               0        NULL
 ```
 
 【Parser】解析所得資料：結構化資料
@@ -1199,13 +1195,13 @@ res_list
 
 ```
 $QTime
-[1] 62
+[1] 87
 
 $totalRows
-[1] 56504
+[1] 56567
 
 $totalPage
-[1] 2826
+[1] 2829
 
 $range
 $range$min
@@ -1279,16 +1275,16 @@ $prods[[2]]$picS
 [1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9EM000_57ec7c2e969b4.jpg"
 
 $prods[[2]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9EM000_580d66431a6fc.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9EM000_5810115e38380.jpg"
 
 $prods[[2]]$name
 [1] "Apple iPhone 7 (128G)"
 
 $prods[[2]]$describe
-[1] "▼每日強檔‧瘋殺特賣▼黑色|玫瑰金★送保護殼+玻璃貼Apple iPhone 7 (128G) "
+[1] "黑色|玫瑰金★藍牙喇叭週邊組Apple iPhone 7 (128G) "
 
 $prods[[2]]$price
-[1] 28990
+[1] 29900
 
 $prods[[2]]$author
 [1] ""
@@ -1308,25 +1304,25 @@ list()
 
 $prods[[3]]
 $prods[[3]]$Id
-[1] "DYAJ83-A9007IBBS"
+[1] "DYAJ86-A9007IBEX"
 
 $prods[[3]]$cateId
-[1] "DYAJ83"
+[1] "DYAJ86"
 
 $prods[[3]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBBS000_57d94a278d691.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/6/sDYAJ86-A9007IBEX000_57d94eb850e79.jpg"
 
 $prods[[3]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/J/8/3/DYAJ83-A9007IBBS000_57fc4fc37d8da.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/6/DYAJ86-A9007IBEX000_57d94eb84fa9f.jpg"
 
 $prods[[3]]$name
-[1] "Apple iPhone 7 (128G)"
+[1] "Apple iPhone 7 Plus (128G)"
 
 $prods[[3]]$describe
-[1] "★搭配保護殼+玻璃貼Apple iPhone 7 (128G) "
+[1] "四色★行電周邊組Apple iPhone 7 Plus (128G) "
 
 $prods[[3]]$price
-[1] 28990
+[1] 36500
 
 $prods[[3]]$author
 [1] ""
@@ -1384,25 +1380,25 @@ list()
 
 $prods[[5]]
 $prods[[5]]$Id
-[1] "DYAJ86-A9007IBEX"
+[1] "DYAP00-A9007KZQL"
 
 $prods[[5]]$cateId
-[1] "DYAJ86"
+[1] "DYAP00"
 
 $prods[[5]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/6/sDYAJ86-A9007IBEX000_57d94eb850e79.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/P/0/0/sDYAP00-A9007KZQL000_58045be01eb9c.jpg"
 
 $prods[[5]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/6/DYAJ86-A9007IBEX000_57d94eb84fa9f.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/P/0/0/DYAP00-A9007KZQL000_58101314ed60a.jpg"
 
 $prods[[5]]$name
-[1] "Apple iPhone 7 Plus (128G)"
+[1] "Apple Lightning 8pin iPhone/iPad 原廠充電傳輸線"
 
 $prods[[5]]$describe
-[1] "四色★行電周邊組Apple iPhone 7 Plus (128G) "
+[1] "Apple Lightning 8pin iPhone/iPad 原廠充電傳輸線"
 
 $prods[[5]]$price
-[1] 36500
+[1] 399
 
 $prods[[5]]$author
 [1] ""
@@ -1498,25 +1494,25 @@ list()
 
 $prods[[8]]
 $prods[[8]]$Id
-[1] "DYAJ81-A9007IBBO"
+[1] "DYAJ81-A9007I9J9"
 
 $prods[[8]]$cateId
-[1] "DYAJ81"
+[1] "DYAJ86"
 
 $prods[[8]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IBBO000_57d93f818e5ae.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9J9000_57dafcac6141f.jpg"
 
 $prods[[8]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007IBBO000_580d70548ba9f.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9J9000_57d94ef40d8bb.jpg"
 
 $prods[[8]]$name
-[1] "Apple iPhone 7 (32G)"
+[1] "Apple iPhone 7 Plus (128G)"
 
 $prods[[8]]$describe
-[1] "★搭配保護殼+玻璃貼Apple iPhone 7 (32G) "
+[1] "黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) "
 
 $prods[[8]]$price
-[1] 25900
+[1] 36900
 
 $prods[[8]]$author
 [1] ""
@@ -1536,25 +1532,25 @@ list()
 
 $prods[[9]]
 $prods[[9]]$Id
-[1] "DYAJ81-A9007I9J9"
+[1] "DYAJ81-A9007IBBO"
 
 $prods[[9]]$cateId
-[1] "DYAJ86"
+[1] "DYAJ81"
 
 $prods[[9]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9J9000_57dafcac6141f.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IBBO000_57d93f818e5ae.jpg"
 
 $prods[[9]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9J9000_57d94ef40d8bb.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007IBBO000_580d70548ba9f.jpg"
 
 $prods[[9]]$name
-[1] "Apple iPhone 7 Plus (128G)"
+[1] "Apple iPhone 7 (32G)"
 
 $prods[[9]]$describe
-[1] "黑色|玫瑰金★藍牙喇叭周邊組Apple iPhone 7 Plus (128G) "
+[1] "★搭配保護殼+玻璃貼Apple iPhone 7 (32G) "
 
 $prods[[9]]$price
-[1] 36900
+[1] 25900
 
 $prods[[9]]$author
 [1] ""
@@ -1574,25 +1570,25 @@ list()
 
 $prods[[10]]
 $prods[[10]]$Id
-[1] "DGAX73-A9006LF1U"
+[1] "DYAJ83-A9007IBJY"
 
 $prods[[10]]$cateId
-[1] "DGAX73"
+[1] "DYAJ83"
 
 $prods[[10]]$picS
-[1] "/pic/v1/data/item/201510/D/G/A/X/7/3/sDGAX73-A9006LF1U000_56331db66b5d3.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBJY000_57dad31bc2bfb.jpg"
 
 $prods[[10]]$picB
-[1] "/pic/v1/data/item/201610/D/G/A/X/7/3/DGAX73-A9006LF1U000_580c4c063befe.png"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IBJY000_57e91dd933954.jpg"
 
 $prods[[10]]$name
-[1] "Apple TV 32G(MGY52TA/A)"
+[1] "Apple iPhone 7 (128G)★"
 
 $prods[[10]]$describe
-[1] " ▼每日強檔‧瘋殺特賣▼Apple TV 32G(MGY52TA/A)"
+[1] "黑色|玫瑰金★行電防護週邊組Apple iPhone 7 (128G) "
 
 $prods[[10]]$price
-[1] 5190
+[1] 29900
 
 $prods[[10]]$author
 [1] ""
@@ -1612,25 +1608,25 @@ list()
 
 $prods[[11]]
 $prods[[11]]$Id
-[1] "DYAJ86-A9007L0C8"
+[1] "DYAJ81-A9007I9D9"
 
 $prods[[11]]$cateId
-[1] "DYAJ86"
+[1] "DYAJ83"
 
 $prods[[11]]$picS
-[1] "/pic/v1/data/item/201610/D/Y/A/J/8/6/sDYAJ86-A9007L0C8000_5804773694972.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D9000_57dad9556e595.jpg"
 
 $prods[[11]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/J/8/6/DYAJ86-A9007L0C8000_580477369264a.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D9000_5810113d9c932.jpg"
 
 $prods[[11]]$name
-[1] "Apple iPhone 7 Plus (128G)曜石黑"
+[1] "Apple iPhone 7 (128G)"
 
 $prods[[11]]$describe
-[1] "★行電萬用週邊組!!★Apple iPhone 7 Plus (128G) 智慧型手機-曜石黑 "
+[1] "銀色|金色★藍牙喇叭週邊組Apple iPhone 7 (128G) "
 
 $prods[[11]]$price
-[1] 37900
+[1] 29900
 
 $prods[[11]]$author
 [1] ""
@@ -1650,25 +1646,25 @@ list()
 
 $prods[[12]]
 $prods[[12]]$Id
-[1] "DYAJ81-A9007I9D9"
+[1] "DYAGBG-A9006WILK"
 
 $prods[[12]]$cateId
-[1] "DYAJ83"
+[1] "DYAR00"
 
 $prods[[12]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D9000_57dad9556e595.jpg"
+[1] "/pic/v1/data/item/201603/D/Y/A/G/B/G/sDYAGBG-A9006WILK000_56ea94f2d5706.jpg"
 
 $prods[[12]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D9000_580d668e36dd3.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/G/B/G/DYAGBG-A9006WILK000_58100f06d35ae.jpg"
 
 $prods[[12]]$name
-[1] "Apple iPhone 7 (128G)"
+[1] "ESR億色 Apple iPhone 6 Plus/6s Plus手機殼 保護殼 晶耀系列 蘋果6背殼 超薄電鍍邊框軟殼"
 
 $prods[[12]]$describe
-[1] "▼每日強檔‧瘋殺特賣▼銀色|金色★送保護殼+玻璃貼Apple iPhone 7 (128G) "
+[1] "ESR Apple iPhone 6 Plus/6s Plus手機殼/保護殼 初色晶耀系列 蘋果iPhone6 Plus/6s Plus背殼 電鍍邊框軟殼 超薄手機保護殼/套"
 
 $prods[[12]]$price
-[1] 28990
+[1] 179
 
 $prods[[12]]$author
 [1] ""
@@ -1688,25 +1684,25 @@ list()
 
 $prods[[13]]
 $prods[[13]]$Id
-[1] "DYAJ83-A9007IBJY"
+[1] "DYAJ84-A9007I8HJ"
 
 $prods[[13]]$cateId
-[1] "DYAJ83"
+[1] "DYAJ85"
 
 $prods[[13]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/sDYAJ83-A9007IBJY000_57dad31bc2bfb.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8HJ000_57d7b66b5c2f1.jpg"
 
 $prods[[13]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/3/DYAJ83-A9007IBJY000_57e91dd933954.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8HJ000_57d8b0e4d5f7f.jpg"
 
 $prods[[13]]$name
-[1] "Apple iPhone 7 (128G)★"
+[1] "Apple iPhone 7 Plus (256G)"
 
 $prods[[13]]$describe
-[1] "黑色|玫瑰金★行電防護週邊組Apple iPhone 7 (128G) "
+[1] "★行電萬用週邊組!!★Apple iPhone 7 Plus (256G) 智慧型手機"
 
 $prods[[13]]$price
-[1] 29900
+[1] 39900
 
 $prods[[13]]$author
 [1] ""
@@ -1726,25 +1722,25 @@ list()
 
 $prods[[14]]
 $prods[[14]]$Id
-[1] "DYAJ84-A9007I8HJ"
+[1] "DYAJ81-A9007I9D3"
 
 $prods[[14]]$cateId
-[1] "DYAJ85"
+[1] "DYAJ81"
 
 $prods[[14]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/sDYAJ84-A9007I8HJ000_57d7b66b5c2f1.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D3000_57daaa9098d9e.jpg"
 
 $prods[[14]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/4/DYAJ84-A9007I8HJ000_57d8b0e4d5f7f.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D3000_580d70f996889.jpg"
 
 $prods[[14]]$name
-[1] "Apple iPhone 7 Plus (256G)"
+[1] "Apple iPhone 7 (32G)"
 
 $prods[[14]]$describe
-[1] "★行電萬用週邊組!!★Apple iPhone 7 Plus (256G) 智慧型手機"
+[1] "▼每日強檔‧瘋殺特賣▼黑色|玫瑰金★週邊防護組Apple iPhone 7 (32G) "
 
 $prods[[14]]$price
-[1] 39900
+[1] 24990
 
 $prods[[14]]$author
 [1] ""
@@ -1764,25 +1760,25 @@ list()
 
 $prods[[15]]
 $prods[[15]]$Id
-[1] "DYAJ81-A9007IDT5"
+[1] "DYAI6B-A9007INQL"
 
 $prods[[15]]$cateId
-[1] "DYAJ81"
+[1] "DYAI6B"
 
 $prods[[15]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IDT5000_57d93ee659028.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/I/6/B/sDYAI6B-A9007INQL000_57dfd372bb376.jpg"
 
 $prods[[15]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007IDT5000_57d93ee657847.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/I/6/B/DYAI6B-A9007INQL000_57dfd372ba4b5.jpg"
 
 $prods[[15]]$name
-[1] "Apple iPhone 7 (32G)"
+[1] "Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶"
 
 $prods[[15]]$describe
-[1] "四色★加送藍牙耳機+氣墊空壓殼+保護貼+觸控筆Apple iPhone 7 (32G) "
+[1] "Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶"
 
 $prods[[15]]$price
-[1] 25990
+[1] 13500
 
 $prods[[15]]$author
 [1] ""
@@ -1802,25 +1798,25 @@ list()
 
 $prods[[16]]
 $prods[[16]]$Id
-[1] "DYAJ86-A9007KOI7"
+[1] "DYAJ81-A9007I9KO"
 
 $prods[[16]]$cateId
 [1] "DYAJ86"
 
 $prods[[16]]$picS
-[1] "/pic/v1/data/item/201610/D/Y/A/J/8/6/sDYAJ86-A9007KOI7000_57ff1212b6c0a.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9KO000_57dafe0947c50.jpg"
 
 $prods[[16]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/J/8/6/DYAJ86-A9007KOI7000_57ff1212b50d0.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9KO000_57d94ed0760cf.jpg"
 
 $prods[[16]]$name
 [1] "Apple iPhone 7 Plus (128G)"
 
 $prods[[16]]$describe
-[1] "黑色★行電週邊組Apple iPhone 7 Plus (128G) "
+[1] "銀色|金色★行電周邊組Apple iPhone 7 Plus (128G) "
 
 $prods[[16]]$price
-[1] 36900
+[1] 36500
 
 $prods[[16]]$author
 [1] ""
@@ -1840,25 +1836,25 @@ list()
 
 $prods[[17]]
 $prods[[17]]$Id
-[1] "DYAJ81-A9007I9D3"
+[1] "DGAX73-A9006LF1U"
 
 $prods[[17]]$cateId
-[1] "DYAJ81"
+[1] "DGAX73"
 
 $prods[[17]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9D3000_57daaa9098d9e.jpg"
+[1] "/pic/v1/data/item/201510/D/G/A/X/7/3/sDGAX73-A9006LF1U000_56331db66b5d3.jpg"
 
 $prods[[17]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/J/8/1/DYAJ81-A9007I9D3000_580d70f996889.jpg"
+[1] "/pic/v1/data/item/201610/D/G/A/X/7/3/DGAX73-A9006LF1U000_58100f55d1584.jpg"
 
 $prods[[17]]$name
-[1] "Apple iPhone 7 (32G)"
+[1] "Apple TV 32G(MGY52TA/A)"
 
 $prods[[17]]$describe
-[1] "▼每日強檔‧瘋殺特賣▼黑色|玫瑰金★週邊防護組Apple iPhone 7 (32G) "
+[1] "Apple TV 32G(MGY52TA/A)"
 
 $prods[[17]]$price
-[1] 24990
+[1] 5190
 
 $prods[[17]]$author
 [1] ""
@@ -1878,25 +1874,25 @@ list()
 
 $prods[[18]]
 $prods[[18]]$Id
-[1] "DYAJ81-A9007I9KO"
+[1] "DYAM6K-A90078VOR"
 
 $prods[[18]]$cateId
-[1] "DYAJ86"
+[1] "DYAM6K"
 
 $prods[[18]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007I9KO000_57dafe0947c50.jpg"
+[1] "/pic/v1/data/item/201605/D/Y/A/M/6/K/sDYAM6K-A90078VOR000_573afef9962c0.jpg"
 
 $prods[[18]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007I9KO000_57d94ed0760cf.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/M/6/K/DYAM6K-A90078VOR000_5806d6f3d6d85.jpg"
 
 $prods[[18]]$name
-[1] "Apple iPhone 7 Plus (128G)"
+[1] "Apple 9.7吋 iPad Pro WiFi版 32GB"
 
 $prods[[18]]$describe
-[1] "銀色|金色★行電周邊組Apple iPhone 7 Plus (128G) "
+[1] "▼送9H 耐磨鋼化玻璃保護貼▼9.7吋 iPad Pro Wi-Fi 32GB"
 
 $prods[[18]]$price
-[1] 36500
+[1] 19900
 
 $prods[[18]]$author
 [1] ""
@@ -1916,25 +1912,25 @@ list()
 
 $prods[[19]]
 $prods[[19]]$Id
-[1] "DYAI6B-A9007INQL"
+[1] "DYAJ81-A9007IDT5"
 
 $prods[[19]]$cateId
-[1] "DYAI6B"
+[1] "DYAJ81"
 
 $prods[[19]]$picS
-[1] "/pic/v1/data/item/201609/D/Y/A/I/6/B/sDYAI6B-A9007INQL000_57dfd372bb376.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/sDYAJ81-A9007IDT5000_57d93ee659028.jpg"
 
 $prods[[19]]$picB
-[1] "/pic/v1/data/item/201609/D/Y/A/I/6/B/DYAI6B-A9007INQL000_57dfd372ba4b5.jpg"
+[1] "/pic/v1/data/item/201609/D/Y/A/J/8/1/DYAJ81-A9007IDT5000_57d93ee657847.jpg"
 
 $prods[[19]]$name
-[1] "Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶"
+[1] "Apple iPhone 7 (32G)"
 
 $prods[[19]]$describe
-[1] "Apple Watch第二代 太空灰色鋁金屬錶殼搭配黑色運動型錶帶"
+[1] "四色★加送藍牙耳機+氣墊空壓殼+保護貼+觸控筆Apple iPhone 7 (32G) "
 
 $prods[[19]]$price
-[1] 13500
+[1] 25990
 
 $prods[[19]]$author
 [1] ""
@@ -1954,25 +1950,25 @@ list()
 
 $prods[[20]]
 $prods[[20]]$Id
-[1] "DYAM6K-A90078VOR"
+[1] "DYAJ84-A9007KFVA"
 
 $prods[[20]]$cateId
-[1] "DYAM6K"
+[1] "DYAJ84"
 
 $prods[[20]]$picS
-[1] "/pic/v1/data/item/201605/D/Y/A/M/6/K/sDYAM6K-A90078VOR000_573afef9962c0.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/4/sDYAJ84-A9007KFVA000_57fc53b7b6285.jpg"
 
 $prods[[20]]$picB
-[1] "/pic/v1/data/item/201610/D/Y/A/M/6/K/DYAM6K-A90078VOR000_5806d6f3d6d85.jpg"
+[1] "/pic/v1/data/item/201610/D/Y/A/J/8/4/DYAJ84-A9007KFVA000_57fc53b7b503e.jpg"
 
 $prods[[20]]$name
-[1] "Apple 9.7吋 iPad Pro WiFi版 32GB"
+[1] "Apple iPhone 7 Plus (32G)"
 
 $prods[[20]]$describe
-[1] "▼送9H 耐磨鋼化玻璃保護貼▼9.7吋 iPad Pro Wi-Fi 32GB"
+[1] "三色★送藍芽耳機+氣墊空壓殼+觸控筆Apple iPhone 7 Plus (32G) "
 
 $prods[[20]]$price
-[1] 19900
+[1] 31999
 
 $prods[[20]]$author
 [1] ""
@@ -2019,4 +2015,188 @@ list()
 - [RMySQL](https://cran.r-project.org/web/packages/RMySQL/RMySQL.pdf)
 - [RPostgreSQL](https://cran.r-project.org/web/packages/RPostgreSQL/RPostgreSQL.pdf)
 
+
+【Data】資料處理與儲存
+==================================================================
+**RSQLite示範**</br>
+嘗試把內建的資料集`iris`存入資料庫
+
+```r
+library(RSQLite)
+# 創建一個存放資料庫的資料夾
+dir.create("db")
+
+# 創建名為 Test 的資料庫
+db = dbConnect(SQLite(), 
+               dbname="db/Test.sqlite")
+
+# 將資料集 iris 存到資料庫 db 中，存成名為 IRIS 的資料表
+dbWriteTable(conn = db, name = "IRIS", 
+             iris, overwrite=T,
+             row.names=FALSE)
+```
+
+```
+[1] TRUE
+```
+
+```r
+# 讀取 db 資料庫中的 IRIS 資料表
+data = dbReadTable(db, "IRIS") 
+data
+```
+
+```
+    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+1            5.1         3.5          1.4         0.2     setosa
+2            4.9         3.0          1.4         0.2     setosa
+3            4.7         3.2          1.3         0.2     setosa
+4            4.6         3.1          1.5         0.2     setosa
+5            5.0         3.6          1.4         0.2     setosa
+6            5.4         3.9          1.7         0.4     setosa
+7            4.6         3.4          1.4         0.3     setosa
+8            5.0         3.4          1.5         0.2     setosa
+9            4.4         2.9          1.4         0.2     setosa
+10           4.9         3.1          1.5         0.1     setosa
+11           5.4         3.7          1.5         0.2     setosa
+12           4.8         3.4          1.6         0.2     setosa
+13           4.8         3.0          1.4         0.1     setosa
+14           4.3         3.0          1.1         0.1     setosa
+15           5.8         4.0          1.2         0.2     setosa
+16           5.7         4.4          1.5         0.4     setosa
+17           5.4         3.9          1.3         0.4     setosa
+18           5.1         3.5          1.4         0.3     setosa
+19           5.7         3.8          1.7         0.3     setosa
+20           5.1         3.8          1.5         0.3     setosa
+21           5.4         3.4          1.7         0.2     setosa
+22           5.1         3.7          1.5         0.4     setosa
+23           4.6         3.6          1.0         0.2     setosa
+24           5.1         3.3          1.7         0.5     setosa
+25           4.8         3.4          1.9         0.2     setosa
+26           5.0         3.0          1.6         0.2     setosa
+27           5.0         3.4          1.6         0.4     setosa
+28           5.2         3.5          1.5         0.2     setosa
+29           5.2         3.4          1.4         0.2     setosa
+30           4.7         3.2          1.6         0.2     setosa
+31           4.8         3.1          1.6         0.2     setosa
+32           5.4         3.4          1.5         0.4     setosa
+33           5.2         4.1          1.5         0.1     setosa
+34           5.5         4.2          1.4         0.2     setosa
+35           4.9         3.1          1.5         0.2     setosa
+36           5.0         3.2          1.2         0.2     setosa
+37           5.5         3.5          1.3         0.2     setosa
+38           4.9         3.6          1.4         0.1     setosa
+39           4.4         3.0          1.3         0.2     setosa
+40           5.1         3.4          1.5         0.2     setosa
+41           5.0         3.5          1.3         0.3     setosa
+42           4.5         2.3          1.3         0.3     setosa
+43           4.4         3.2          1.3         0.2     setosa
+44           5.0         3.5          1.6         0.6     setosa
+45           5.1         3.8          1.9         0.4     setosa
+46           4.8         3.0          1.4         0.3     setosa
+47           5.1         3.8          1.6         0.2     setosa
+48           4.6         3.2          1.4         0.2     setosa
+49           5.3         3.7          1.5         0.2     setosa
+50           5.0         3.3          1.4         0.2     setosa
+51           7.0         3.2          4.7         1.4 versicolor
+52           6.4         3.2          4.5         1.5 versicolor
+53           6.9         3.1          4.9         1.5 versicolor
+54           5.5         2.3          4.0         1.3 versicolor
+55           6.5         2.8          4.6         1.5 versicolor
+56           5.7         2.8          4.5         1.3 versicolor
+57           6.3         3.3          4.7         1.6 versicolor
+58           4.9         2.4          3.3         1.0 versicolor
+59           6.6         2.9          4.6         1.3 versicolor
+60           5.2         2.7          3.9         1.4 versicolor
+61           5.0         2.0          3.5         1.0 versicolor
+62           5.9         3.0          4.2         1.5 versicolor
+63           6.0         2.2          4.0         1.0 versicolor
+64           6.1         2.9          4.7         1.4 versicolor
+65           5.6         2.9          3.6         1.3 versicolor
+66           6.7         3.1          4.4         1.4 versicolor
+67           5.6         3.0          4.5         1.5 versicolor
+68           5.8         2.7          4.1         1.0 versicolor
+69           6.2         2.2          4.5         1.5 versicolor
+70           5.6         2.5          3.9         1.1 versicolor
+71           5.9         3.2          4.8         1.8 versicolor
+72           6.1         2.8          4.0         1.3 versicolor
+73           6.3         2.5          4.9         1.5 versicolor
+74           6.1         2.8          4.7         1.2 versicolor
+75           6.4         2.9          4.3         1.3 versicolor
+76           6.6         3.0          4.4         1.4 versicolor
+77           6.8         2.8          4.8         1.4 versicolor
+78           6.7         3.0          5.0         1.7 versicolor
+79           6.0         2.9          4.5         1.5 versicolor
+80           5.7         2.6          3.5         1.0 versicolor
+81           5.5         2.4          3.8         1.1 versicolor
+82           5.5         2.4          3.7         1.0 versicolor
+83           5.8         2.7          3.9         1.2 versicolor
+84           6.0         2.7          5.1         1.6 versicolor
+85           5.4         3.0          4.5         1.5 versicolor
+86           6.0         3.4          4.5         1.6 versicolor
+87           6.7         3.1          4.7         1.5 versicolor
+88           6.3         2.3          4.4         1.3 versicolor
+89           5.6         3.0          4.1         1.3 versicolor
+90           5.5         2.5          4.0         1.3 versicolor
+91           5.5         2.6          4.4         1.2 versicolor
+92           6.1         3.0          4.6         1.4 versicolor
+93           5.8         2.6          4.0         1.2 versicolor
+94           5.0         2.3          3.3         1.0 versicolor
+95           5.6         2.7          4.2         1.3 versicolor
+96           5.7         3.0          4.2         1.2 versicolor
+97           5.7         2.9          4.2         1.3 versicolor
+98           6.2         2.9          4.3         1.3 versicolor
+99           5.1         2.5          3.0         1.1 versicolor
+100          5.7         2.8          4.1         1.3 versicolor
+101          6.3         3.3          6.0         2.5  virginica
+102          5.8         2.7          5.1         1.9  virginica
+103          7.1         3.0          5.9         2.1  virginica
+104          6.3         2.9          5.6         1.8  virginica
+105          6.5         3.0          5.8         2.2  virginica
+106          7.6         3.0          6.6         2.1  virginica
+107          4.9         2.5          4.5         1.7  virginica
+108          7.3         2.9          6.3         1.8  virginica
+109          6.7         2.5          5.8         1.8  virginica
+110          7.2         3.6          6.1         2.5  virginica
+111          6.5         3.2          5.1         2.0  virginica
+112          6.4         2.7          5.3         1.9  virginica
+113          6.8         3.0          5.5         2.1  virginica
+114          5.7         2.5          5.0         2.0  virginica
+115          5.8         2.8          5.1         2.4  virginica
+116          6.4         3.2          5.3         2.3  virginica
+117          6.5         3.0          5.5         1.8  virginica
+118          7.7         3.8          6.7         2.2  virginica
+119          7.7         2.6          6.9         2.3  virginica
+120          6.0         2.2          5.0         1.5  virginica
+121          6.9         3.2          5.7         2.3  virginica
+122          5.6         2.8          4.9         2.0  virginica
+123          7.7         2.8          6.7         2.0  virginica
+124          6.3         2.7          4.9         1.8  virginica
+125          6.7         3.3          5.7         2.1  virginica
+126          7.2         3.2          6.0         1.8  virginica
+127          6.2         2.8          4.8         1.8  virginica
+128          6.1         3.0          4.9         1.8  virginica
+129          6.4         2.8          5.6         2.1  virginica
+130          7.2         3.0          5.8         1.6  virginica
+131          7.4         2.8          6.1         1.9  virginica
+132          7.9         3.8          6.4         2.0  virginica
+133          6.4         2.8          5.6         2.2  virginica
+134          6.3         2.8          5.1         1.5  virginica
+135          6.1         2.6          5.6         1.4  virginica
+136          7.7         3.0          6.1         2.3  virginica
+137          6.3         3.4          5.6         2.4  virginica
+138          6.4         3.1          5.5         1.8  virginica
+139          6.0         3.0          4.8         1.8  virginica
+140          6.9         3.1          5.4         2.1  virginica
+141          6.7         3.1          5.6         2.4  virginica
+142          6.9         3.1          5.1         2.3  virginica
+143          5.8         2.7          5.1         1.9  virginica
+144          6.8         3.2          5.9         2.3  virginica
+145          6.7         3.3          5.7         2.5  virginica
+146          6.7         3.0          5.2         2.3  virginica
+147          6.3         2.5          5.0         1.9  virginica
+148          6.5         3.0          5.2         2.0  virginica
+149          6.2         3.4          5.4         2.3  virginica
+150          5.9         3.0          5.1         1.8  virginica
+```
 

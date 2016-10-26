@@ -750,3 +750,26 @@ res_list
 - [RPostgreSQL](https://cran.r-project.org/web/packages/RPostgreSQL/RPostgreSQL.pdf)
 
 
+【Data】資料處理與儲存
+==================================================================
+**RSQLite示範**</br>
+嘗試把內建的資料集`iris`存入資料庫
+```{r}
+library(RSQLite)
+# 創建一個存放資料庫的資料夾
+dir.create("db")
+
+# 創建名為 Test 的資料庫
+db = dbConnect(SQLite(), 
+               dbname="db/Test.sqlite")
+
+# 將資料集 iris 存到資料庫 db 中，存成名為 IRIS 的資料表
+dbWriteTable(conn = db, name = "IRIS", 
+             iris, overwrite=T,
+             row.names=FALSE)
+
+# 讀取 db 資料庫中的 IRIS 資料表
+data = dbReadTable(db, "IRIS") 
+data
+```
+
