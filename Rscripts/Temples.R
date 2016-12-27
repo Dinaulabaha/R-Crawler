@@ -1,6 +1,10 @@
+install.packages("data.table")
+install.packages("rvest")
+library(httr)
 library(magrittr)
 library(data.table)
 library(rvest)
+
 urls = paste0("http://temple.twgod.com/CwP/P/P",29:40,".html")
 
 getTable = function(url){

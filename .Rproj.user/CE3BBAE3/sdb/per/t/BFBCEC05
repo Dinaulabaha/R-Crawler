@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "\n\nrsconnect::setAccountInfo(name='dinaulabaha',\n                          token='ABD5E1F64F864BF966DD951A9BA26BFB',\n                          secret='<SECRET>')",
+    "created" : 1482212372592.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2763131516",
+    "id" : "BFBCEC05",
+    "lastKnownWriteTime" : 1482212384,
+    "last_content_update" : 1482212384239,
+    "path" : "~/Desktop/b02208013/Inclass/aaa.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
